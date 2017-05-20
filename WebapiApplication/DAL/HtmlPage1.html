@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="//code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var object = {
+                ID: 1,
+                IsCustomer: 1,
+                dtDOB: "02-01-1994",//mm-dd-yyyy
+                intCasteID: 591,
+                intCountryLivingID: 12,
+                intCustPostedBY: 40,
+                intEmpID: null,
+                intGenderID: "2",
+                intLandCode: 12,
+                intMobileCode: 12,
+                intMotherTongueID: 1,
+                intProfileRegisteredBy: null,
+                intReligionID: 1,
+                strAreaCode: undefined,
+                strEmail: "ergeger@gmail.com",
+                strFirstName: "fdggg",
+                strLandNo: undefined,
+                strLastName: "rgrggg",
+                strMobileNo: "2224444444",
+                strPassword: "123456"
+            }
+            $("#Display").click(function () {
+
+                alert(5);
+
+                $.ajax({
+                    url: 'http://localhost:63006/Api/DashboardRequest/DashboardGetPartnerProfilesRequestget',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: { TypeOfReport: 'SP', id: 97893, pagefrom: 19, pageto: 27, DashboardType: "Paid" },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+
+            $("#test").click(function () {
+                $.ajax({
+                    url: 'http://localhost:63006/Api/Registration/RegisterCustomerHomepages',
+                    type: 'POST',
+                    crossDomain: true,
+                    data: JSON.stringify(object),
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+
+            //$("#ClassData").click(function () {
+            //    alert(1);
+            //    $.ajax({
+            //        url: 'http://localhost:63006/Api/StaticPages/getViewFullProfileMail',
+            //        type: 'GET',
+            //        crossDomain: true,
+            //        data: { OriginalString: "?MyProfileQSAccept=7YrKbCteX/RfSC2jOgj8Gcizbtqmd119aeqlYhed2ZqWXNmTI5qSOXX/nMIYhzTxA3lntoCFjwwZJX36lW1BzGhJ/zM0kS7wvOVa2gAUVMTwt8p1b9F4VRhXGBUgIBbnrEUUvID6rgk41lqOXYwJDA==" },
+            //        contentType: 'application/json',
+            //        success: function (data, textStatus, xhr) {
+            //            alert(JSON.stringify(data));
+            //            console.log(data);
+            //        },
+            //        error: function (xhr, textStatus, errorThrown) {
+            //            console.log(xhr);
+            //        }
+            //    });
+            //});
+            $("#ClassData").click(function () {
+                alert(1);
+                $.ajax({
+                    url: 'http://localhost:63006/Api/StaticPages/getExpressIntrstfullprofile',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: { tocustid: 22464,intFromCustId:91022,EmpID:2 },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+            $("#8070").click(function () {
+                alert(1);
+                $.ajax({
+                    url: 'http://localhost:63006/Api/CustomerPersonalUpdate/getGenerateHoroscorpe',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: { customerid: '91022', EmpIDQueryString: '2', intDay: '30', intMonth: '8', intYear: '1992', CityID: '80' },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+
+            $("#ClassData1").click(function () {
+                alert(1);
+                $.ajax({
+                    url: 'http://localhost:63006/Api/CustomerPersonalUpdate/getAstroGenerationS3Update',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: { Path: "C:\\Webroot\\WebApI\\Images\\HoroscopeImages\\91022_HaroscopeImage\\91022_HaroscopeImage.html", KeyName: "Images/HoroscopeImages/91022_HaroscopeImage/91022_HaroscopeImage.html" },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+
+            $("#TestHoro").click(function () {
+                alert(1);
+                $.ajax({
+                    url: 'http://183.82.0.58:8010/Api/CustomerPersonalUpdate/getAstroGenerationS3Update',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: { Path: "C:\\Webroot\\WebApI\\Images\\HoroscopeImages\\91022_HaroscopeImage\\91022_HaroscopeImage.html", KeyName: "Images/HoroscopeImages/91022_HaroscopeImage/91022_HaroscopeImage.html" },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+
+
+
+            $("#ClassData2").click(function () {
+                alert(1);
+                $.ajax({
+                    url: 'http://localhost:8010/Api/CustomerPersonal/getCustomerEducationdetails',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: { CustID: 91035 },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
+
+
+            //$("#ClassData").click(function () {
+
+            //    $.ajax({
+            //        url: 'http://183.82.0.58:8010/Api/Registration/insertRegistrationBasic',
+            //        type: 'GET',
+            //        crossDomain: true,
+            //        data: { CustID: 91035 },
+            //        contentType: 'application/json',
+            //        success: function (data, textStatus, xhr) {
+            //            alert(JSON.stringify(data));
+            //            console.log(data);
+            //        },
+            //        error: function (xhr, textStatus, errorThrown) {
+            //            console.log(xhr);
+            //        }
+            //    });
+            //});
+
+        });
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        function Host() {
+            alert(2);
+            $.get('http://54.169.133.223:8010/Api/DB/GetTimeUrl/1', function (data) {
+
+                $.each(data, function (i, v) {
+                    $('#result').html($('#result').html() + v.Title + '<br />');
+                });
+            });
+        }
+
+        function yourFunction() {
+            alert(1);
+        }
+
+    </script>
+</head>
+<body>
+
+    <input type="button" id="Save" value="Save Data" />
+    <input type="button" id="Display" value="Display" />
+    <input type="button" id="test" value="Test" />
+    <input type="button" id="ClassData" value="ClassData" />
+    <input type="button" id="ClassData1" value="KKKK" />
+    <input type="button" id="ClassData2" value="Local" />
+    <input type="button" id="8070" value="8070" />
+    <input type="button" id="TestHoro" value="TestHoro" />
+
+    <div id="result"></div>
+    <div>
+        Test Display
+        <a onclick="yourFunction(); return false;">One Way</a>
+
+    </div>
+</body>
+</html>
