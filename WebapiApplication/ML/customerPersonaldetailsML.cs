@@ -311,6 +311,12 @@ namespace WebapiApplication.ML
         public int? SibilingSpouseFatherCasteID { set; get; }
         public int? BroProfessionCategoryID { set; get; }
         public int? BroSpouseProfessionCategoryID { set; get; }
+        public string BroSpouseFatherEmailID { set; get; }
+        public int? BroSpouseFatherMobileCountryID { set; get; }
+        public string BroSpouseFatherMobileNo { set; get; }
+        public int? BroSpouseFatherLandCountryID { set; get; }
+        public string BroSpouseFatherLandAreaCode { set; get; }
+        public string BroSpouseFatherLandNo { set; get; }
 
     }
 
@@ -364,7 +370,12 @@ namespace WebapiApplication.ML
         public int? SibilingSpouseFatherCasteID { set; get; }
         public int? SisProfessionCategoryID { set; get; }
         public int? SisSpouseProfessionCategoryID { set; get; }
-
+        public string SisSpouseFatherEmailID { set; get; }
+        public int? SisSpouseFatherMobileCountryID { set; get; }
+        public string SisSpouseFatherMobileNo { set; get; }
+        public int? SisSpouseFatherLandCountryID { set; get; }
+        public string SisSpouseFatherLandAreaCode { set; get; }
+        public string SisSpouseFatherLandNo { set; get; }
     }
 
 
