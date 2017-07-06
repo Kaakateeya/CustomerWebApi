@@ -51,8 +51,8 @@
 
             $("#test").click(function () {
                 $.ajax({
-                    url: 'http://localhost:63006/Api/Registration/RegisterCustomerHomepages',
-                    type: 'POST',
+                    url: 'http://localhost:63006/Api/DB/userLogin/person',
+                    type: 'get',
                     crossDomain: true,
                     data: JSON.stringify(object),
                     contentType: 'application/json',

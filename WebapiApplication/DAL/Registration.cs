@@ -363,6 +363,61 @@ namespace WebapiApplication.DAL
             return intstatus;
         }
 
+
+        public int FatherMothersibDetails(FatherMothersibDetails Mobj, string spName)
+        {
+            DataSet ds = new DataSet();
+            int intstatus = 0;
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(spName, connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@FatherNativePlace", Mobj.FatherNativePlace);
+                cmd.Parameters.AddWithValue("@MotherNative", Mobj.MotherNative);
+                cmd.Parameters.AddWithValue("@NoOfBrothers", Mobj.NoOfBrothers);
+                cmd.Parameters.AddWithValue("@NoofSisters", Mobj.NoofSisters);
+                cmd.Parameters.AddWithValue("@NoofelderBrothers", Mobj.NoofelderBrothers);
+                cmd.Parameters.AddWithValue("@NoOfYoungerBrothers", Mobj.NoOfYoungerBrothers);
+                cmd.Parameters.AddWithValue("@NoofElderSisters", Mobj.NoofElderSisters);
+                cmd.Parameters.AddWithValue("@NoofYoungerSisters", Mobj.NoofYoungerSisters);
+                cmd.Parameters.AddWithValue("@intCusID", Mobj.intCusID);
+
+                SqlParameter outputParamStatus = cmd.Parameters.Add("@Status", SqlDbType.Int);
+                outputParamStatus.Direction = ParameterDirection.Output;
+                SQLHelper.GetSQLConnection().Close();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                if (Convert.ToInt32(cmd.Parameters[9].Value) == 1)
+                {
+                    intstatus = 1;
+                }
+                else
+                {
+                    intstatus = 0;
+                }
+
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), null, spName, null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return intstatus;
+        }
     }
 }
 

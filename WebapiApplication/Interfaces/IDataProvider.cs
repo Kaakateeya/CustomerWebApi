@@ -156,8 +156,7 @@ namespace WebapiApplication.Interfaces
         string BgetPassword(string Username);
         ArrayList DGetloginCustinformation(string Username, string Password, int? iflag);
         int CheckUserPwd(string Username, string Password);
-
-
+        int FatherMothersibDetails(FatherMothersibDetails Mobj);
     }
 }
 

@@ -22,6 +22,6 @@ namespace WebapiApplication.Implement
         public string BgetPassword(string Username) { return new RegistrationDAL().BgetPassword(Username); }
         public ArrayList DGetloginCustinformation(string Username, string Password, int? iflag) { return new RegistrationDAL().DGetloginCustinformation(Username, Password, iflag); }
         public int CheckUserPwd(string Username, string Password) { return new RegistrationDAL().CheckUserPwd(Username, Password); }
-
+        public int FatherMothersibDetails(FatherMothersibDetails Mobj) { return new RegistrationDAL().FatherMothersibDetails(Mobj, "[dbo].[usp_insertFatherMothersibDetails]"); }
     }
 }
