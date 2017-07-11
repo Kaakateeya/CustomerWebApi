@@ -382,5 +382,17 @@ namespace WebapiApplication.ML
         public string motherProfessiondetails { set; get; }
     }
 
+    public class FatherMothersibDetails
+    {
+        public string FatherNativePlace { set; get; }
+        public string MotherNative { set; get; }
+        public int? NoOfBrothers { set; get; }
+        public int? NoofSisters { set; get; }
+        public int? NoofelderBrothers { set; get; }
+        public int? NoOfYoungerBrothers { set; get; }
+        public int? NoofElderSisters { set; get; }
+        public int? NoofYoungerSisters { set; get; }
+        public int? intCusID { set; get; }
 
+    }
 }

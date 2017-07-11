@@ -30,6 +30,6 @@ namespace WebapiApplication.Api
         public string getPassword(string Username) { return this.IRegistration.BgetPassword(Username); }
         public ArrayList getloginCustinformation(string Username, string Password, int? iflag) { return this.IRegistration.DGetloginCustinformation(Username, Password, iflag); }
         public int getCheckUserPwd(string Username, string Password) { return this.IRegistration.CheckUserPwd(Username, Password); }
-
+        public int FatherMothersibDetails([FromBody]FatherMothersibDetails Mobj) { return this.IRegistration.FatherMothersibDetails(Mobj); }
     }
 }
