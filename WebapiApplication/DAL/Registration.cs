@@ -285,7 +285,7 @@ namespace WebapiApplication.DAL
             int status = 0;
             try
             {
-                SqlCommand cmd = new SqlCommand("[dbo].[Usp_CheckCustLogin]", connection);
+                SqlCommand cmd = new SqlCommand("[dbo].[Usp_CheckCustLogin_Customer]", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Username", Username);
                 cmd.Parameters.AddWithValue("@Password", Password);
@@ -306,7 +306,7 @@ namespace WebapiApplication.DAL
             }
             catch (Exception EX)
             {
-                Commonclass.ApplicationErrorLog("Usp_CheckCustLogin", Convert.ToString(EX.Message), null, "DGetloginCustinformation", null);
+                Commonclass.ApplicationErrorLog("Usp_CheckCustLogin_Customer", Convert.ToString(EX.Message), null, "DGetloginCustinformation", null);
             }
             finally
             {

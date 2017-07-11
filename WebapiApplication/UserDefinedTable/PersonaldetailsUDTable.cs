@@ -331,13 +331,13 @@ namespace WebapiApplication.UserDefinedTable
             dtsibBrotherdetails.Columns.Add("SibilingSpouseFatherCasteID");
             dtsibBrotherdetails.Columns.Add("BroProfessionCategoryID");
             dtsibBrotherdetails.Columns.Add("BroSpouseProfessionCategoryID");
-            dtsibBrotherdetails.Columns.Add("BroSpouseFatherEmailID");
-            dtsibBrotherdetails.Columns.Add("BroSpouseFatherMobileCountryID");
-            dtsibBrotherdetails.Columns.Add("BroSpouseFatherMobileNo");
-            dtsibBrotherdetails.Columns.Add("BroSpouseFatherLandCountryID");
-            dtsibBrotherdetails.Columns.Add("BroSpouseFatherLandAreaCode");
-            dtsibBrotherdetails.Columns.Add("BroSpouseFatherLandNo");
-            dtsibBrotherdetails.Columns.Add("BornOrder");
+            //dtsibBrotherdetails.Columns.Add("BroSpouseFatherEmailID");
+            //dtsibBrotherdetails.Columns.Add("BroSpouseFatherMobileCountryID");
+            //dtsibBrotherdetails.Columns.Add("BroSpouseFatherMobileNo");
+            //dtsibBrotherdetails.Columns.Add("BroSpouseFatherLandCountryID");
+            //dtsibBrotherdetails.Columns.Add("BroSpouseFatherLandAreaCode");
+            //dtsibBrotherdetails.Columns.Add("BroSpouseFatherLandNo");
+            //dtsibBrotherdetails.Columns.Add("BornOrder");
             return dtsibBrotherdetails;
         }
 
@@ -391,13 +391,13 @@ namespace WebapiApplication.UserDefinedTable
             dtsibsisterdetails.Columns.Add("SibilingSpouseFatherCasteID");
             dtsibsisterdetails.Columns.Add("SisProfessionCategoryID");
             dtsibsisterdetails.Columns.Add("SisSpouseProfessionCategoryID");
-            dtsibsisterdetails.Columns.Add("SisSpouseFatherEmailID");
-            dtsibsisterdetails.Columns.Add("SisSpouseFatherMobileCountryID");
-            dtsibsisterdetails.Columns.Add("SisSpouseFatherMobileNo");
-            dtsibsisterdetails.Columns.Add("SisSpouseFatherLandCountryID");
-            dtsibsisterdetails.Columns.Add("SisSpouseFatherLandAreaCode");
-            dtsibsisterdetails.Columns.Add("SisSpouseFatherLandNo");
-            dtsibsisterdetails.Columns.Add("BornOrder");
+            //dtsibsisterdetails.Columns.Add("SisSpouseFatherEmailID");
+            //dtsibsisterdetails.Columns.Add("SisSpouseFatherMobileCountryID");
+            //dtsibsisterdetails.Columns.Add("SisSpouseFatherMobileNo");
+            //dtsibsisterdetails.Columns.Add("SisSpouseFatherLandCountryID");
+            //dtsibsisterdetails.Columns.Add("SisSpouseFatherLandAreaCode");
+            //dtsibsisterdetails.Columns.Add("SisSpouseFatherLandNo");
+            //dtsibsisterdetails.Columns.Add("BornOrder");
             return dtsibsisterdetails;
 
         }
@@ -457,7 +457,7 @@ namespace WebapiApplication.UserDefinedTable
             dtFBDetails.Columns.Add("FBCurrentLocation");
             dtFBDetails.Columns.Add("FatherbrotherCust_familyID");
             dtFBDetails.Columns.Add("FatherBrotherEducationDetails");
-            dtFBDetails.Columns.Add("BornOrder");
+            //dtFBDetails.Columns.Add("BornOrder");
 
             return dtFBDetails;
         }
@@ -487,7 +487,7 @@ namespace WebapiApplication.UserDefinedTable
             dtFSister.Columns.Add("FSCurrentLocation");
             dtFSister.Columns.Add("FatherSisterCust_familyID");
             dtFSister.Columns.Add("FSHEducationdetails");
-            dtFSister.Columns.Add("BornOrder");
+            //dtFSister.Columns.Add("BornOrder");
             return dtFSister;
         }
 
@@ -510,7 +510,7 @@ namespace WebapiApplication.UserDefinedTable
             dtMBdetails.Columns.Add("MBCurrentLocation");
             dtMBdetails.Columns.Add("MBMotherBrotherCust_familyID");
             dtMBdetails.Columns.Add("MBEducationdetails");
-            dtMBdetails.Columns.Add("BornOrder");
+            //dtMBdetails.Columns.Add("BornOrder");
 
             return dtMBdetails;
         }
@@ -539,7 +539,7 @@ namespace WebapiApplication.UserDefinedTable
             dtMSisterDetails.Columns.Add("MSCurrentLocation");
             dtMSisterDetails.Columns.Add("MSCust_familyID");
             dtMSisterDetails.Columns.Add("MSEducationdetails");
-            dtMSisterDetails.Columns.Add("BornOrder");
+            //dtMSisterDetails.Columns.Add("BornOrder");
 
             return dtMSisterDetails;
         }

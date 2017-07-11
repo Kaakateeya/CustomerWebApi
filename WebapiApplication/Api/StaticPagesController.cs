@@ -30,9 +30,8 @@ namespace WebapiApplication.Api
         public ArrayList getpaymentdetailsmethoddal(Int64? CustID) { return this.ISuccessStories.paymentdetailsmethoddal(CustID); }
         public ArrayList TicketDetails([FromBody]TicketDetails ticketdetails) { return this.ISuccessStories.GetTicketDetails(ticketdetails); }
         //public ArrayList getExpressIntrstfullprofile(string ToProfileID, string FromProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(ToProfileID, FromProfileID, EmpID); }
-        public ArrayList getExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(tocustid, fromcustid, EmpID); }
-      
-        
+       // public ArrayList getExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(tocustid, fromcustid, EmpID); }
+        public ArrayList getExpressIntrstfullprofile(string ToProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(ToProfileID, EmpID); }
         public ArrayList getExpressinterst_bookmark_ignore_data(long? Loggedcustid, long? ToCustID) { return this.ISuccessStories.Expressinterst_bookmark_ignore_data(Loggedcustid, ToCustID); }
         public ArrayList getdisplayMissingFieldsupdate_Customerdetails(string CustID, int? i_updateflag) { return this.ISuccessStories.displayMissingFieldsupdate_Customerdetails(CustID, i_updateflag); }
         public ArrayList getCust_NotificationDetails(int? Cust_NotificationID, long? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.Cust_NotificationDetails(Cust_NotificationID, CustID, Startindex, EndIndex); }

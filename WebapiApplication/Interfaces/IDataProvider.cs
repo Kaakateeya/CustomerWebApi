@@ -129,7 +129,8 @@ namespace WebapiApplication.Interfaces
         int InsertExpressViewTicket(long? FromCustID, long? ToCustID, string p, string strtypeOfReport);
         ViewfullProfileML ViewFullProfileMail(string OriginalString);
         //ArrayList ExpressIntrstfullprofile(string ToProfileID, string FromProfileID, int? EmpID);
-        ArrayList ExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID);
+       // ArrayList ExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID);
+        ArrayList ExpressIntrstfullprofile(string ToProfileID, int? EmpID);
         ArrayList Expressinterst_bookmark_ignore_data(long? Loggedcustid, long? ToCustID);
         int UpdateExpressIntrestViewfullprofile(UpdateExpressIntrestStatus Mobj);
         ArrayList Cust_NotificationDetails(int? Cust_NotificationID, long? CustID, int? Startindex, int? EndIndex);
