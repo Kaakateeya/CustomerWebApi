@@ -83,13 +83,14 @@
             //        }
             //    });
             //});
+
             $("#ClassData").click(function () {
                 alert(1);
                 $.ajax({
-                    url: 'http://localhost:63006/Api/StaticPages/getExpressIntrstfullprofile',
+                    url: 'http://localhost:63006/Api/StaticPages/getViewFullProfileMail',
                     type: 'GET',
                     crossDomain: true,
-                    data: { tocustid: 22464,intFromCustId:91022,EmpID:2 },
+                    data: { OriginalString: "?MyProfileQSAccept=7YrKbCteX/RfSC2jOgj8GRhL sZ 4Gp844 OVwdZ28YLfB7/ MjBS8ZPAqS6zQr2Fp6KCqReHKZT/XPVK8ytAp7ryGNsa7pIuJXkh nlVnD4q9s8slEZYnahl3xyS9D2" },
                     contentType: 'application/json',
                     success: function (data, textStatus, xhr) {
                         alert(JSON.stringify(data));
@@ -100,6 +101,23 @@
                     }
                 });
             });
+            //$("#ClassData").click(function () {
+            //    alert(1);
+            //    $.ajax({
+            //        url: 'http://localhost:63006/Api/StaticPages/getExpressIntrstfullprofile',
+            //        type: 'GET',
+            //        crossDomain: true,
+            //        data: { tocustid: 22464,intFromCustId:91022,EmpID:2 },
+            //        contentType: 'application/json',
+            //        success: function (data, textStatus, xhr) {
+            //            alert(JSON.stringify(data));
+            //            console.log(data);
+            //        },
+            //        error: function (xhr, textStatus, errorThrown) {
+            //            console.log(xhr);
+            //        }
+            //    });
+            //});
             $("#8070").click(function () {
                 alert(1);
                 $.ajax({

@@ -2069,7 +2069,40 @@ namespace WebapiApplication.DAL
         //    return Commonclass.convertdataTableToArrayList(dset);
         //}
 
-        public ArrayList ExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID, string spName)
+        //public ArrayList ExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID, string spName)
+        //{
+        //    DataSet dset = new DataSet();
+        //    SqlConnection connection = new SqlConnection();
+        //    connection = SQLHelper.GetSQLConnection();
+        //    connection.Open();
+
+        //    var sqlCommand = connection.CreateCommand();
+        //    sqlCommand.CommandTimeout = 120;
+
+
+        //    try
+        //    {
+        //        SqlParameter[] parm = new SqlParameter[5];
+        //        parm[0] = new SqlParameter("@intCust_id", SqlDbType.Int);
+        //        parm[0].Value = tocustid;
+        //        parm[1] = new SqlParameter("@intFromCustId", SqlDbType.Int);
+        //        parm[1].Value = fromcustid;
+        //        dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(fromcustid), "ExpressIntrstfullprofile", null);
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //        SqlConnection.ClearPool(connection);
+        //        SqlConnection.ClearAllPools();
+        //    }
+        //    return Commonclass.convertdataTableToArrayList(dset);
+        //}
+
+        public ArrayList ExpressIntrstfullprofile(string ToProfileID, int? EmpID, string spName)
         {
             DataSet dset = new DataSet();
             SqlConnection connection = new SqlConnection();
@@ -2083,15 +2116,15 @@ namespace WebapiApplication.DAL
             try
             {
                 SqlParameter[] parm = new SqlParameter[5];
-                parm[0] = new SqlParameter("@intCust_id", SqlDbType.Int);
-                parm[0].Value = tocustid;
-                parm[1] = new SqlParameter("@intFromCustId", SqlDbType.Int);
-                parm[1].Value = fromcustid;
+                parm[0] = new SqlParameter("@strProfileID", SqlDbType.VarChar);
+                parm[0].Value = ToProfileID;
+                parm[1] = new SqlParameter("@intAdminId", SqlDbType.Int);
+                parm[1].Value = EmpID;
                 dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
             }
             catch (Exception ex)
             {
-                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(fromcustid), "ExpressIntrstfullprofile", null);
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(ToProfileID), "ExpressIntrstfullprofile", null);
             }
             finally
             {
@@ -2101,7 +2134,6 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
-
         public ArrayList Expressinterst_bookmark_ignore_data(long? Loggedcustid, long? ToCustID, string spName)
         {
             SqlConnection connection = new SqlConnection();
@@ -2336,6 +2368,9 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(ds);
         }
+
+     
+
     }
 }
 
