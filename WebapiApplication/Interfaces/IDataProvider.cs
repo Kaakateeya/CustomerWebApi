@@ -37,6 +37,8 @@ namespace WebapiApplication.Interfaces
         int CustomerInsertPaymentDetilsInfo_NewDesign(PaymentInsertML Mobj);
         ArrayList ProfilePaymentDetails_Gridview(long? intProfileID);
         ArrayList DgetProfilePaymentDetails_NewDesigns(long? intProfileID);
+
+        ArrayList getCustomerPaymentPackagesDisplay(long? LcustID);
     }
     public interface ICustomerSearch
     {

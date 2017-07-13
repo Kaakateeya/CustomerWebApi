@@ -40,6 +40,6 @@ namespace WebapiApplication.Api
         public ArrayList getProfilePaymentDetailsGridview(long? intProfileID) { return this.IPayment.ProfilePaymentDetails_Gridview(intProfileID); }
         public ArrayList getProfilePaymentDetails_NewDesigns(long? intProfileID) { return this.IPayment.DgetProfilePaymentDetails_NewDesigns(intProfileID); }
 
-
+        public ArrayList getCustomerPaymentPackagesDisplay(long? LcustID) { return this.IPayment.getCustomerPaymentPackagesDisplay(LcustID); }
     }
 }

@@ -455,5 +455,36 @@ namespace WebapiApplication.DAL
                 dsPayment = null;
             return Commonclass.convertdataTableToArrayList(dsPayment);
         }
+
+        public ArrayList getCustomerPaymentPackagesDisplayDal(long? LcustID, string spName)
+        {
+         
+            DataSet dsPayment = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            SqlParameter[] parm = new SqlParameter[1];
+            try
+            {
+                parm[0] = new SqlParameter("@i_FromCustID", SqlDbType.BigInt);
+                parm[0].Value = LcustID;
+               
+                dsPayment = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
+            }
+            catch (Exception EX) { Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), Convert.ToInt32(LcustID), "DgetProfilePaymentDetails_NewDesigns", null); }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+
+            if (dsPayment.Tables.Count == 0)
+                dsPayment = null;
+            return Commonclass.convertdataTableToArrayList(dsPayment);
+        }
     }
 }
