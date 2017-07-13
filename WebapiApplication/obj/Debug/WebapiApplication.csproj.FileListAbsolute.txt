@@ -113,3 +113,4 @@ D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Friendly
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
+D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
