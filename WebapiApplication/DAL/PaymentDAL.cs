@@ -456,9 +456,11 @@ namespace WebapiApplication.DAL
             return Commonclass.convertdataTableToArrayList(dsPayment);
         }
 
+     
+
         public ArrayList getCustomerPaymentPackagesDisplayDal(long? LcustID, string spName)
         {
-         
+
             DataSet dsPayment = new DataSet();
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
@@ -471,7 +473,7 @@ namespace WebapiApplication.DAL
             {
                 parm[0] = new SqlParameter("@i_FromCustID", SqlDbType.BigInt);
                 parm[0].Value = LcustID;
-               
+
                 dsPayment = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
             }
             catch (Exception EX) { Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), Convert.ToInt32(LcustID), "DgetProfilePaymentDetails_NewDesigns", null); }
