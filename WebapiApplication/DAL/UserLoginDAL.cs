@@ -28,6 +28,7 @@ namespace WebapiApplication.DAL
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Username", Mobj.Username);
                 command.Parameters.AddWithValue("@Password", Commonclass.Encrypt(Mobj.Password));
+                command.Parameters.AddWithValue("@iflag", Mobj.iflag);
                 SqlParameter outputParamStatus = command.Parameters.Add("@Status", SqlDbType.Int);
                 outputParamStatus.Direction = ParameterDirection.Output;
                 SqlDataReader reader;
