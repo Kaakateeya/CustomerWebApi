@@ -113,3 +113,15 @@ D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membersh
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.XmlSerializers.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.XmlSerializers.dll
+D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.dll
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.dll
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.pdb
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.pdb
+D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.xml
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.xml
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.xml

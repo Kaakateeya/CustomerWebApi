@@ -251,6 +251,7 @@
     <Compile Include="Api\DBController.cs" />
     <Compile Include="Api\DependencyController.cs" />
     <Compile Include="Api\EmailMobileVerfController.cs" />
+    <Compile Include="Api\MobileAppLandingController.cs" />
     <Compile Include="Api\PaymentController.cs" />
     <Compile Include="Api\RegistrationController.cs" />
     <Compile Include="Api\StaticPagesController.cs" />
@@ -265,6 +266,7 @@
     <Compile Include="DAL\CustomerServiceDal.cs" />
     <Compile Include="DAL\Dashboard.cs" />
     <Compile Include="DAL\DependencyDAL.cs" />
+    <Compile Include="DAL\MobileAppApiDAL.cs" />
     <Compile Include="DAL\PaymentDAL.cs" />
     <Compile Include="DAL\Registration.cs" />
     <Compile Include="DAL\SQLHelper.cs" />
@@ -278,6 +280,7 @@
     <Compile Include="Implement\ImpCustomerSearch.cs" />
     <Compile Include="Implement\Impdependency_injection.cs" />
     <Compile Include="Implement\implementationclass.cs" />
+    <Compile Include="Implement\ImpMobileApp.cs" />
     <Compile Include="Implement\ImpRegistration.cs" />
     <Compile Include="Implement\ImpStaticPages.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
@@ -287,6 +290,7 @@
     <Compile Include="ML\DashboardClass.cs" />
     <Compile Include="ML\Dependency.cs" />
     <Compile Include="ML\ML.cs" />
+    <Compile Include="ML\MobileAppDevML.cs" />
     <Compile Include="ML\PaymentML.cs" />
     <Compile Include="ML\RegistrationML.cs" />
     <Compile Include="ML\StaticPagesML .cs" />
