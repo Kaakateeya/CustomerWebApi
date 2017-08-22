@@ -34,7 +34,15 @@ namespace WebapiApplication.ML
         public string FullPhotoPath { set; get; }
         public string ApplicationPhotoPath { set; get; }
     }
-
+    public class MobileEmailVerf
+    {
+        public long? CustID { set; get; }
+        public string Email { set; get; }
+        public string MobileNumber { set; get; }
+        public int? CountryCode { set; get; }
+        public string VerificationCode { set; get; }
+        public int? isVerified { set; get; }
+    }
     public class ProfileSettings
     {
         public string Email { set; get; }

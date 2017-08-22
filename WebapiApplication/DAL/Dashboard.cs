@@ -42,9 +42,6 @@ namespace WebapiApplication.DAL
                 {
                     con.Open();
 
-                    var sqlCommand = con.CreateCommand();
-                    sqlCommand.CommandTimeout = 120;
-
                     reader = SQLHelper.ExecuteReader(con, CommandType.StoredProcedure, spName, parm);
 
                     if (reader.HasRows)

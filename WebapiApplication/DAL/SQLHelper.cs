@@ -606,7 +606,7 @@ namespace KaakateeyaDAL
             {
                 DataSet ds = new DataSet();
                 // Fill the DataSet using default values for DataTable names, etc
-               da.Fill(ds);
+                da.Fill(ds);
 
                 // Detach the SqlParameters from the command object, so they can be used again
                 cmd.Parameters.Clear();
@@ -860,6 +860,8 @@ namespace KaakateeyaDAL
             bool mustCloseConnection = false;
             // Create a command and prepare it for execution
             SqlCommand cmd = new SqlCommand();
+            cmd.CommandTimeout = 100;
+
             try
             {
                 PrepareCommand(cmd, connection, transaction, commandType, commandText, commandParameters, out mustCloseConnection);
