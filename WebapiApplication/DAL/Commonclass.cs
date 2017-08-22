@@ -424,7 +424,7 @@ namespace WebapiApplication.DAL
 
             return arraylist;
         }
-
+      
         public static string gethorophotoS3(string cust_id, string HoroscopeImageName)
         {
 
@@ -450,22 +450,7 @@ namespace WebapiApplication.DAL
             return path;
         }
 
-        public static ArrayList convertdataTableToArrayListTable(DataSet dtSet)
-        {
-
-            ArrayList arraylist = new ArrayList();
-
-            if (dtSet != null && dtSet.Tables.Count > 0)
-            {
-                for (int icount = 0; icount < dtSet.Tables.Count; icount++)
-                {
-                    arraylist.Add(dtSet.Tables[icount]);
-                }
-            }
-
-            return arraylist;
-        }
-
+       
 
     }
 }
