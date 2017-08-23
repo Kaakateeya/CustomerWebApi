@@ -230,6 +230,7 @@ namespace WebapiApplication.DAL
                                 Mobjresult.Photo = (reader["PhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoPath")) : string.Empty;
                                 Mobjresult.Photofullpath = (reader["FullPhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FullPhotoPath")) : string.Empty;
                                 Mobjresult.DistName = (reader["DistName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("DistName")) : string.Empty;
+                                Mobjresult.strFirstName = (reader["FirstName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FirstName")) : string.Empty;
 
                             }
 
