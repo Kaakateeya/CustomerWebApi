@@ -2439,6 +2439,7 @@ namespace WebapiApplication.DAL
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
             DataSet dtAssignSettings = new DataSet();
+            Int32? inull = null;
             SqlDataAdapter daParentDetails = new SqlDataAdapter();
 
             try
@@ -2468,7 +2469,18 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearPool(connection);
                 SqlConnection.ClearAllPools();
             }
+            if (dtAssignSettings != null && dtAssignSettings.Tables.Count > 0)
+            {
+                if (dtAssignSettings.Tables[0].Rows.Count > 0)
+                {
+                    int? CountryCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["CountryCode"].ToString()) ? Convert.ToInt32(dtAssignSettings.Tables[0].Rows[0]["CountryCode"].ToString()) : inull;
+                    int? iCCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["iCCode"].ToString()) ? Convert.ToInt32(dtAssignSettings.Tables[0].Rows[0]["iCCode"].ToString()) : inull;
+                    string MobileNumber = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["MobileNumber"].ToString()) ? dtAssignSettings.Tables[0].Rows[0]["MobileNumber"].ToString() : null;
+                    string VerificationCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["VerificationCode"].ToString()) ? dtAssignSettings.Tables[0].Rows[0]["VerificationCode"].ToString() : null;
 
+                    Commonclass.ResendMobileSMS(CountryCode, iCCode, MobileNumber, VerificationCode);
+                }
+            }
             return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
         }
 
