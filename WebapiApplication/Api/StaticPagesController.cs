@@ -87,6 +87,7 @@ namespace WebapiApplication.Api
 
         public ArrayList getMobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.MobileLandingOrderDisplay(CustID, Startindex, EndIndex); }
 
+        public ArrayList getExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofilepartial(ToProfileID, EmpID); }
 
 
     }

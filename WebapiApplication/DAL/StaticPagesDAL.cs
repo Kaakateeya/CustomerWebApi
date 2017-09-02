@@ -2539,6 +2539,39 @@ namespace WebapiApplication.DAL
         }
 
 
+
+        public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID, string spName)
+        {
+            DataSet dset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+
+
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[5];
+                parm[0] = new SqlParameter("@strProfileID", SqlDbType.VarChar);
+                parm[0].Value = ToProfileID;
+                parm[1] = new SqlParameter("@intAdminId", SqlDbType.Int);
+                parm[1].Value = EmpID;
+                dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(ToProfileID), "ExpressIntrstfullprofile", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Commonclass.convertdataTableToArrayList(dset);
+        }
     }
 }
 

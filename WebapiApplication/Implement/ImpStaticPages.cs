@@ -67,9 +67,10 @@ namespace WebapiApplication.Implement
 
         public ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj) { return new StaticPagesDAL().UpdateCustomerEmailMobileNumber_Verification(Mobj, "[dbo].[usp_EmailmobileUpdate_MobileApp]"); }
 
-        public ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().MobileLandingOrderDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingOrderDisplay_MobileApp]"); }		
-		
-				
+        public ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().MobileLandingOrderDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingOrderDisplay_MobileApp]"); }
+
+
+        public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepartial(ToProfileID, EmpID, "[dbo].[GetViewProfile_FullDetails_Partial]"); }		
 	
 
 

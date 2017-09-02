@@ -148,6 +148,8 @@ namespace WebapiApplication.Interfaces
         ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex);
 
 
+
+        ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID);
     }
 
     public interface IDependency
