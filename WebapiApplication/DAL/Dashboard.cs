@@ -292,18 +292,6 @@ namespace WebapiApplication.DAL
                 Partnercls.ExpressFlag = reader["ExpressFlag"] != DBNull.Value ? reader.GetBoolean(reader.GetOrdinal("ExpressFlag")) : bnull;
                 Partnercls.IsPaidMember = reader["IsPaidMember"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("IsPaidMember")) : inull;
                 Partnercls.iGenderID = reader["iGenderID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iGenderID")) : inull;
-                Partnercls.iCasteID = reader["iCasteID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iCasteID")) : inull;
-                Partnercls.iStarID = reader["iStarID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iStarID")) : inull;
-                Partnercls.iCountryID = reader["iCountryID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iCountryID")) : inull;
-                Partnercls.iReligionID = reader["iReligionID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iReligionID")) : inull;
-                Partnercls.iProfessionGroupID = reader["iProfessionGroupID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iProfessionGroupID")) : inull;
-                Partnercls.ProfessionID = reader["ProfessionID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ProfessionID")) : inull;
-                Partnercls.iEducationGroupID = reader["iEducationGroupID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iEducationGroupID")) : inull;
-                Partnercls.iHeightInCentimeters = reader["iHeightInCentimeters"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iHeightInCentimeters")) : inull;
-                Partnercls.iStarLanguageID = reader["iStarLanguageID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iStarLanguageID")) : inull;
-                Partnercls.iCityID = reader["iCityID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iCityID")) : inull;
-                Partnercls.iStateID = reader["iStateID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("iStateID")) : inull;
-                Partnercls.MaritalStatusID = reader["MaritalStatusID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("MaritalStatusID")) : inull;
                 Partnercls.MaritualStatus = reader["MaritualStatus"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("MaritualStatus")) : null;
                 Partnercls.Photo = reader["Photo"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("Photo")) : null;
                 Partnercls.DescribeYourSelf = reader["DescribeYourSelf"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("DescribeYourSelf")) : null;
@@ -315,9 +303,6 @@ namespace WebapiApplication.DAL
                     Partnercls.SuggestEmpName = reader["SuggestEmpName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("SuggestEmpName")) : null;
                     Partnercls.SuggestedEmpNumber = reader["SuggestedEmpNumber"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("SuggestedEmpNumber")) : null;
                     Partnercls.SuggestionFlag = reader["SuggestionFlag"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("SuggestionFlag")) : inull;
-                    Partnercls.NewCount = reader["NewCount"] != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("NewCount")) : Lnull;
-                    Partnercls.AcceptCount = reader["AcceptCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("AcceptCount")) : inull;
-                    Partnercls.RejectCount = reader["RejectCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("RejectCount")) : inull;
                     Partnercls.RelationShipManagerName = reader["RelationShipManagerName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("RelationShipManagerName")) : null;
                     Partnercls.RelationShipManagerNumber = reader["RelationShipManagerNumber"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("RelationShipManagerNumber")) : null;
                     Partnercls.LogID = reader["LogID"] != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("LogID")) : Lnull;
@@ -326,7 +311,6 @@ namespace WebapiApplication.DAL
                     Partnercls.Mystatus = reader["Mystatus"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("Mystatus")) : null;
                     Partnercls.OppStatus = reader["OppStatus"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("OppStatus")) : null;
                     Partnercls.TicketID = reader["TicketID"] != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("TicketID")) : Lnull;
-                    Partnercls.CreatedDate = reader["CreatedDate"] != DBNull.Value ? reader.GetDateTime(reader.GetOrdinal("CreatedDate")) : dnull;
                     Partnercls.CommunicationHistoryFlag = reader["CommunicationHistoryFlag"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("CommunicationHistoryFlag")) : inull;
                     Partnercls.YouProceed = reader["YouProceed"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("YouProceed")) : inull;
                     Partnercls.Youskipped = reader["Youskipped"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Youskipped")) : inull;

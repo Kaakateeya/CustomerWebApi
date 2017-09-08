@@ -63,19 +63,7 @@ namespace WebapiApplication.ML
         public string cgdate { get; set; }
         public int? IsPaidMember { get; set; }
         public int? iGenderID { get; set; }
-        public int? iCasteID { get; set; }
-        public int? iStarID { get; set; }
-        public int? iCountryID { get; set; }
-        public int? iReligionID { get; set; }
-        public int? iProfessionGroupID { get; set; }
-        public int? ProfessionID { get; set; }
-        public int? iEducationGroupID { get; set; }
         public DateTime? iDateOfBirth { get; set; }
-        public int? iHeightInCentimeters { get; set; }
-        public int? iStarLanguageID { get; set; }
-        public int? iCityID { get; set; }
-        public int? iStateID { get; set; }
-        public int? MaritalStatusID { get; set; }
         public string MaritualStatus { get; set; }
         public bool? PhotoRequest { get; set; }
         public string Photo { get; set; }
@@ -90,16 +78,12 @@ namespace WebapiApplication.ML
         public long? LogID { get; set; }
         public string RelationShipManagerNumber { get; set; }
         public string RelationShipManagerName { get; set; }
-        public int? AcceptCount { get; set; }
-        public int? RejectCount { get; set; }
-        public long? NewCount { get; set; }
         public int? SuggestionFlag { get; set; }
         public string SuggestedEmpNumber { get; set; }
         public string RelationShipManagerEmail { get; set; }
         public string Mystatus { get; set; }
         public string OppStatus { get; set; }
         public long? TicketID { get; set; }
-        public DateTime? CreatedDate { get; set; }
         public int? CommunicationHistoryFlag { get; set; }
         public int? Opppending { get; set; }
         public int? Oppskipped { get; set; }

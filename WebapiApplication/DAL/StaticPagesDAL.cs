@@ -1862,7 +1862,14 @@ namespace WebapiApplication.DAL
 
                             if ((status == 1 && AccRejFlag != "MailReject") || (AccRejFlag == "MailAccept" && status == 431))
                             {
-                                status = 9;
+                                if ((AccRejFlag == "MailAccept" && status == 431))
+                                {
+                                    status = 16;
+                                }
+                                else
+                                {
+                                    status = 9;
+                                }
                             }
 
                             if (AccRejFlag == "MailAccept" && status == 432)
