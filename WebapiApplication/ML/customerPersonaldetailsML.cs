@@ -570,7 +570,7 @@ namespace WebapiApplication.ML
         public string latitude { get; set; }
         public string strTime { get; set; }
         public string oldcityname { get; set; }
-        public const string fullpath = "http://e.kaakateeya.com/access/Images/HoroscopeImages/";
+        public const string fullpath = "http://emp.kaakateeya.com/access/Images/HoroscopeImages/";
         public const string str = "http://www.astrovisiononline.com/avservices/singlepagehoro/inserttolsdb_v3.php?data=<DATA><BIRTHDATA><CUSTID>";
 
         public int? CityOfBirthID { get; set; }
