@@ -140,6 +140,16 @@ namespace WebapiApplication.Interfaces
         int ChangePassword(string StrCustID, string Password);
         ArrayList RegisteredBranchStatus(string StrCustID);
 
+
+        ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex);
+
+        ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj);
+
+        ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex);
+
+
+
+        ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID);
     }
 
     public interface IDependency

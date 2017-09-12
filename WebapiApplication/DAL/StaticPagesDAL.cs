@@ -1862,7 +1862,14 @@ namespace WebapiApplication.DAL
 
                             if ((status == 1 && AccRejFlag != "MailReject") || (AccRejFlag == "MailAccept" && status == 431))
                             {
-                                status = 9;
+                                if ((AccRejFlag == "MailAccept" && status == 431))
+                                {
+                                    status = 16;
+                                }
+                                else
+                                {
+                                    status = 9;
+                                }
                             }
 
                             if (AccRejFlag == "MailAccept" && status == 432)
@@ -2369,8 +2376,209 @@ namespace WebapiApplication.DAL
             return Commonclass.convertdataTableToArrayList(ds);
         }
 
-     
 
+        /// <summary>
+        /// S.A.Kiran
+        /// Date : 06/08/2017
+        /// </summary>
+        /// <param name="CustID">Customer login  ID</param>
+        /// <param name="PaidStatus">Login  member  Payment  status</param>
+        /// <param name="Startindex">Pagging  starting  index</param>
+        /// <param name="EndIndex">Pagging  Ending  index</param>
+        /// <param name="spName">[dbo].[usp_LandingPage_MobileApp]</param>
+        /// <returns>Array List</returns>
+        /// 
+
+        public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex, string spName)
+        {
+            ArrayList arrayList = new ArrayList();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            DataSet dtAppLanding = new DataSet();
+            SqlDataAdapter daMobileLanding = new SqlDataAdapter();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(spName, connection);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@i_CustID", CustID);
+                cmd.Parameters.AddWithValue("@iStartindex", Startindex);
+                cmd.Parameters.AddWithValue("@iEndIndex", EndIndex);
+
+                daMobileLanding.SelectCommand = cmd;
+                daMobileLanding.Fill(dtAppLanding);
+
+            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+
+            return Commonclass.convertdataTableToArrayListTable(dtAppLanding);
+        }
+
+
+        /// <summary>
+        /// S.A.Kiran
+        /// Date : 07/08/2017
+        /// </summary>
+        /// <param name="Mobj">Obj for Mobj.CustID Customer Loginid </param>
+        /// Mobj.Email  Update Customer Email 
+        ///  Mobj.MobileNumber Mobile Number
+        ///  Mobj.VerificationCode  Mobile Code
+        ///  Mobj.isVerified 0 or  1
+        /// <param name="spName">[dbo].[usp_EmailmobileUpdate_MobileApp]</param>
+        /// <returns>Array List </returns>
+
+        public ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj, string spName)
+        {
+            ArrayList arrayList = new ArrayList();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+            DataSet dtAssignSettings = new DataSet();
+            Int32? inull = null;
+            SqlDataAdapter daParentDetails = new SqlDataAdapter();
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand(spName, connection);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@i_CustID", Mobj.CustID);
+                cmd.Parameters.AddWithValue("@v_Email", Mobj.Email);
+                cmd.Parameters.AddWithValue("@v_MobileNumber", Mobj.MobileNumber);
+                cmd.Parameters.AddWithValue("@i_CountryCode", Mobj.CountryCode);
+                cmd.Parameters.AddWithValue("@v_VerificationCode", Mobj.VerificationCode);
+                cmd.Parameters.AddWithValue("@isVerified", Mobj.isVerified);
+
+                daParentDetails.SelectCommand = cmd;
+                daParentDetails.Fill(dtAssignSettings);
+
+            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            if (Mobj.isVerified == 0)
+            {
+                if (dtAssignSettings != null && dtAssignSettings.Tables.Count > 0)
+                {
+                    if (dtAssignSettings.Tables[0].Rows.Count > 0)
+                    {
+                        int? CountryCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["CountryCode"].ToString()) ? Convert.ToInt32(dtAssignSettings.Tables[0].Rows[0]["CountryCode"].ToString()) : inull;
+                        int? iCCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["iCCode"].ToString()) ? Convert.ToInt32(dtAssignSettings.Tables[0].Rows[0]["iCCode"].ToString()) : inull;
+                        string MobileNumber = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["MobileNumber"].ToString()) ? dtAssignSettings.Tables[0].Rows[0]["MobileNumber"].ToString() : null;
+                        string VerificationCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["VerificationCode"].ToString()) ? dtAssignSettings.Tables[0].Rows[0]["VerificationCode"].ToString() : null;
+
+                        Commonclass.ResendMobileSMS(CountryCode, iCCode, MobileNumber, VerificationCode);
+                    }
+                }
+            }
+            return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
+        }
+
+
+        /// <summary>
+        /// S.A.Kiran
+        /// Date : 08/08/2017
+        /// </summary>
+        /// <param name="CustID">Login customerID</param>
+        /// <param name="Startindex">Pagging Starting  index</param>
+        /// <param name="EndIndex">Pagging Ending  index</param>
+        /// <param name="spName">[dbo].[usp_LandingOrderDisplay_MobileApp]</param>
+        /// <returns></returns>
+        /// 
+
+        public ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string spName)
+        {
+
+            ArrayList arrayList = new ArrayList();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            DataSet dtAssignSettings = new DataSet();
+            SqlDataAdapter daParentDetails = new SqlDataAdapter();
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand(spName, connection);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@i_CustID", CustID);
+                cmd.Parameters.AddWithValue("@ipagefrom", Startindex);
+                cmd.Parameters.AddWithValue("@ipageto", EndIndex);
+
+                daParentDetails.SelectCommand = cmd;
+                daParentDetails.Fill(dtAssignSettings);
+
+            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+
+            return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
+        }
+
+
+
+        public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID, string spName)
+        {
+            DataSet dset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+
+
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[5];
+                parm[0] = new SqlParameter("@strProfileID", SqlDbType.VarChar);
+                parm[0].Value = ToProfileID;
+                parm[1] = new SqlParameter("@intAdminId", SqlDbType.Int);
+                parm[1].Value = EmpID;
+                dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(ToProfileID), "ExpressIntrstfullprofile", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Commonclass.convertdataTableToArrayList(dset);
+        }
     }
 }
 

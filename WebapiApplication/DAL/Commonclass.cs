@@ -424,7 +424,7 @@ namespace WebapiApplication.DAL
 
             return arraylist;
         }
-
+      
         public static string gethorophotoS3(string cust_id, string HoroscopeImageName)
         {
 
@@ -450,6 +450,7 @@ namespace WebapiApplication.DAL
             return path;
         }
 
+       
 
     }
 }

@@ -84,7 +84,6 @@ namespace WebapiApplication.DAL
             connection.Open();
             DataSet dtAssignSettings = new DataSet();
             SqlDataAdapter daParentDetails = new SqlDataAdapter();
-
             try
             {
 
@@ -113,6 +112,7 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearAllPools();
             }
 
+        
             return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
         }
 

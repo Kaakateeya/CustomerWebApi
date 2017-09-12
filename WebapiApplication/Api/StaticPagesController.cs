@@ -67,6 +67,29 @@ namespace WebapiApplication.Api
         public string getCustomerfilldata(long? CustomerCustID) { return this.ISuccessStories.Customerfilldata(CustomerCustID); }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CustID"></param>
+        /// <param name="PaidStatus"></param>
+        /// <param name="Startindex"></param>
+        /// <param name="EndIndex"></param>
+        /// <returns></returns>
+
+
+        public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
+
+        public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
+        {
+            if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
+            return this.ISuccessStories.UpdateCustomerEmailMobileNumber_Verification(Mobj);
+        }
+
+        public ArrayList getMobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.MobileLandingOrderDisplay(CustID, Startindex, EndIndex); }
+
+        public ArrayList getExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofilepartial(ToProfileID, EmpID); }
+
+
     }
 }
 
