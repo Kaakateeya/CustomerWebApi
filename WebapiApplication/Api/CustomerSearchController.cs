@@ -16,7 +16,7 @@ namespace WebapiApplication.Api
     public class CustomerSearchController : ApiController
     {
         private readonly ICustomerSearch ICustomerSearch; public CustomerSearchController() : base() { this.ICustomerSearch = new ImpCustomerSearch(); }
-        public PrimaryInformationMl getPartnerpreferencedetails(int? CustID, int? EmpID, Int64? searchresultID) { return this.ICustomerSearch.Partnerpreferencedetails_CustomerSearch(CustID, EmpID, searchresultID); }
+        public partnerInfoMl getPartnerpreferencedetails(int? CustID, int? EmpID, Int64? searchresultID) { return this.ICustomerSearch.Partnerpreferencedetails_CustomerSearch(CustID, EmpID, searchresultID); }
         public List<QuicksearchResultML> CustomerProfileIdsearch(ProfileIDSearch ProfileIDSearch) { return this.ICustomerSearch.ProfileIdsearch(ProfileIDSearch); }
         public List<QuicksearchResultML> CustomerGeneralandAdvancedSearch(PrimaryInformationMl search) { return this.ICustomerSearch.GeneralandAdvancedSearch(search); }
         public List<QuicksearchResultML> CustomerHomePageSearch(CustomerHomePageSearch Search) { return this.ICustomerSearch.CustomerHomePageSearch(Search); }

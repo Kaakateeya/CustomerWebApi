@@ -984,6 +984,7 @@ namespace WebapiApplication.DAL
             return lstgeneaterhoro;
         }
         public static string PathChange = ConfigurationManager.AppSettings["PathChange"];
+
         public HoroGeneration GenerateHoroscorpe(int? customerid, string EmpIDQueryString, int? intDay, int? intMonth, int? intYear, int? CityID)
         {
             string accesspathhoro = "~\\access\\Images\\";
@@ -1047,38 +1048,14 @@ namespace WebapiApplication.DAL
                         string strCustDtryName = customerid + "_HaroscopeImage";
                         string FileName = customerid + "_HaroscopeImage.html";
 
-                        string Strpaths3 = (HttpContext.Current.Server.MapPath((string.IsNullOrEmpty(EmpIDQueryString) ? accesspathhoro : withouraccesspathhoro) + "HoroscopeImages\\")) + strCustDtryName + "\\" + FileName;
-
-                        // string Strpaths3 = "http:\\e.kaakateeya.com\\access\\Images\\" + "HoroscopeImages\\" + strCustDtryName + "\\" + FileName;
-
-                        //string Strpaths3 = ("http://e.kaakateeya.com/access" + "HoroscopeImages\\")) + strCustDtryName + "\\" + FileName;
+                        string Strpaths3 = (HttpContext.Current.Server.MapPath(withouraccesspathhoro + "HoroscopeImages\\")) + strCustDtryName + "\\" + FileName;
 
                         string Strkeyname = "Images/HoroscopeImages/" + strCustDtryName + "/" + FileName;
-
-                        // string strPath = null;
-                        //if (Strpaths3.Contains("http://kaakateeya.com/"))
-                        //{
-                        //    strPath = Strpaths3.Replace("http://kaakateeya.com/", "http://e.kaakateeya.com/");
-                        //}
-                        //else
-                        //{
-                        //    strPath = Strpaths3;
-                        //}
-
-                        //if (!string.IsNullOrEmpty(Commonclass.GlobalImgPath))
-                        //{
-                        //    if (Directory.Exists(path))
-                        //    {
-                        //        Commonclass.S3upload(Strpaths3, Strkeyname);
-                        //    }
-                        //}
-
                         string strHoro = Strkeyname.Replace("/", "\\");
                         string strPath = "C:\\inetpub\\wwwroot\\access\\" + strHoro;
                         string strTestPath = System.IO.Path.Combine(System.Environment.CurrentDirectory, strPath);
-
                         horogeneration.KeyName = Strkeyname;
-                        horogeneration.Path = strPath;
+                        horogeneration.Path = Strpaths3;
                         horogeneration.AstroGeneration = str;
                         horogeneration.strTestPath = strTestPath;
 
@@ -1092,27 +1069,7 @@ namespace WebapiApplication.DAL
         public int AstroGenerationUpdate(string Path, string KeyName)
         {
             int iresult = 0;
-
-            string strHoro = KeyName.Replace("/", "\\");
-            Path = PathChange + strHoro;
-
-            //Path = "e.kaakateeya.com\\access\\Images\\HoroscopeImages\\91022_HaroscopeImage\\91022_HaroscopeImage.html";
-            Path = "C:\\inetpub\\wwwroot\\access\\" + strHoro;
-            // KeyName = "Images/HoroscopeImages/91022_HaroscopeImage/91022_HaroscopeImage.html";
-
-            //Path = "C:\\91022_HaroscopeImage\\91022_HaroscopeImage.html";
-            //KeyName = "D:\\9_HaroscopeImage\\91022_HaroscopeImage.html";
-            //Path = System.IO.Path(KeyName);
-
-            //  string parentDir = System.IO.Path.GetDirectoryName(Path);
-
-            //  Path = parentDir + "\\91022_HaroscopeImage.html";
-            //  Path = Server.MapPath("~/" + KeyName);
-
-            //Path = "www.e.kaakateeya.com\\access\\Images\\HoroscopeImages\\91022_HaroscopeImage\\91022_HaroscopeImage.html";
-
-            Path = System.IO.Path.Combine(System.Environment.CurrentDirectory, Path);
-
+            string strHoro = KeyName;
             if (!string.IsNullOrEmpty(Commonclass.GlobalImgPath))
             {
                 Commonclass.S3upload(Path, KeyName);
@@ -1120,7 +1077,6 @@ namespace WebapiApplication.DAL
             }
 
             return iresult;
-
         }
 
     }

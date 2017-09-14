@@ -78,7 +78,6 @@ D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
-D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\WebapiApplication.pdb
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Antlr3.Runtime.dll

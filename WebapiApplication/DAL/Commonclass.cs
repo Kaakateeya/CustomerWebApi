@@ -357,6 +357,9 @@ namespace WebapiApplication.DAL
         public static bool S3upload(string filePath, string keyName)
         {
             //filePath = "D://KaakateeyaMainProject//Kaakateeya//Development_Kaakateeya//kaakateeyaWeb//access//Images//ProfilePics//KMPL_71668_Images//img2.jpg";
+
+            string strpath = keyName.Replace("/", "//");
+            filePath = "C://inetpub//wwwroot//access//" + strpath;
             try
             {
                 TransferUtility fileTransferUtility = new
@@ -365,28 +368,32 @@ namespace WebapiApplication.DAL
                 //TransferUtility utility = new TransferUtility();
                 //utility.UploadDirectory(directoryPath, bucketName);
 
+
                 // 1. Upload a file, file name is used as the object key name.
                 //fileTransferUtility.Upload(filePath, bucketName);
                 //Console.WriteLine("Upload 1 completed");
 
+
                 //// 2. Specify object key name explicitly.
                 //fileTransferUtility.Upload(filePath,
-                //                          bucketName, keyName);
+                //                      	bucketName, keyName);
                 //Console.WriteLine("Upload 2 completed");
+
 
                 //// 3. Upload data from a type of System.IO.Stream.
                 //using (FileStream fileToUpload =
-                //    new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                //	new FileStream(filePath, FileMode.Open, FileAccess.Read))
                 //{
-                //    fileTransferUtility.Upload(fileToUpload,
-                //                               bucketName, keyName);
+                //	fileTransferUtility.Upload(fileToUpload,
+                //                           	bucketName, keyName);
                 //}
                 //Console.WriteLine("Upload 3 completed");
+
 
                 // 4.Specify advanced settings/options.
                 TransferUtilityUploadRequest fileTransferUtilityRequest = new TransferUtilityUploadRequest
                 {
-                    BucketName = S3bucketname,
+                    BucketName = "kaakateeyaprod",
                     FilePath = filePath,
                     StorageClass = S3StorageClass.ReducedRedundancy,
                     PartSize = 6291456, // 6 MB.
@@ -396,18 +403,18 @@ namespace WebapiApplication.DAL
                 fileTransferUtilityRequest.Metadata.Add("param1", "Value1");
                 fileTransferUtilityRequest.Metadata.Add("param2", "Value2");
                 fileTransferUtility.Upload(fileTransferUtilityRequest);
-
                 return true;
             }
             catch (AmazonS3Exception s3Exception)
             {
+                Commonclass.ApplicationErrorLog("s3 Horo", Convert.ToString(s3Exception.Message), null, null, null);
+
                 return false;
             }
             finally
             {
                 SqlConnection.ClearAllPools();
             }
-
         }
         public static ArrayList convertdataTableToArrayListTable(DataSet dtSet)
         {

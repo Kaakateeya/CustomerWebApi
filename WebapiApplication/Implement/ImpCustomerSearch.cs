@@ -15,7 +15,7 @@ namespace WebapiApplication.Implement
 {
     public class ImpCustomerSearch : ICustomerSearch
     {
-        public PrimaryInformationMl Partnerpreferencedetails_CustomerSearch(int? CustID, int? EmpID, Int64? searchresultID) { return new CustomerSearch().DgetPartnerpreferencedetails(CustID, EmpID, searchresultID, "[dbo].[usp_GetCustomerinfo_Forsearches]"); }
+        public partnerInfoMl Partnerpreferencedetails_CustomerSearch(int? CustID, int? EmpID, Int64? searchresultID) { return new CustomerSearch().DgetPartnerpreferencedetails(CustID, EmpID, searchresultID, "[dbo].[usp_GetCustomerinfo_Forsearches]"); }
         public List<QuicksearchResultML> ProfileIdsearch(ProfileIDSearch ProfileIDSearch) { return new CustomerSearch().ProfileIdsearch(ProfileIDSearch, "[dbo].[usp_Customers_ProfileSearch_Profor]"); }
         public List<QuicksearchResultML> GeneralandAdvancedSearch(PrimaryInformationMl search) { return new CustomerSearch().GeneralandAdvancedSearch(search, "[dbo].[usp_Customers_GeneralSearch_Perfor]"); }
         public List<QuicksearchResultML> CustomerHomePageSearch(CustomerHomePageSearch search) { return new CustomerSearch().CustomerHomePageSearch(search, "[dbo].[usp_Customers_GeneralSearch_Perfor_HomePage]"); }

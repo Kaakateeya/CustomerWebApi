@@ -13,10 +13,10 @@ namespace WebapiApplication.DAL
 {
     public class CustomerSearch
     {
-        public PrimaryInformationMl DgetPartnerpreferencedetails(int? CustID, int? EmpID, Int64? searchresultID, string spName)
+        public partnerInfoMl DgetPartnerpreferencedetails(int? CustID, int? EmpID, Int64? searchresultID, string spName)
         {
-            List<PrimaryInformationMl> ds = new List<PrimaryInformationMl>();
-            PrimaryInformationMl Mobjresult = new PrimaryInformationMl();
+            List<partnerInfoMl> ds = new List<partnerInfoMl>();
+            partnerInfoMl Mobjresult = new partnerInfoMl();
             SqlDataReader reader = null;
             SqlParameter[] parm = new SqlParameter[5];
             Int64? intNull = null;

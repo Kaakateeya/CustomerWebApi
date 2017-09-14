@@ -138,6 +138,49 @@ namespace WebapiApplication.ML
 
     }
 
+
+
+    public class partnerInfoMl
+    {
+        public Int64? intCusID { set; get; }
+        public int? intGender { get; set; }
+        public string Agefrom { get; set; }
+        public string Ageto { get; set; }
+        public string Heightfrom { get; set; }
+        public string Heightto { get; set; }
+        public string Maritalstatus { get; set; }
+        public string Religion { get; set; }
+        public string MotherTongue { get; set; }
+        public string Caste { get; set; }
+        public string Complexion { get; set; }
+        public string bodytype { get; set; }
+        public string PhysicalStatusstring { get; set; }
+        public string Educationcategory { get; set; }
+        public string Education { get; set; }
+        public string Professiongroup { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
+        public string Stars { get; set; }
+        public int? iManglinkKujaDosham { get; set; }
+        public string CasteText { get; set; }
+        public int? iStarID { get; set; }
+        public int? iStarLanguage { get; set; }
+        public string Visastatus { get; set; }
+        public int? iAnnualincome { get; set; }
+        public Int64? iFromSal { get; set; }
+        public Int64? iToSal { get; set; }
+        public int? iDiet { get; set; }
+        public int? i_Registrationdays { set; get; }
+
+
+    }
+
+
+
+
+
+
+
     public class CustomerHomePageSearch
     {
         public int? CustId { set; get; }

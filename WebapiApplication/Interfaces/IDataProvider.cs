@@ -42,7 +42,7 @@ namespace WebapiApplication.Interfaces
     }
     public interface ICustomerSearch
     {
-        PrimaryInformationMl Partnerpreferencedetails_CustomerSearch(int? CustID, int? EmpID, Int64? searchresultID);
+        partnerInfoMl Partnerpreferencedetails_CustomerSearch(int? CustID, int? EmpID, Int64? searchresultID);
         List<QuicksearchResultML> ProfileIdsearch(ProfileIDSearch ProfileIDSearch);
         List<QuicksearchResultML> GeneralandAdvancedSearch(PrimaryInformationMl search);
         List<QuicksearchResultML> CustomerAdvanceGeneralandSavedSearch(PrimaryInformationMl primaryInfo, DataTable dtTableValues);
