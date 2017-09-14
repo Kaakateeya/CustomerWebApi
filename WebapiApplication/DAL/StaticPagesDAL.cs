@@ -1751,8 +1751,19 @@ namespace WebapiApplication.DAL
                         li.Add(smtp);
 
                     }
-                    status = Istatus != null ? Convert.ToInt32(Istatus) : 0;
-                    Commonclass.SendMailSmtpMethod(li, "info");
+                    if (string.Compare(System.DBNull.Value.ToString(), parm[4].Value.ToString()) == 0)
+                    {
+                        status = 0;
+                    }
+                    else
+                    {
+                        status = Convert.ToInt32(parm[4].Value);
+                    }
+                    //status = Istatus != null ? Convert.ToInt32(Istatus) : 0;
+                    if (li.Count > 0)
+                    {
+                        Commonclass.SendMailSmtpMethod(li, "info");
+                    }
                 }
                 else
                 {
