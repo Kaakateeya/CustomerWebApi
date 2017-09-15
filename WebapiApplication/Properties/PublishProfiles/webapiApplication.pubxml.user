@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\customerBuild_files\14_12_2017_insertviewprofileemail</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\customerBuild_files\15_12_2017_expressinterestpagenewSp123</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_WebReferences/SMSC_CLIENT/configuration.svcinfo">
@@ -118,7 +118,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/WebapiApplication.dll">
-      <publishTime>09/14/2017 19:43:43</publishTime>
+      <publishTime>09/15/2017 14:33:46</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>05/20/2017 12:23:50</publishTime>
@@ -127,7 +127,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="DAL/HtmlPage1.html">
-      <publishTime>09/14/2017 19:17:11</publishTime>
+      <publishTime>09/15/2017 12:46:28</publishTime>
     </File>
     <File Include="DAL/TestAngular.html">
       <publishTime>05/20/2017 12:23:50</publishTime>

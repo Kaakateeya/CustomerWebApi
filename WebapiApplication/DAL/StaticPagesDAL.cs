@@ -1759,7 +1759,7 @@ namespace WebapiApplication.DAL
                     //{
                     //    status = Convert.ToInt32(parm[4].Value);
                     //}
-                    //status = Istatus != null ? Convert.ToInt32(Istatus) : 0;
+                    status = Istatus != null ? Convert.ToInt32(Istatus) : 0;
                     if (li.Count > 0)
                     {
                         Commonclass.SendMailSmtpMethod(li, "info");
@@ -2581,6 +2581,39 @@ namespace WebapiApplication.DAL
             catch (Exception ex)
             {
                 Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(ToProfileID), "ExpressIntrstfullprofile", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Commonclass.convertdataTableToArrayList(dset);
+        }
+
+        public ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID, string spName)
+        {
+            DataSet dset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[5];
+                parm[0] = new SqlParameter("@strProfileID", SqlDbType.VarChar);
+                parm[0].Value = fromProfileID;
+                parm[1] = new SqlParameter("@intCust_id ", SqlDbType.BigInt);
+                parm[1].Value = toustid;
+                parm[2] = new SqlParameter("@intAdminId", SqlDbType.Int);
+                parm[2].Value = EmpID;
+                dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(fromProfileID), "ExpressIntrstfullprofilepaidunpaid", null);
             }
             finally
             {
