@@ -70,6 +70,7 @@ namespace WebapiApplication.Implement
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepartial(ToProfileID, EmpID, "[dbo].[GetViewProfile_FullDetails_Partial]"); }
 
         public ArrayList getCustomerBindings() { return new StaticPagesDAL().getCustomerBindingsDal("[dbo].[usp_customerbindings]"); }
-
+        
+        public ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepaidandunpaid(fromProfileID, toustid, EmpID, "[dbo].[GetViewProfile_FullDetails_RoleWise_1509backup]"); }
     }
 }

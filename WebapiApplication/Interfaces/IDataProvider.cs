@@ -152,6 +152,7 @@ namespace WebapiApplication.Interfaces
         ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID);
 
         ArrayList getCustomerBindings();
+        ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID);
     }
 
     public interface IDependency
