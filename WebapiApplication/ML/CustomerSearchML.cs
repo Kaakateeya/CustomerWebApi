@@ -329,6 +329,47 @@ namespace WebapiApplication.ML
         public long? LogID { get; set; }
         public string DistName { get; set; }
     }
+
+
+    public class generalAdvanceSearchResult
+    {
+        public Int64? intCusID { set; get; }
+        public string NAME { set; get; }
+        public string ProfileID { set; get; }
+        public string Age { get; set; }
+        public string Height { get; set; }
+        public string ReligionName { set; get; }
+        public string Caste { set; get; }
+        public string Star { set; get; }
+        public string Location { set; get; }
+        public string Education { set; get; }
+        public string Profession { set; get; }
+        public Int64? TotalRows { set; get; }
+        public Int64? TotalPages { set; get; }
+        public string Photo { set; get; }
+        public int? PhotoCount { set; get; }
+        public string placeofbirth { set; get; }
+        public int? GenderID { get; set; }
+        public string PhotoPassword { set; get; }
+        public string MaritualStatus { get; set; }
+        public string MaritalStatusId { get; set; }
+        public int? IsPaidMember { get; set; }
+        public int? mybookmarked { get; set; }
+        public int? ExpressFlag { get; set; }
+        public int? ignode { get; set; }
+        public long? LogId { get; set; }
+        public long? LogID { get; set; }
+        
+        public string Photofullpath { set; get; }
+        public string DistName { get; set; }
+        public string strFirstName { get; set; }
+    }
+	
+
+
+
+
+
     public class Newsavedserach
     {
         public Int64? CustID { get; set; }

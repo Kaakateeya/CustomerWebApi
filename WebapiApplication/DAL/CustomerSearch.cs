@@ -118,9 +118,9 @@ namespace WebapiApplication.DAL
             }
             return Mobjresult;
         }
-        public List<QuicksearchResultML> GeneralandAdvancedSearch(PrimaryInformationMl search, string spName)
+        public List<generalAdvanceSearchResult> GeneralandAdvancedSearch(PrimaryInformationMl search, string spName)
         {
-            List<QuicksearchResultML> listSearch = new List<QuicksearchResultML>();
+            List<generalAdvanceSearchResult> listSearch = new List<generalAdvanceSearchResult>();
             SqlDataReader reader;
             SqlParameter[] parm = new SqlParameter[30];
             Int64? intNull = null;
@@ -199,7 +199,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
-                            QuicksearchResultML Mobjresult = new QuicksearchResultML();
+                            generalAdvanceSearchResult Mobjresult = new generalAdvanceSearchResult();
                             {
                                 Mobjresult.intCusID = (reader["Cust_Id"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_Id")) : intNull;
                                 Mobjresult.NAME = (reader["NAME"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("NAME")) : strNP;
@@ -410,7 +410,7 @@ namespace WebapiApplication.DAL
             }
             return intStatus;
         }
-        public List<QuicksearchResultML> CustomerGeneralandAdvancedSavedSearch(PrimaryInformationMl primaryInfo, DataTable dtTableValues, string SavedSearchSp, string saveParam, string searchSp)
+        public List<generalAdvanceSearchResult> CustomerGeneralandAdvancedSavedSearch(PrimaryInformationMl primaryInfo, DataTable dtTableValues, string SavedSearchSp, string saveParam, string searchSp)
         {
             int iResult = CustomerAdvanceGeneralProfileIDsearchSave(dtTableValues, primaryInfo.intCusID, primaryInfo.iupdateFlag, SavedSearchSp, saveParam);
             return GeneralandAdvancedSearch(primaryInfo, searchSp);

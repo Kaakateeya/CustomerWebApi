@@ -199,10 +199,10 @@
             $("#ClassData2").click(function () {
                 alert(1);
                 $.ajax({
-                    url: 'http://localhost:63006/Api/StaticPages/UpdateCustomerEmailMobileNumber_Verification',
-                    type: 'POST',
+                    url: 'http://localhost:63006/Api/DashboardRequest/DashboardRequestget',
+                    type: 'get',
                     crossDomain: true,
-                    data: JSON.stringify(MobjMob),
+                    data: { DashboardType: 'UnPaid',TypeOfReport:'C',id:91035,pagefrom:1,pageto:9},
                     contentType: 'application/json',
                     success: function (data, textStatus, xhr) {
                         alert(JSON.stringify(data));

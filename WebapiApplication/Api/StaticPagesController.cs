@@ -89,6 +89,7 @@ namespace WebapiApplication.Api
 
         public ArrayList getExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofilepartial(ToProfileID, EmpID); }
 
+        public ArrayList getCustomerBindings() { return this.ISuccessStories.getCustomerBindings(); }
 
     }
 }

@@ -2579,6 +2579,33 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
+
+        public ArrayList getCustomerBindingsDal(string spName)
+        {
+            DataSet dset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[5];
+                dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName);
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), 123456, "usp_customerbindings", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Commonclass.convertdataTableToArrayList(dset);
+        }
     }
 }
 
