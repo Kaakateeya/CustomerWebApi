@@ -1730,6 +1730,7 @@ namespace WebapiApplication.DAL
                         Myprofilebind.ProfileID = (reader["ProfileID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
                         Myprofilebind.ProfileStatusID = (reader["ProfileStatusID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ProfileStatusID")) : iNull;
                         Myprofilebind.CustID = (reader["Cust_ID"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_ID")) : ilong;
+                        Myprofilebind.GenderID = (reader["GenderID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : iNull;
                     }
                 }
 
@@ -1986,14 +1987,11 @@ namespace WebapiApplication.DAL
                 mobj.AccRejFlag = AccRejFlag;
                 ///
                 SendServiceProfileIds Myprofilebind = new SendServiceProfileIds();
-                SendServiceProfileIds Myprofilebind2 = new SendServiceProfileIds();
-                Myprofilebind = SendServiceProfileIDs(mobj.FromProfileID, "[dbo].[usp_SendServiceProfileIDs]");
-                Myprofilebind2 = SendServiceProfileIDs(mobj.ToProfileID, "[dbo].[usp_SendServiceProfileIDs]");
 
+                Myprofilebind = SendServiceProfileIDs(mobj.FromProfileID, "[dbo].[usp_SendServiceProfileIDs]");
                 mobj.FromProfileName = Myprofilebind.FirstName;
                 mobj.FromProfileLastName = Myprofilebind.LastName;
-                mobj.ToProfileName = Myprofilebind2.FirstName;
-                mobj.TOProfileLastName = Myprofilebind2.LastName;
+                mobj.Fromgender = Myprofilebind.GenderID;
                 DataSet ds = CustomerData(5, FromProfileID);
 
                 if (ds != null && ds.Tables.Count > 0)

@@ -216,6 +216,7 @@ namespace WebapiApplication.ML
         public string ProfileID { get; set; }
         public int? ProfileStatusID { get; set; }
         public long? CustID { get; set; }
+        public int? GenderID { get; set; }
     }
     public class KaakateeyaBranchesML
     {

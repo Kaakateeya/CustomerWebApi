@@ -140,9 +140,9 @@ namespace WebapiApplication.ML
 
         public string FromProfileLastName { get; set; }
 
-        public string TOProfileLastName { get; set; }
 
-        public string ToProfileName { get; set; }
+
+        public int? Fromgender { get; set; }
     }
     public class UpdateExpressIntrestStatus
     {
