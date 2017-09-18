@@ -1702,6 +1702,52 @@ namespace WebapiApplication.DAL
             }
             return status;
         }
+        public SendServiceProfileIds SendServiceProfileIDs(string ProfileIDs, string spName)
+        {
+            SqlParameter[] parm = new SqlParameter[10];
+            SqlDataReader reader;
+            int? iNull = null;
+            long? ilong = null;
+            SendServiceProfileIds Myprofilebind = null;
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            try
+            {
+                parm[0] = new SqlParameter("@ProfileIDs", SqlDbType.VarChar);
+                parm[0].Value = ProfileIDs;
+
+                reader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Myprofilebind = new SendServiceProfileIds();
+                        Myprofilebind.FirstName = (reader["FirstName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FirstName")) : null;
+                        Myprofilebind.LastName = (reader["LastName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("LastName")) : null;
+                        Myprofilebind.ProfileID = (reader["ProfileID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
+                        Myprofilebind.ProfileStatusID = (reader["ProfileStatusID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ProfileStatusID")) : iNull;
+                        Myprofilebind.CustID = (reader["Cust_ID"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_ID")) : ilong;
+                        Myprofilebind.GenderID = (reader["GenderID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : iNull;
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Myprofilebind;
+        }
         public int InsertExpressViewTicket(long? FromCustID, long? ToCustID, string EncriptedText, string strtypeOfReport, string spName)
         {
             int? Istatus = null;
@@ -1939,6 +1985,13 @@ namespace WebapiApplication.DAL
                 mobj.ToCustID = ToProfileID;
                 mobj.status = status;
                 mobj.AccRejFlag = AccRejFlag;
+                ///
+                SendServiceProfileIds Myprofilebind = new SendServiceProfileIds();
+
+                Myprofilebind = SendServiceProfileIDs(mobj.FromProfileID, "[dbo].[usp_SendServiceProfileIDs]");
+                mobj.FromProfileName = Myprofilebind.FirstName;
+                mobj.FromProfileLastName = Myprofilebind.LastName;
+                mobj.Fromgender = Myprofilebind.GenderID;
                 DataSet ds = CustomerData(5, FromProfileID);
 
                 if (ds != null && ds.Tables.Count > 0)
