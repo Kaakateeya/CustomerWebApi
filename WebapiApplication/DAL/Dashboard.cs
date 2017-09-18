@@ -37,7 +37,7 @@ namespace WebapiApplication.DAL
                 parm[2].Value = pagefrom;
                 parm[3] = new SqlParameter("@pageto", SqlDbType.Int);
                 parm[3].Value = pageto;
-                
+
                 using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["KakConnection"].ToString()))
                 {
                     con.Open();
@@ -694,5 +694,143 @@ namespace WebapiApplication.DAL
             }
             return status;
         }
+
+        public PersonalInfo custDashboardPersonalInfoDal(int CustID, string spName)
+        {
+            PersonalInfo Pcls = new PersonalInfo();
+            SqlDataReader reader;
+            int? inull = null;
+            bool? bnull = null;
+            SqlConnection con = null;
+            Int64? Lnull = null;
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[1];
+
+                parm[0] = new SqlParameter("@custID", SqlDbType.Int);
+                parm[0].Value = CustID;
+                using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["KakConnection"].ToString()))
+                {
+                    con.Open();
+                    reader = SQLHelper.ExecuteReader(con, CommandType.StoredProcedure, spName, parm);
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                          
+                            Pcls.TableName = reader["TableName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("TableName")) : null;
+                            Pcls.ProfileID = reader["ProfileID"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
+                            Pcls.GenderID = reader["GenderID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : inull;
+                            Pcls.NAME = reader["NAME"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("NAME")) : null;
+                            Pcls.PaidMember = reader["PaidMember"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("PaidMember")) : inull;
+                            Pcls.ProfileLastModifieddate = reader["ProfileLastModifieddate"] != DBNull.Value ? (reader.GetDateTime(reader.GetOrdinal("ProfileLastModifieddate"))).ToString() : null;
+                            Pcls.PhotoName = reader["PhotoName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoName")) : null;
+                            Pcls.PhotoName_Cust = reader["PhotoName_Cust"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("PhotoName_Cust")) : inull;
+                            Pcls.MsgReceivedFrom = reader["MsgReceivedFrom"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("MsgReceivedFrom")) : null;
+                            Pcls.MsgReceivedDate = reader["MsgReceivedDate"] != DBNull.Value ? (reader.GetDateTime(reader.GetOrdinal("MsgReceivedDate"))).ToString() : null;
+                            Pcls.ProfilePhotoName = reader["ProfilePhotoName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfilePhotoName")) : null;
+                            Pcls.IsReviewed = reader["IsReviewed"] != DBNull.Value ? reader.GetBoolean(reader.GetOrdinal("IsReviewed")) : bnull;
+                            Pcls.IsActive = reader["IsActive"] != DBNull.Value ? reader.GetBoolean(reader.GetOrdinal("IsActive")) : bnull;
+                            Pcls.ProfileBattery = reader["ProfileBattery"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ProfileBattery")) : inull;
+                            Pcls.EmpID = reader["EmpID"] != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("EmpID")) : Lnull;
+                            Pcls.EmpPhone = reader["EmpPhone"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("EmpPhone")) : null;
+                            Pcls.OfficialContactNumber = reader["OfficialContactNumber"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("OfficialContactNumber")) : null;
+                            Pcls.EmployeeName = reader["EmployeeName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("EmployeeName")) : null;
+                            Pcls.EmailID = reader["EmailID"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("EmailID")) : null;
+                            Pcls.PhotoViewCount = reader["PhotoViewCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("PhotoViewCount")) : inull;
+                            Pcls.PartnetPrefernceLastOnemonth = reader["PartnetPrefernceLastOnemonth"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("PartnetPrefernceLastOnemonth")) : inull;
+                            Pcls.Photo = reader["Photo"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("Photo")) : null;
+                            Pcls.MaskDiv = (!string.IsNullOrEmpty(Pcls.ProfilePhotoName) && (Pcls.IsReviewed == true && Pcls.IsActive == true)) ? " " : ((!string.IsNullOrEmpty(Pcls.ProfilePhotoName) && (Pcls.IsReviewed == true || Pcls.IsActive == true)) ? "divCSSclass clearfix" : "cssMaskupload clearfix");
+                        }
+
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), CustID, "LandingCountsDal", null);
+            }
+            finally
+            {
+                con.Close();
+                SqlConnection.ClearPool(con);
+                SqlConnection.ClearAllPools();
+            }
+            return Pcls;
+        }
+
+        public LandingPartnerMenu getcustDashboardCountsDal(int custid, string spName)
+        {
+            SqlDataReader reader;
+            int? inull = null;
+            SqlConnection con = null;
+            LandingPartnerMenu liCount = new LandingPartnerMenu();
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[1];
+
+                parm[0] = new SqlParameter("@custID", SqlDbType.Int);
+                parm[0].Value = custid;
+                using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["KakConnection"].ToString()))
+                {
+                    con.Open();
+                    reader = SQLHelper.ExecuteReader(con, CommandType.StoredProcedure, spName, parm);
+
+                    if (reader.HasRows)
+                    {
+
+                        while (reader.Read())
+                        {
+                            liCount.SaveSearchCount = reader["SavesSearchCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("SavesSearchCount")) : inull;
+                            liCount.WhobookmarkedCount = reader["WhoBookmarkedCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("WhoBookmarkedCount")) : inull;
+                            liCount.MybookMarkedProfCount = reader["BookmarkCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("BookmarkCount")) : inull;
+                            liCount.RectViewedProfCount = reader["ViewedCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ViewedCount")) : inull;
+                            liCount.RectWhoViewedCout = reader["WhoViewedCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("WhoViewedCount")) : inull;
+                            liCount.IgnoreProfileCount = reader["IgnoreCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("IgnoreCount")) : inull;
+                            //express and Counts Bind
+
+                            liCount.ExpressIntSent = reader["ExpressSentCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ExpressSentCount")) : inull;
+                            liCount.ExpressIntReceived = reader["ExpressReceiveCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ExpressReceiveCount")) : inull;
+                            liCount.ExpressAllcount = reader["ExpressAllcount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ExpressAllcount")) : inull;
+
+                            liCount.NewMsgs = reader["NewMessageCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("NewMessageCount")) : inull;
+                            liCount.TotalMsgs = reader["TotalMessageCount"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("TotalMessageCount")) : inull;
+
+                            liCount.SentPhotoRequestCount = reader["PhotoRequestSentCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("PhotoRequestSentCount"))) : inull;
+                            liCount.SentHoroRequestCount = reader["HoroRequestSentCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("HoroRequestSentCount"))) : inull;
+                            liCount.ReceivedPhotoRequestCount = reader["PhotoRequestReceivedCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("PhotoRequestReceivedCount"))) : inull;
+                            liCount.ReceivedHoroRequestCount = reader["HoroRequestReceivedCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("HoroRequestReceivedCount"))) : inull;
+
+                            liCount.SentProtectedReply = reader["SentProtectedNewCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("SentProtectedNewCount"))) : inull;
+                            liCount.SentProtectedAccept = reader["SentProtectedAcceptCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("SentProtectedAcceptCount"))) : inull;
+                            liCount.SentProtectedReject = reader["SentProtectedRejectCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("SentProtectedRejectCount"))) : inull;
+                            liCount.ReceivedProtectedNew = reader["ReceivedProtectedNewCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("ReceivedProtectedNewCount"))) : inull;
+                            liCount.ReceivedProtectedAccept = reader["ReceivedProtectedAcceptCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("ReceivedProtectedAcceptCount"))) : inull;
+                            liCount.ReceivedProtectedReject = reader["ReceivedProtectedRejectCount"] != DBNull.Value ? Convert.ToInt32(reader.GetString(reader.GetOrdinal("ReceivedProtectedRejectCount"))) : inull;
+                        }
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), custid, "LandingCountsDal", null);
+            }
+            finally
+            {
+                con.Close();
+                SqlConnection.ClearPool(con);
+                SqlConnection.ClearAllPools();
+            }
+            return liCount;
+        }
+
+
+
+
     }
 }

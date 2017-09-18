@@ -22,6 +22,11 @@ namespace WebapiApplication.Interfaces
         List<CommunicationHistry> GetCustometMessagesCount(CommunicationHistoryReq Mobj);
         int InsertExpressViewTicket(long? FromCustID, long? ToCustID, string EncriptedText, string strtypeOfReport);
         int InsertCustomerExpressinterest(int? fromcustid, int? tocustid, long? logID, string interstTYpe, int? empid);
+
+        PersonalInfo getcustDashboardPersonalInfo(int custid);
+        LandingPartnerMenu getcustDashboardCounts(int custid);
+
+        DashboardClass custDashboardPartnerProfiles(int id, string TypeOfReport, int pagefrom, int pageto, string DashboardType);
     }
 
     public interface IEmailMobileVerf { VerifiedContactInformationML DgetMobileEmailVerification(long? CustID); }

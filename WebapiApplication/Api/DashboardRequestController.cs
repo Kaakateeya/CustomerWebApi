@@ -25,5 +25,9 @@ namespace WebapiApplication.Api
         public int getInsertExpressViewTicket([FromUri]long? FromCustID, [FromUri]long? ToCustID, [FromUri] string EncriptedText, [FromUri] string strtypeOfReport) { return IDashboardRequest.InsertExpressViewTicket(FromCustID, ToCustID, EncriptedText = WebapiApplication.DAL.Commonclass.createTicketEncriptedText(Convert.ToString(FromCustID), Convert.ToString(ToCustID)), strtypeOfReport); }
         public int getInsertCustomerExpressinterest([FromUri]int? fromcustid, [FromUri]int? tocustid, [FromUri] long? logID, [FromUri] string interstTYpe, [FromUri] int? empid) { return IDashboardRequest.InsertCustomerExpressinterest(fromcustid, tocustid, logID, interstTYpe, empid); }
 
+        public PersonalInfo getcustDashboardPersonalInfo(int custid) { return this.IDashboardRequest.getcustDashboardPersonalInfo(custid); }
+        public LandingPartnerMenu getcustDashboardCounts(int custid) { return this.IDashboardRequest.getcustDashboardCounts(custid); }
+        public DashboardClass getcustDashboardPartnerProfiles([FromUri]int id, [FromUri]string TypeOfReport, [FromUri]int pagefrom, [FromUri]int pageto, string DashboardType) { return this.IDashboardRequest.custDashboardPartnerProfiles(id, TypeOfReport, pagefrom, pageto, DashboardType); }
+
     }
 }

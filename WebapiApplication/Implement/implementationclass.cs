@@ -35,7 +35,15 @@ namespace WebapiApplication.Implement
         public List<CommunicationHistry> GetCustometMessagesCount(CommunicationHistoryReq Mobj) { return dashboard.GetCustometMessagesCount(Mobj, "[dbo].[usp_GetCustMessageHistory]"); }
         public int InsertExpressViewTicket(long? FromCustID, long? ToCustID, string EncriptedText, string strtypeOfReport) { return dashboard.InsertExpressViewTicket(FromCustID, ToCustID, EncriptedText, strtypeOfReport, "[dbo].[Usp_InsertExpressViewTicket_new]"); }
         public int InsertCustomerExpressinterest(int? fromcustid, int? tocustid, long? logID, string interstTYpe, int? empid) { return dashboard.InsertCustomerExpressinterest(fromcustid, tocustid, logID, interstTYpe, empid, "[dbo].[usp_insert_customerDashboard_expressinterest]"); }
-    
+
+        public PersonalInfo getcustDashboardPersonalInfo(int custid) { return dashboard.custDashboardPersonalInfoDal(custid, "[dbo].[usp_select_CustomerDashBoard_PersonalInfo]"); }
+        public LandingPartnerMenu getcustDashboardCounts(int custid) { return dashboard.getcustDashboardCountsDal(custid, "[dbo].[usp_select_CustomerDashBoard_PersonalInfo]"); }
+
+        public DashboardClass custDashboardPartnerProfiles(int CustID, string TypeOfReport, int pagefrom, int pageto, string DashboardType)
+        {
+            if (DashboardType == "UnPaid") { return dashboard.LandingCountsDal(CustID, TypeOfReport, pagefrom, pageto, "[dbo].[usp_select_CustomerDashBoard_PartnerPrefe]"); }
+            else { return dashboard.LandingCountsDal(CustID, TypeOfReport, pagefrom, pageto, "[dbo].[usp_select_CustomerDashBoard_Exact]"); }
+        }
     }
     public class ImpEmailMobileVerf : IEmailMobileVerf { public VerifiedContactInformationML DgetMobileEmailVerification(long? CustID) { return new VerifiedContactInformationDAL().DgetMobileEmailVerification(CustID); } }
     public class ImpCustSearchService : ICustSearchService { public int CustomerServiceDal(CustSearchMl MobjViewprofile) { if (MobjViewprofile.TypeofInsert == "E") { MobjViewprofile = Commonclass.CustomerViewProfileEncriptedText(MobjViewprofile); } return new CustomerServiceDAL().getCustomerServiceDal(MobjViewprofile, "[dbo].[usp_insert_customerDashboard]"); } }
