@@ -37,7 +37,7 @@ namespace WebapiApplication.Implement
         public int InsertCustomerExpressinterest(int? fromcustid, int? tocustid, long? logID, string interstTYpe, int? empid) { return dashboard.InsertCustomerExpressinterest(fromcustid, tocustid, logID, interstTYpe, empid, "[dbo].[usp_insert_customerDashboard_expressinterest]"); }
 
         public PersonalInfo getcustDashboardPersonalInfo(int custid) { return dashboard.custDashboardPersonalInfoDal(custid, "[dbo].[usp_select_CustomerDashBoard_PersonalInfo]"); }
-        public LandingPartnerMenu getcustDashboardCounts(int custid) { return dashboard.getcustDashboardCountsDal(custid, "[dbo].[usp_select_CustomerDashBoard_PersonalInfo]"); }
+        public LandingPartnerMenu getcustDashboardCounts(int custid) { return dashboard.getcustDashboardCountsDal(custid, "[dbo].[usp_select_CustomerDashBoard_Counts]"); }
 
         public DashboardClass custDashboardPartnerProfiles(int CustID, string TypeOfReport, int pagefrom, int pageto, string DashboardType)
         {
