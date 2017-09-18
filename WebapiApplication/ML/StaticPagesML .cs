@@ -283,9 +283,11 @@ namespace WebapiApplication.ML
         public string SeenStatus { get; set; }
         public string ViewTicket { get; set; }
         public string Paidstatus { get; set; }
-
-
     }
-
+    public class cust_bindings
+    {
+        public string Name { get; set; }
+        public int ID { get; set; }
+    }
 
 }

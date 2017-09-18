@@ -211,5 +211,54 @@ namespace WebapiApplication.DAL
             }
             return dropdownfilling;
         }
+
+        public List<CountryDependency> getDropdown_filling_Dataset(string strDropdownname, string Spname)
+        {
+            List<CountryDependency> dropdownfilling = new List<CountryDependency>();
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["KakConnection"].ToString());
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+
+            try
+            {
+
+                SqlCommand command = new SqlCommand(Spname, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@v_dflag", strDropdownname);
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        CountryDependency CD = new CountryDependency
+                        {
+                            ID = (reader["ID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ID")) : 0,
+                            Name = (reader["Name"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Name")) : null,
+                        };
+
+                        dropdownfilling.Add(CD);
+                    }
+                }
+                reader.Close();
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(Spname, Convert.ToString(EX.Message), null, "getDropdown_filling_values", null);
+            }
+            finally
+            {
+
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return dropdownfilling;
+        }
+
+
+
     }
 }

@@ -155,23 +155,23 @@
                 });
             });
 
-            $("#TestHoro").click(function () {
-                alert(1);
-                $.ajax({
-                    url: 'http://183.82.0.58:8010/Api/CustomerPersonalUpdate/getAstroGenerationS3Update',
-                    type: 'GET',
-                    crossDomain: true,
-                    data: { Path: "C:\\Webroot\\WebApI\\Images\\HoroscopeImages\\91022_HaroscopeImage\\91022_HaroscopeImage.html", KeyName: "Images/HoroscopeImages/91022_HaroscopeImage/91022_HaroscopeImage.html" },
-                    contentType: 'application/json',
-                    success: function (data, textStatus, xhr) {
-                        alert(JSON.stringify(data));
-                        console.log(data);
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        console.log(xhr);
-                    }
-                });
-            });
+            //$("#TestHoro").click(function () {
+            //    alert(1);
+            //    $.ajax({
+            //        url: 'http://183.82.0.58:8010/Api/CustomerPersonalUpdate/getAstroGenerationS3Update',
+            //        type: 'GET',
+            //        crossDomain: true,
+            //        data: { Path: "C:\\Webroot\\WebApI\\Images\\HoroscopeImages\\91022_HaroscopeImage\\91022_HaroscopeImage.html", KeyName: "Images/HoroscopeImages/91022_HaroscopeImage/91022_HaroscopeImage.html" },
+            //        contentType: 'application/json',
+            //        success: function (data, textStatus, xhr) {
+            //            alert(JSON.stringify(data));
+            //            console.log(data);
+            //        },
+            //        error: function (xhr, textStatus, errorThrown) {
+            //            console.log(xhr);
+            //        }
+            //    });
+            //});
 
 
             //    var objsss = {
@@ -199,10 +199,10 @@
             $("#ClassData2").click(function () {
                 alert(1);
                 $.ajax({
-                    url: 'http://localhost:63006/Api/StaticPages/UpdateCustomerEmailMobileNumber_Verification',
-                    type: 'POST',
+                    url: 'http://localhost:63006/Api/DashboardRequest/DashboardRequestget',
+                    type: 'get',
                     crossDomain: true,
-                    data: JSON.stringify(MobjMob),
+                    data: { DashboardType: 'UnPaid',TypeOfReport:'C',id:91035,pagefrom:1,pageto:9},
                     contentType: 'application/json',
                     success: function (data, textStatus, xhr) {
                         alert(JSON.stringify(data));
@@ -215,23 +215,23 @@
             });
 
 
-            //$("#ClassData").click(function () {
+            $("#TestHoro").click(function () {
 
-            //    $.ajax({
-            //        url: 'http://183.82.0.58:8010/Api/Registration/insertRegistrationBasic',
-            //        type: 'GET',
-            //        crossDomain: true,
-            //        data: { CustID: 91035 },
-            //        contentType: 'application/json',
-            //        success: function (data, textStatus, xhr) {
-            //            alert(JSON.stringify(data));
-            //            console.log(data);
-            //        },
-            //        error: function (xhr, textStatus, errorThrown) {
-            //            console.log(xhr);
-            //        }
-            //    });
-            //});
+                $.ajax({
+                    url: 'http://183.82.0.58:8010/Api/StaticPages/getmgr',
+                    type: 'GET',
+                    crossDomain: true,
+                    data: {  },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
 
         });
 

@@ -44,8 +44,8 @@ namespace WebapiApplication.Interfaces
     {
         partnerInfoMl Partnerpreferencedetails_CustomerSearch(int? CustID, int? EmpID, Int64? searchresultID);
         List<QuicksearchResultML> ProfileIdsearch(ProfileIDSearch ProfileIDSearch);
-        List<QuicksearchResultML> GeneralandAdvancedSearch(PrimaryInformationMl search);
-        List<QuicksearchResultML> CustomerAdvanceGeneralandSavedSearch(PrimaryInformationMl primaryInfo, DataTable dtTableValues);
+        List<generalAdvanceSearchResult> GeneralandAdvancedSearch(PrimaryInformationMl search);
+        List<generalAdvanceSearchResult> CustomerAdvanceGeneralandSavedSearch(PrimaryInformationMl primaryInfo, DataTable dtTableValues);
         List<QuicksearchResultML> CustomerProfileIDSavedSearch(ProfileIDSearch primaryInfo, DataTable dtTableValues);
         List<SearchResultSaveEditML> SearchResultSaveEdit(long? Cust_ID, string SaveSearchName, int? iEditDelete);
         List<QuicksearchResultML> CustomerHomePageSearch(CustomerHomePageSearch search);
@@ -151,6 +151,7 @@ namespace WebapiApplication.Interfaces
 
         ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID);
 
+        ArrayList getCustomerBindings();
         ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID);
     }
 

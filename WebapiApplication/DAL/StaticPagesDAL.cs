@@ -1751,23 +1751,12 @@ namespace WebapiApplication.DAL
                         li.Add(smtp);
 
                     }
-                    //if (string.Compare(System.DBNull.Value.ToString(), parm[4].Value.ToString()) == 0)
-                    //{
-                    //    status = 0;
-                    //}
-                    //else
-                    //{
-                    //    status = Convert.ToInt32(parm[4].Value);
-                    //}
                     status = Istatus != null ? Convert.ToInt32(Istatus) : 0;
-                    if (li.Count > 0)
-                    {
-                        Commonclass.SendMailSmtpMethod(li, "info");
-                    }
+                    Commonclass.SendMailSmtpMethod(li, "info");
                 }
                 else
                 {
-                    if (string.Compare(System.DBNull.Value.ToString(), parm[4].Value.ToString()).Equals(0))
+                    if (string.Compare(System.DBNull.Value.ToString(), parm[4].Value.ToString()) == 0)
                     {
                         status = 0;
                     }
@@ -2556,8 +2545,6 @@ namespace WebapiApplication.DAL
             return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
         }
 
-
-
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID, string spName)
         {
             DataSet dset = new DataSet();
@@ -2581,6 +2568,32 @@ namespace WebapiApplication.DAL
             catch (Exception ex)
             {
                 Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(ToProfileID), "ExpressIntrstfullprofile", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Commonclass.convertdataTableToArrayList(dset);
+        }
+        public ArrayList getCustomerBindingsDal(string spName)
+        {
+            DataSet dset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[5];
+                dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName);
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), 123456, "usp_customerbindings", null);
             }
             finally
             {
@@ -2623,6 +2636,8 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
+
+
     }
 }
 
