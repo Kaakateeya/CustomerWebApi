@@ -70,7 +70,7 @@ namespace WebapiApplication.Interfaces
         ArrayList GetphotosofCustomer(string Custid, int? EmpID);
         ArrayList getCustomerPersonalMenu(long? CustID);
         string getDiscribeYour(string CustID, string AboutYourself, int? flag, string spName);
-
+        int getNoPhotoStatus(long custid);
     }
     public interface ICustomerPersonaldetailsUpdate
     {

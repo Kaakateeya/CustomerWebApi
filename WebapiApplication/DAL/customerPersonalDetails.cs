@@ -1079,5 +1079,44 @@ namespace WebapiApplication.DAL
             return iresult;
         }
 
+
+        public int getNoPhotoStatusDal(long custid, string spName)
+        {
+            int iStatus = 0;
+
+            SqlParameter[] parm = new SqlParameter[2];
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            SqlDataReader reader;
+            try
+            {
+                parm[0] = new SqlParameter("@custid", SqlDbType.BigInt);
+                parm[0].Value = custid;
+                parm[1] = new SqlParameter("@intStatusID", SqlDbType.Int);
+                parm[1].Direction = ParameterDirection.Output;
+                reader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+                if (string.Compare(parm[1].Value.ToString(), System.DBNull.Value.ToString()) == 0)
+                {
+                    iStatus = 0;
+                }
+                else
+                {
+                    iStatus = Convert.ToInt32(parm[1].Value);
+                }
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), custid, "GetPhotoStatusForUpload", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return iStatus;
+        }
     }
 }
