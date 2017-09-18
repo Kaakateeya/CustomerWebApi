@@ -2545,8 +2545,6 @@ namespace WebapiApplication.DAL
             return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
         }
 
-
-
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID, string spName)
         {
             DataSet dset = new DataSet();
@@ -2605,6 +2603,7 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
+
         public ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID, string spName)
         {
             DataSet dset = new DataSet();
@@ -2637,6 +2636,8 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
+
+
     }
 }
 
