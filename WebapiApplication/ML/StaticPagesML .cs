@@ -209,7 +209,14 @@ namespace WebapiApplication.ML
         public int Statusint { get; set; }
         public int CustID { get; set; }
     }
-
+    public class SendServiceProfileIds
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string ProfileID { get; set; }
+        public int? ProfileStatusID { get; set; }
+        public long? CustID { get; set; }
+    }
     public class KaakateeyaBranchesML
     {
         public string BranchAddress { set; get; }

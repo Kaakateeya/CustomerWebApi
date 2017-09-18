@@ -135,6 +135,14 @@ namespace WebapiApplication.ML
         public string PrimaryEmail { get; set; }
 
         public string AccRejFlag { get; set; }
+
+        public string FromProfileName { get; set; }
+
+        public string FromProfileLastName { get; set; }
+
+        public string TOProfileLastName { get; set; }
+
+        public string ToProfileName { get; set; }
     }
     public class UpdateExpressIntrestStatus
     {
