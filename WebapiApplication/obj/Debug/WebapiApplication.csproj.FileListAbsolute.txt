@@ -124,3 +124,4 @@ D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.pdb
 D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.xml
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.xml
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.xml
+D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
