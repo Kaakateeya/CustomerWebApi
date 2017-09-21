@@ -572,5 +572,140 @@ namespace WebapiApplication.DAL
             }
             return listSearch;
         }
+
+        public List<generalAdvanceSearchResult> CustomerGeneralandAdvancedSearchWithoutLoginDal(PrimaryInformationMl search, string spName)
+        {
+            List<generalAdvanceSearchResult> listSearch = new List<generalAdvanceSearchResult>();
+            SqlDataReader reader;
+            SqlParameter[] parm = new SqlParameter[30];
+            Int64? intNull = null;
+            int? iNull = null;
+            string strNP = "Not specified";
+            SqlConnection con = null;
+            try
+            {
+                parm[0] = new SqlParameter("@i_CustId", SqlDbType.Int);
+                parm[0].Value = search.intCusID;
+                parm[1] = new SqlParameter("@i_GenderId", SqlDbType.Int);
+                parm[1].Value = search.intGender;
+                parm[2] = new SqlParameter("@i_FromAge", SqlDbType.Int);
+                parm[2].Value = search.FromAge;
+                parm[3] = new SqlParameter("@i_ToAge", SqlDbType.Int);
+                parm[3].Value = search.ToAge;
+                parm[4] = new SqlParameter("@i_FromHeight", SqlDbType.Int);
+                parm[4].Value = search.iFromHeight;
+                parm[5] = new SqlParameter("@i_ToHeight", SqlDbType.Int);
+                parm[5].Value = search.iToHeight;
+                parm[6] = new SqlParameter("@i_ReligionId", SqlDbType.Int);
+                parm[6].Value = search.intReligionID;
+                parm[7] = new SqlParameter("@tbl_Caste", SqlDbType.Structured);
+                parm[7].Value = Commonclass.returndt(search.Caste, search.dtCateIDs, "Caste", "CastIDs2");
+                parm[8] = new SqlParameter("@tbl_Country", SqlDbType.Structured);
+                parm[8].Value = Commonclass.returndt(search.Country, search.dtCountrylivingin, "Countrylivingin", "CountrylivinginIDs4");
+                parm[9] = new SqlParameter("@tbl_Education", SqlDbType.Structured);
+                parm[9].Value = Commonclass.returndt(search.Education, search.dtEducationGroup, "EducationGroup", "EducationGroupIDs8");
+                parm[10] = new SqlParameter("@tbl_ProfessionGroup", SqlDbType.Structured);
+                parm[10].Value = Commonclass.returndt(search.Professiongroup, search.dtProfessionGroup, "ProfessionGroup", "ProfessionGroupIDs09");
+                parm[11] = new SqlParameter("@tbl_MotherTongue", SqlDbType.Structured);
+                parm[11].Value = Commonclass.returndt(search.MotherTongue, search.dtMothertongue, "Mothertongue", "MothertongueIDs1");
+                parm[12] = new SqlParameter("@i_Photoflag", SqlDbType.Int);
+                parm[12].Value = search.intPhotoCount;
+                parm[13] = new SqlParameter("@i_StartIndex", SqlDbType.Int);
+                parm[13].Value = search.StartIndex;
+                parm[14] = new SqlParameter("@i_EndIndex", SqlDbType.Int);
+                parm[14].Value = search.EndIndex;
+                parm[15] = new SqlParameter("@i_Registrationdays", SqlDbType.Int);
+                parm[15].Value = search.i_Registrationdays;
+                parm[16] = new SqlParameter("@tbl_MaritalStatus", SqlDbType.Structured);
+                parm[16].Value = Commonclass.returndt(search.Maritalstatus, search.dtMaritalstatus, "Maritalstatus", "MaritalstatusIDs0");
+                parm[17] = new SqlParameter("@i_PhysicalStatus", SqlDbType.Int);
+                parm[17].Value = search.iPhysicalstatus;
+                parm[18] = new SqlParameter("@tbl_Complexion", SqlDbType.Structured);
+                parm[18].Value = Commonclass.returndt(search.Complexion, search.dtComplexion, "Complexion", "ComplexionIDs3");
+                parm[19] = new SqlParameter("@tbl_EducationCategory", SqlDbType.Structured);
+                parm[19].Value = Commonclass.returndt(search.Educationcategory, search.dtEduactionCat, "Educationcategory", "EducationcategoryIDs7");
+                parm[20] = new SqlParameter("@tbl_LivingState", SqlDbType.Structured);
+                parm[20].Value = Commonclass.returndt(search.State, search.dtStateLivingIn, "Statelivingin", "StatelivinginIDs5");
+                parm[21] = new SqlParameter("@tbl_VisaStatus", SqlDbType.Structured);
+                parm[21].Value = Commonclass.returndt(search.Visastatus, search.dtVisaStatus, "VisaStatus", "VisaStatusIDs6");
+                parm[22] = new SqlParameter("@i_FromAnualIncome", SqlDbType.BigInt);
+                parm[22].Value = search.iFromSal;
+                parm[23] = new SqlParameter("@i_ToAnualIncome", SqlDbType.BigInt);
+                parm[23].Value = search.iToSal;
+                parm[24] = new SqlParameter("@tbl_StarLanguage", SqlDbType.Structured);
+                parm[24].Value = Commonclass.returndatatable(search.iStarLanguage, search.dtStarLang, "StarLanguageIDs", "StarLanguageIDs11");
+                parm[25] = new SqlParameter("@tbl_Star", SqlDbType.Structured);
+                parm[25].Value = Commonclass.returndt(search.Stars, search.dtStar, "Star", "Stars");
+                parm[26] = new SqlParameter("@b_isManglik", SqlDbType.Bit);
+                parm[26].Value = search.iManglinkKujaDosham;
+                parm[27] = new SqlParameter("@i_IsDiet", SqlDbType.Int);
+                parm[27].Value = search.iDiet;
+                parm[28] = new SqlParameter("@i_SalaryIncurrency", SqlDbType.Int);
+                parm[28].Value = search.iAnnualincome;
+
+                using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["KakConnection"].ToString()))
+                {
+                    con.Open();
+                    var sqlCommand = con.CreateCommand();
+                    sqlCommand.CommandTimeout = 120;
+
+                    reader = SQLHelper.ExecuteReader(con, CommandType.StoredProcedure, spName, parm);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            generalAdvanceSearchResult Mobjresult = new generalAdvanceSearchResult();
+                            {
+                                Mobjresult.intCusID = (reader["Cust_Id"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_Id")) : intNull;
+                                Mobjresult.NAME = (reader["NAME"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("NAME")) : strNP;
+                                Mobjresult.ProfileID = (reader["ProfileID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
+                                Mobjresult.Age = (reader["Age"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Age")) : strNP;
+                                Mobjresult.Height = (reader["Height"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Height")) : strNP;
+                                Mobjresult.ReligionName = (reader["ReligionName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ReligionName")) : strNP;
+                                Mobjresult.Caste = (reader["Caste"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Caste")) : strNP;
+                                Mobjresult.Star = (reader["Star"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Star")) : strNP;
+                                Mobjresult.Location = (reader["Location"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Location")) : strNP;
+                                Mobjresult.Education = (reader["Education"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Education")) : strNP;
+                                Mobjresult.Profession = (reader["Profession"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Profession")) : strNP;
+                                Mobjresult.TotalRows = (reader["TotalRows"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("TotalRows")) : 0;
+                                Mobjresult.TotalPages = (reader["Totalpages"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Totalpages")) : 0;
+                                Mobjresult.Photo = (reader["Photo"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Photo")) : null;
+                                Mobjresult.PhotoCount = (reader["PhotoCount"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("PhotoCount")) : 0;
+                                Mobjresult.placeofbirth = (reader["placeofbirth"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("placeofbirth")) : null;
+                                Mobjresult.GenderID = (reader["GenderID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : 0;
+                                Mobjresult.PhotoPassword = (reader["PhotoPassword"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoPassword")) : null;
+                                Mobjresult.MaritualStatus = (reader["MaritualStatus"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MaritualStatus")) : strNP;
+                                Mobjresult.MaritalStatusId = (reader["MaritalStatusId"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MaritalStatusId")) : null;
+                                Mobjresult.IsPaidMember = (reader["IsPaidMember"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("IsPaidMember")) : iNull;
+                                Mobjresult.mybookmarked = (reader["mybookmarked"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("mybookmarked")) : iNull;
+                                Mobjresult.ExpressFlag = (reader["ExpressFlag"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ExpressFlag")) : iNull;
+                                Mobjresult.ignode = (reader["ignode"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ignode")) : iNull;
+                                Mobjresult.LogId = (reader["LogId"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("LogId")) : intNull;
+                                Mobjresult.LogID = (reader["LogId"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("LogId")) : intNull;
+                                Mobjresult.Photo = (reader["PhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoPath")) : string.Empty;
+                                Mobjresult.Photofullpath = (reader["FullPhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FullPhotoPath")) : string.Empty;
+                                Mobjresult.DistName = (reader["DistName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("DistName")) : string.Empty;
+                                Mobjresult.strFirstName = (reader["FirstName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FirstName")) : string.Empty;
+
+                            }
+
+                            listSearch.Add(Mobjresult);
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), search.intCusID, "GeneralandAdvancedSearch", null);
+            }
+            finally
+            {
+                con.Close();
+                SqlConnection.ClearPool(con);
+                SqlConnection.ClearAllPools();
+            }
+            return listSearch;
+        }
     }
 }

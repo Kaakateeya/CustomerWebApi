@@ -42,5 +42,9 @@ namespace WebapiApplication.Api
         }
 
         public List<SearchResultSaveEditML> getSearchResultSaveEdit(Int64? Cust_ID, string SaveSearchName, int? iEditDelete) { return this.ICustomerSearch.SearchResultSaveEdit(Cust_ID, SaveSearchName, iEditDelete); }
+
+        public List<generalAdvanceSearchResult> CustomerGeneralandAdvancedSearchWithoutLogin(PrimaryInformationMl search) { return this.ICustomerSearch.CustomerGeneralandAdvancedSearchWithoutLogin(search); }
+
+
     }
 }

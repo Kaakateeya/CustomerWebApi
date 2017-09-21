@@ -22,5 +22,7 @@ namespace WebapiApplication.Implement
         public List<generalAdvanceSearchResult> CustomerAdvanceGeneralandSavedSearch(PrimaryInformationMl primaryInfo, DataTable dtTableValues) { return new CustomerSearch().CustomerGeneralandAdvancedSavedSearch(primaryInfo, dtTableValues, "[dbo].[usp_AdvSearch_Customer]", "@dtAdvsearch", "[dbo].[usp_Customers_GeneralSearch_Perfor]"); }
         public List<QuicksearchResultML> CustomerProfileIDSavedSearch(ProfileIDSearch primaryInfo, DataTable dtTableValues) { return new CustomerSearch().CustomerProfileIDSavedSearch(primaryInfo, dtTableValues, "[dbo].[usp_ProfileIDsearch_Customer]", "@dtProfileIDsearch", "[dbo].[usp_Customers_ProfileSearch_Profor]"); }
         public List<SearchResultSaveEditML> SearchResultSaveEdit(long? Cust_ID, string SaveSearchName, int? iEditDelete) { return new CustomerSearch().SearchResultSaveEdit(Cust_ID, SaveSearchName, iEditDelete, "[dbo].[usp_SearchResultSaveEdit]"); }
+
+        public List<generalAdvanceSearchResult> CustomerGeneralandAdvancedSearchWithoutLogin(PrimaryInformationMl search) { return new CustomerSearch().CustomerGeneralandAdvancedSearchWithoutLoginDal(search, "[dbo].[usp_Customers_GeneralSearch_BeforeLogin]"); }
     }
 }
