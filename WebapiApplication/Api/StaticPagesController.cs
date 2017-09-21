@@ -97,6 +97,10 @@ namespace WebapiApplication.Api
 
         public ArrayList getCustomerBindings() { return this.ISuccessStories.getCustomerBindings(); }
 
+        public string getencryptedProfileID(string ProfileID) { return Commonclass.profileidEncrypt(ProfileID); }
+
+        public string getdecryptedProfileID(string ProfileID) { return Commonclass.Decrypt_new(ProfileID); }
+
     }
 }
 
