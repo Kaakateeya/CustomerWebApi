@@ -612,6 +612,12 @@ namespace WebapiApplication.ML
         public int? PhotoStatus { get; set; }
     }
 
+    public class PhotosendMail
+    {
+       public int? GenderID { set; get; }
+       public int? Status { set; get; }
+    }
+
     //public class UploadInsertSelect
     //{
 

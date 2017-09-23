@@ -1080,7 +1080,7 @@ namespace WebapiApplication.DAL
         }
 
 
-        public int getNoPhotoStatusDal(long custid, string spName)
+        public ArrayList getNoPhotoStatusDal(long custid, string spName)
         {
             int iStatus = 0;
 
@@ -1088,8 +1088,10 @@ namespace WebapiApplication.DAL
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
-
+            ArrayList arrayList = new ArrayList();
             SqlDataReader reader;
+            PhotosendMail Mail = null;
+            int? int32 = null;
             try
             {
                 parm[0] = new SqlParameter("@custid", SqlDbType.BigInt);
@@ -1097,14 +1099,27 @@ namespace WebapiApplication.DAL
                 parm[1] = new SqlParameter("@intStatusID", SqlDbType.Int);
                 parm[1].Direction = ParameterDirection.Output;
                 reader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
-                if (string.Compare(parm[1].Value.ToString(), System.DBNull.Value.ToString()) == 0)
+                if (reader.HasRows)
                 {
-                    iStatus = 0;
+                    if (reader.Read())
+                    {
+                        Mail = new PhotosendMail();
+                        Mail.GenderID = reader["GenderID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : int32;
+                        Mail.Status = reader["Status"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Status")) : int32;
+                       
+                    }
                 }
-                else
-                {
-                    iStatus = Convert.ToInt32(parm[1].Value);
-                }
+                arrayList.Add(Mail);
+                reader.Close();
+
+                //if (string.Compare(parm[1].Value.ToString(), System.DBNull.Value.ToString()) == 0)
+                //{
+                //    iStatus = 0;
+                //}
+                //else
+                //{
+                //    iStatus = Convert.ToInt32(parm[1].Value);
+                //}
             }
             catch (Exception EX)
             {
@@ -1116,7 +1131,9 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearPool(connection);
                 SqlConnection.ClearAllPools();
             }
-            return iStatus;
+            return arrayList;
         }
+
+
     }
 }

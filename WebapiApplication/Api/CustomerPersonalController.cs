@@ -27,7 +27,7 @@ namespace WebapiApplication.Api
         public string getEducationProfession_AboutYourself(string CustID, string AboutYourself, int? flag) { return this.ICustomerpersonal.getDiscribeYour(CustID, AboutYourself, flag, "[dbo].[usp_Education_Profession_AboutYourself]"); }
         public string getParents_AboutMyFamily(string CustID, string AboutYourself, int? flag) { return this.ICustomerpersonal.getDiscribeYour(CustID, AboutYourself, flag, "[dbo].[usp_Parents_AboutMyFamily]"); }
         public string getPartnerpreference_DiscribeYourPartner(string CustID, string AboutYourself, int? flag) { return this.ICustomerpersonal.getDiscribeYour(CustID, AboutYourself, flag, "[dbo].[usp_Partnerpreference_DiscribeYourPartner]"); }
-        public int getNoPhotoStatus(long custid) { return this.ICustomerpersonal.getNoPhotoStatus(custid); }
+        public ArrayList getNoPhotoStatus(long custid) { return this.ICustomerpersonal.getNoPhotoStatus(custid); }
 
 
     }

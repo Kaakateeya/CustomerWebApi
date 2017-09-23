@@ -31,8 +31,9 @@ namespace WebapiApplication.Implement
         public ArrayList GetphotosofCustomer(string Custid, int? EmpID) { return customerdetails.DGetphotosofCustomer(Custid, EmpID, "[dbo].[Usp_GetphotosofCustomer]"); }
         public ArrayList getCustomerPersonalMenu(long? CustID) { return customerdetails.DgetAstroDetailsDisplay(CustID, "[dbo].[usp_CustomerPersonalMenu]"); }
         public string getDiscribeYour(string CustID, string AboutYourself, int? flag, string spName) { return customerdetails.DgetDiscribeYour(CustID, AboutYourself, flag, spName); }
-        public int getNoPhotoStatus(long custid) { return customerdetails.getNoPhotoStatusDal(custid, "GetPhotoStatusForUpload"); }
+        public ArrayList getNoPhotoStatus(long custid) { return customerdetails.getNoPhotoStatusDal(custid, "GetPhotoStatusForUpload"); }
     }
+
 
     public class ImpCustomerPersonaldetailsUpdate : ICustomerPersonaldetailsUpdate
     {

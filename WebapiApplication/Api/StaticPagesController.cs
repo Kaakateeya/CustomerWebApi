@@ -101,6 +101,9 @@ namespace WebapiApplication.Api
 
         public string getdecryptedProfileID(string ProfileID) { return Commonclass.Decrypt_new(ProfileID); }
 
+
+        public ArrayList getfromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return ISuccessStories.fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid); }
+
     }
 }
 

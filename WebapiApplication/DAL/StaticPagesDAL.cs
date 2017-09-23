@@ -2476,7 +2476,8 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearAllPools();
             }
 
-            return Commonclass.convertdataTableToArrayListTable(dtAppLanding);
+            return Commonclass.convertdataTableToArrayList(dtAppLanding);
+
         }
 
 
@@ -2559,6 +2560,7 @@ namespace WebapiApplication.DAL
         /// <returns></returns>
         /// 
 
+
         public ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string spName)
         {
 
@@ -2596,7 +2598,11 @@ namespace WebapiApplication.DAL
             }
 
             return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
+
         }
+
+
+
 
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID, string spName)
         {
@@ -2630,6 +2636,8 @@ namespace WebapiApplication.DAL
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
+
+
         public ArrayList getCustomerBindingsDal(string spName)
         {
             DataSet dset = new DataSet();
@@ -2691,6 +2699,39 @@ namespace WebapiApplication.DAL
         }
 
 
+
+        public ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid, string spName)
+        {
+            DataSet dset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            try
+            {
+                SqlParameter[] parm = new SqlParameter[5];
+                parm[0] = new SqlParameter("@FromProfileid", SqlDbType.VarChar);
+                parm[0].Value = Fromprofileid;
+                parm[1] = new SqlParameter("@ToProfileid ", SqlDbType.VarChar);
+                parm[1].Value = Toprofileid;
+                parm[2] = new SqlParameter("@EmpID", SqlDbType.Int);
+                parm[2].Value = Empid;
+                dset = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
+            }
+            catch (Exception ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(ex.Message), Convert.ToInt32(Fromprofileid), "usp_GetExpressInterestStatus", null);
+            }
+            finally
+            {
+                connection.Close();
+                SqlConnection.ClearPool(connection);
+                SqlConnection.ClearAllPools();
+            }
+            return Commonclass.convertdataTableToArrayList(dset);
+        }
     }
 }
 
