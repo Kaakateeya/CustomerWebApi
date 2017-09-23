@@ -2730,7 +2730,7 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearPool(connection);
                 SqlConnection.ClearAllPools();
             }
-            return Commonclass.convertdataTableToArrayList(dset);
+            return Commonclass.convertdataTableToArrayListTable(dset);
         }
     }
 }
