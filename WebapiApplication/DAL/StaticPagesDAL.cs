@@ -2476,7 +2476,7 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearAllPools();
             }
 
-            return Commonclass.convertdataTableToArrayList(dtAppLanding);
+            return Commonclass.convertdataTableToArrayListTable(dtAppLanding);
 
         }
 
