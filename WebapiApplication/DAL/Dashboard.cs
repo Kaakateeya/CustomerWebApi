@@ -122,7 +122,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
-                            PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "Partner");
+                            PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "Partner", spName);
                             PartnerLi.Add(Partnercls);
                         }
 
@@ -175,7 +175,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
-                            PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "Partner");
+                            PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "Partner", spName);
                             PartnerLi.Add(Partnercls);
                         }
                         land.PartnerProfilesnew = PartnerLi;
@@ -229,7 +229,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
-                            PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "ExpressInterest");
+                            PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "ExpressInterest", "[dbo].[usp_select_customerDashboard_ExpressInterest]");
                             PartnerLi.Add(Partnercls);
                         }
                     }
@@ -249,7 +249,7 @@ namespace WebapiApplication.DAL
             return PartnerLi;
         }
 
-        public PartnerProfilesLatest ReturnPartnerProfilesClass(SqlDataReader reader, string Type)
+        public PartnerProfilesLatest ReturnPartnerProfilesClass(SqlDataReader reader, string Type,string spname)
         {
             int? inull = null;
             bool? bnull = null;
@@ -327,7 +327,7 @@ namespace WebapiApplication.DAL
             }
             catch (Exception ex)
             {
-                Commonclass.ApplicationErrorLog("[dbo].[usp_select_customerDashboard_ExpressInterest]", Convert.ToString(ex.Message), null, "ReturnPartnerProfilesClass", null);
+                Commonclass.ApplicationErrorLog(spname, Convert.ToString(ex.Message), null, "ReturnPartnerProfilesClass", null);
             }
             finally
             {
