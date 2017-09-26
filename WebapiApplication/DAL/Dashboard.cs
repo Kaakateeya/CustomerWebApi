@@ -122,6 +122,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
+                           
                             PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "Partner", spName);
                             PartnerLi.Add(Partnercls);
                         }
