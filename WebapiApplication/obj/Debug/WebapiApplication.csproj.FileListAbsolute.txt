@@ -112,4 +112,3 @@ D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membersh
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
-D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache

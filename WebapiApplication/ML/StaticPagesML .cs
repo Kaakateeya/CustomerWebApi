@@ -217,6 +217,10 @@ namespace WebapiApplication.ML
         public int? ProfileStatusID { get; set; }
         public long? CustID { get; set; }
         public int? GenderID { get; set; }
+
+        public int? IsConfidential { get; set; }
+
+        public int? HighConfendential { get; set; }
     }
     public class KaakateeyaBranchesML
     {

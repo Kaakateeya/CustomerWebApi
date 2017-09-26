@@ -34,11 +34,11 @@
                 // alert(5);
 
                 $.ajax({
-                    url: 'http://localhost:63006/Api/DashboardRequest/DashboardRequestget',
+                    url: 'http://localhost:63006/Api/DashboardRequest/getcustDashboardPartnerProfiles',
                     type: 'GET',
                     crossDomain: true,
                     // data: { TypeOfReport: 'SP', id: 97893, pagefrom: 19, pageto: 27, DashboardType: "Paid" },
-                    data: { id: '109829', TypeOfReport: 'C', pagefrom: 1, pageto: 9, DashboardType: "UnPaid" },
+                    data: { id: '113461', TypeOfReport: 'C', pagefrom: 1, pageto: 9, DashboardType: "Paid" },
                     contentType: 'application/json',
                     success: function (data, textStatus, xhr) {
                         alert(JSON.stringify(data));

@@ -139,10 +139,11 @@ namespace WebapiApplication.ML
         public string FromProfileName { get; set; }
 
         public string FromProfileLastName { get; set; }
-
-
-
+        
         public int? Fromgender { get; set; }
+
+        public int? IsConfidential { get; set; }
+        public int? HighConfendential { get; set; }
     }
     public class UpdateExpressIntrestStatus
     {
