@@ -42,7 +42,7 @@ namespace WebapiApplication.Implement
         public DashboardClass custDashboardPartnerProfiles(int CustID, string TypeOfReport, int pagefrom, int pageto, string DashboardType)
         {
             if (DashboardType == "UnPaid") { return dashboard.GetPartnerProfilesDal(CustID, TypeOfReport, pagefrom, pageto, "[dbo].[usp_select_CustomerDashBoard_PartnerPrefe]"); }
-            else { return dashboard.GetPartnerProfilesDal(CustID, TypeOfReport, pagefrom, pageto, "[dbo].[usp_select_CustomerDashBoard_Exact]"); }
+            else { return dashboard.GetPartnerProfilesDal(CustID, TypeOfReport, pagefrom, pageto, "[dbo].[usp_select_CustomerDashBoard_Exact_Web]"); }
         }
     }
     public class ImpEmailMobileVerf : IEmailMobileVerf { public VerifiedContactInformationML DgetMobileEmailVerification(long? CustID) { return new VerifiedContactInformationDAL().DgetMobileEmailVerification(CustID); } }
