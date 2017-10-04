@@ -1022,7 +1022,7 @@ namespace WebapiApplication.DAL
                                  + strTime + "</TIME24HR><CORR>1</CORR><PLACE>" + li[0].CityName + "</PLACE><LONG>" + li[0].Longitude
                                  + "</LONG><LAT>" + li[0].Latitude +
                                  "</LAT><LONGDIR>E</LONGDIR><LATDIR>N</LATDIR><TZONE>05.30</TZONE><TZONEDIR>E</TZONEDIR></BIRTHDATA><OPTIONS>"
-                                 + "<CHARTSTYLE>0</CHARTSTYLE><LANGUAGE>ENG</LANGUAGE><REPTYPE>LS-SP</REPTYPE><REPDMN>kaakateeya</REPDMN><HSETTINGS>"
+                                 + "<CHARTSTYLE>0</CHARTSTYLE><LANGUAGE>ENG</LANGUAGE><REPTYPE>LS-SP</REPTYPE><REPDMN>KKSTAGING</REPDMN><HSETTINGS>"
                                  + "<AYANAMSA>1</AYANAMSA><DASASYSTEM>1</DASASYSTEM><GULIKATYPE>1</GULIKATYPE><PARYANTHARSTART>0</PARYANTHARSTART>"
                                  + "<PARYANTHAREND>25</PARYANTHAREND><FAVMARPERIOD>50</FAVMARPERIOD><BHAVABALAMETHOD>1</BHAVABALAMETHOD><ADVANCEDOPTION1>"
                                  + "0</ADVANCEDOPTION1><ADVANCEDOPTION2>0</ADVANCEDOPTION2><ADVANCEDOPTION3>0</ADVANCEDOPTION3><ADVANCEDOPTION4>0</ADVANCEDOPTION4>"
@@ -1032,8 +1032,7 @@ namespace WebapiApplication.DAL
                         // path = "../../Images/HoroscopeImages/" + customerid + "_HaroscopeImage/" + customerid + "_HaroscopeImage.html";
                         path = ((string.IsNullOrEmpty(EmpIDQueryString) ? "../../Images" : "../Images")) + "/HoroscopeImages/" + customerid + "_HaroscopeImage/" + customerid + "_HaroscopeImage.html";
 
-                        if (EmpIDQueryString != null)
-                        {
+                      
                             AstroUploadDelete astroupdate = new AstroUploadDelete();
                             astroupdate.Cust_ID = customerid;
                             astroupdate.Horopath = path;
@@ -1043,7 +1042,7 @@ namespace WebapiApplication.DAL
                             astroupdate.IsActive = true;
                             astroupdate.i_flag = 1;
                             AstroDetailsUpdateDelete(astroupdate, "[dbo].[usp_AstroUpload_Delete]");
-                        }
+                        
 
                         string strCustDtryName = customerid + "_HaroscopeImage";
                         string FileName = customerid + "_HaroscopeImage.html";
