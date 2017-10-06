@@ -83,8 +83,11 @@ namespace WebapiApplication.Api
         /// <returns></returns>
 
 
-        public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
+       // public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
 
+
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
+       
         public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
         {
             if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }

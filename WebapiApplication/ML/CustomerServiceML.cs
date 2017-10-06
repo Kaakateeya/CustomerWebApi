@@ -139,7 +139,7 @@ namespace WebapiApplication.ML
         public string FromProfileName { get; set; }
 
         public string FromProfileLastName { get; set; }
-        
+
         public int? Fromgender { get; set; }
 
         public int? IsConfidential { get; set; }
@@ -155,5 +155,107 @@ namespace WebapiApplication.ML
         public string spName { get; set; }
     }
 
+    public class CustomerLandingOrderResponse
+    {
 
+        public List<LandingOrderStatus> LandingOrderStatus { get; set; }
+        // public List<LandingOrderStatusResult> LandingOrderStatusResult { get; set; }
+        public List<PhotoStatus> PhotoStatus { get; set; }
+        public List<PaymentMembership> PaymentMembership { get; set; }
+        public List<Notifications> Notifications { get; set; }
+        public List<ProfileOwner> ProfileOwner { get; set; }
+
+    }
+
+    public class PhotoStatus
+    {
+        public string ProfilePic { get; set; }
+    }
+    public class PaymentMembership
+    {
+        public string MembershipName { get; set; }
+        public int? MemberShipTypeID { get; set; }
+        public int? MemberShipDuration { get; set; }
+        public int? AllottedServicePoints { get; set; }
+        public int? MembershipAmount { get; set; }
+        public string AccessFeatue { get; set; }
+        public string Ppluspath { get; set; }
+        public string Ppath { get; set; }
+    }
+    public class Notifications
+    {
+        public int? Cust_NotificationID { get; set; }
+        public int? CategoryID { get; set; }
+        public int? ToCust_Id { get; set; }
+        public string ActionType { get; set; }
+        public string ActionDate { get; set; }
+
+
+        public int? Cust_ID { get; set; }
+        public int? LogID { get; set; }
+        public int? unpaidnotify { get; set; }
+        public int? TotalRows { get; set; }
+        public int? Totalpages { get; set; }
+        public string ProfilePic { set; get; }
+    }
+    public class ProfileOwner
+    {
+        public long? CustomerOwnerEmpID { get; set; }
+        public string CustomerOwnerName { get; set; }
+        public string CustomerMobile { get; set; }
+        public string CustomerLand { get; set; }
+        public string CustomerBranch { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CustomerOwnerFullName { get; set; }
+    }
+
+
+    public class LandingOrderStatus
+    {
+        public bool? PaidStatus { set; get; }
+        public bool? Notifications { set; get; }
+        public bool? ProfileOwner { set; get; }
+        public bool? PhtoStatus { set; get; }
+    }
+
+    public class LandingOrderStatusResult
+    {
+        //PhtoStatus
+        public string ProfilePic { get; set; }
+
+        //PaymentMembership
+        public string MembershipName { get; set; }
+        public int? MemberShipTypeID { get; set; }
+        public int? MemberShipDuration { get; set; }
+        public int? AllottedServicePoints { get; set; }
+        public int? MembershipAmount { get; set; }
+        public string AccessFeatue { get; set; }
+        public string Ppluspath { get; set; }
+        public string Ppath { get; set; }
+
+        // Notifications
+        public int? Cust_NotificationID { get; set; }
+        public int? CategoryID { get; set; }
+        public int? ToCust_Id { get; set; }
+        public string ActionType { get; set; }
+        public string ActionDate { get; set; }
+
+
+        public int? Cust_ID { get; set; }
+        public int? LogID { get; set; }
+        public int? unpaidnotify { get; set; }
+        public int? TotalRows { get; set; }
+        public int? Totalpages { get; set; }
+
+        // ProfileOwner
+        public long? CustomerOwnerEmpID { get; set; }
+        public string CustomerOwnerName { get; set; }
+        public string CustomerMobile { get; set; }
+        public string CustomerLand { get; set; }
+        public string CustomerBranch { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CustomerOwnerFullName { get; set; }
+
+
+    }
 }

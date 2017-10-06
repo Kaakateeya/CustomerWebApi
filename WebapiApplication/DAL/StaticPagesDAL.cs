@@ -2446,32 +2446,206 @@ namespace WebapiApplication.DAL
         /// <returns>Array List</returns>
         /// 
 
-        public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex, string spName)
+        //public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex, string spName)
+        //{
+        //    ArrayList arrayList = new ArrayList();
+        //    SqlConnection connection = new SqlConnection();
+        //    connection = SQLHelper.GetSQLConnection();
+        //    connection.Open();
+
+        //    DataSet dtAppLanding = new DataSet();
+        //    SqlDataAdapter daMobileLanding = new SqlDataAdapter();
+
+        //    try
+        //    {
+        //        SqlCommand cmd = new SqlCommand(spName, connection);
+
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@i_CustID", CustID);
+        //        cmd.Parameters.AddWithValue("@iStartindex", Startindex);
+        //        cmd.Parameters.AddWithValue("@iEndIndex", EndIndex);
+
+        //        daMobileLanding.SelectCommand = cmd;
+        //        daMobileLanding.Fill(dtAppLanding);
+
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //        SqlConnection.ClearPool(connection);
+        //        SqlConnection.ClearAllPools();
+        //    }
+
+        //    return Commonclass.convertdataTableToArrayListTable(dtAppLanding);
+
+        //}
+
+
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex, string spName)
         {
-            ArrayList arrayList = new ArrayList();
+
+            CustomerLandingOrderResponse MarketingTicketResponse = new CustomerLandingOrderResponse();
+
+            string strErrorMsg = string.Empty;
+            int? intnull = null;
+            long? intlongnull = null;
+            Int64? longnull = null;
+            bool? ibool = null;
+            SqlParameter[] parm = new SqlParameter[30];
+            SqlDataReader drReader = null;
+
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
 
-            DataSet dtAppLanding = new DataSet();
-            SqlDataAdapter daMobileLanding = new SqlDataAdapter();
+            string TableName = string.Empty;
 
             try
             {
-                SqlCommand cmd = new SqlCommand(spName, connection);
 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@i_CustID", CustID);
-                cmd.Parameters.AddWithValue("@iStartindex", Startindex);
-                cmd.Parameters.AddWithValue("@iEndIndex", EndIndex);
+                parm[1] = new SqlParameter("@i_CustID", SqlDbType.Int);
+                parm[1].Value = CustID;
 
-                daMobileLanding.SelectCommand = cmd;
-                daMobileLanding.Fill(dtAppLanding);
+                parm[2] = new SqlParameter("@iStartindex", SqlDbType.Int);
+                parm[2].Value = Startindex;
 
+                parm[3] = new SqlParameter("@iEndIndex", SqlDbType.Int);
+                parm[3].Value = EndIndex;
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                List<LandingOrderStatus> LandingOrderStatus = new List<LandingOrderStatus>();
+                List<LandingOrderStatusResult> LandingOrderStatusResult = new List<LandingOrderStatusResult>();
+
+
+                List<PhotoStatus> PhotoStatus = new List<PhotoStatus>();
+                List<PaymentMembership> PaymentMembership = new List<PaymentMembership>();
+                List<Notifications> Notifications = new List<Notifications>();
+                List<ProfileOwner> ProfileOwner = new List<ProfileOwner>();
+                
+
+
+
+                if (drReader.HasRows)
+                {
+
+                    while (drReader.Read())
+                    {
+
+                        LandingOrderStatus.Add(new LandingOrderStatus
+                        {
+
+                            PaidStatus = drReader["PaidStatus"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("PaidStatus")) : ibool,
+
+                            Notifications = drReader["Notifications"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("Notifications")) : ibool,
+
+                            ProfileOwner = drReader["ProfileOwner"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("ProfileOwner")) : ibool,
+
+                            PhtoStatus = drReader["PhtoStatus"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("PhtoStatus")) : ibool
+                        });
+
+                    }
+
+                    MarketingTicketResponse.LandingOrderStatus = LandingOrderStatus;
+
+                }
+
+                drReader.NextResult();
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        TableName = drReader["TableName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("TableName")) : string.Empty;
+                        switch (TableName)
+                        {
+                            case "PhotoStatus":
+                                PhotoStatus.Add(new PhotoStatus
+                                {
+
+                                    ProfilePic = drReader["ProfilePic"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ProfilePic")) : string.Empty
+
+                                });
+
+                                MarketingTicketResponse.PhotoStatus = PhotoStatus;
+                                break;
+
+                            case "PaymentMembership":
+                                PaymentMembership.Add(new PaymentMembership
+                                {
+
+                                    //PaymentMembership
+
+                                    MembershipName = drReader["MembershipName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("MembershipName")) : string.Empty,
+                                    MemberShipTypeID = drReader["MemberShipTypeID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipTypeID")) : intnull,
+                                    MemberShipDuration = drReader["MemberShipDuration"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipDuration")) : intnull,
+                                    AllottedServicePoints = drReader["AllottedServicePoints"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("AllottedServicePoints")) : intnull,
+                                    MembershipAmount = drReader["MembershipAmount"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MembershipAmount")) : intnull,
+                                    AccessFeatue = drReader["AccessFeatue"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("AccessFeatue")) : string.Empty,
+                                    Ppluspath = drReader["Ppluspath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppluspath")) : string.Empty,
+                                    Ppath = drReader["Ppath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppath")) : string.Empty
+
+
+                                });
+                                MarketingTicketResponse.PaymentMembership = PaymentMembership;
+                                break;
+
+                            case "Notifications":
+                                Notifications.Add(new Notifications
+                                {
+                                    //Notifications
+
+                                    Cust_NotificationID = drReader["Cust_NotificationID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Cust_NotificationID")) : intnull,
+                                    CategoryID = drReader["CategoryID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("CategoryID")) : intnull,
+                                    ToCust_Id = drReader["ToCust_Id"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("ToCust_Id")) : intnull,
+                                    ActionType = drReader["ActionType"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ActionType")) : string.Empty,
+                                    ActionDate = drReader["ActionDate"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ActionDate")) : string.Empty,
+                                    Cust_ID = drReader["Cust_ID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Cust_ID")) : intnull,
+                                    LogID = drReader["LogID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("LogID")) : intnull,
+
+                                    unpaidnotify = drReader["unpaidnotify"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("unpaidnotify")) : intnull,
+                                    TotalRows = drReader["TotalRows"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("TotalRows")) : intnull,
+                                    Totalpages = drReader["Totalpages"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Totalpages")) : intnull,
+                                    
+                                       ProfilePic = drReader["ProfilePic"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ProfilePic")) : string.Empty
+                                    
+                                });
+                                MarketingTicketResponse.Notifications = Notifications;
+                                break;
+
+                            case "ProfileOwner":
+                                ProfileOwner.Add(new ProfileOwner
+                                {
+
+                                    // ProfileOwner
+
+                                    CustomerOwnerEmpID = drReader["CustomerOwnerEmpID"] != DBNull.Value ? drReader.GetInt64(drReader.GetOrdinal("CustomerOwnerEmpID")) : intlongnull,
+                                    CustomerOwnerName = drReader["CustomerOwnerName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerOwnerName")) : string.Empty,
+                                    CustomerMobile = drReader["CustomerMobile"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerMobile")) : string.Empty,
+                                    CustomerLand = drReader["CustomerLand"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerLand")) : string.Empty,
+                                    CustomerBranch = drReader["CustomerBranch"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerBranch")) : string.Empty,
+                                    CustomerEmail = drReader["CustomerEmail"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerEmail")) : string.Empty,
+                                    CustomerOwnerFullName = drReader["CustomerOwnerFullName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerOwnerFullName")) : string.Empty
+
+                                });
+                                MarketingTicketResponse.ProfileOwner = ProfileOwner;
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+
+                  
+                }
             }
-            catch (Exception Ex)
+            catch (Exception EX)
             {
-                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), null, null, null);
             }
             finally
             {
@@ -2480,8 +2654,7 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearAllPools();
             }
 
-            return Commonclass.convertdataTableToArrayListTable(dtAppLanding);
-
+            return MarketingTicketResponse;
         }
 
 

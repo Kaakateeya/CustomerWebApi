@@ -43,7 +43,7 @@ namespace WebapiApplication.ML
         public string MObileverficationcode { get; set; }
 
         public string ProfilePic { get; set; }
-
+        public int? istatus { set; get; }
     }
     public class CustLoginMl
     {
