@@ -72,7 +72,7 @@ namespace WebapiApplication.Interfaces
         ArrayList GetphotosofCustomer(string Custid, int? EmpID);
         ArrayList getCustomerPersonalMenu(long? CustID);
         string getDiscribeYour(string CustID, string AboutYourself, int? flag, string spName);
-        int getNoPhotoStatus(long custid);
+        ArrayList getNoPhotoStatus(long custid);
     }
     public interface ICustomerPersonaldetailsUpdate
     {
@@ -148,8 +148,8 @@ namespace WebapiApplication.Interfaces
         ArrayList RegisteredBranchStatus(string StrCustID);
 
 
-        ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex);
-
+       // ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex);
+        CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex);
         ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj);
 
         ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex);
@@ -160,6 +160,8 @@ namespace WebapiApplication.Interfaces
 
         ArrayList getCustomerBindings();
         ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID);
+
+        ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid);
     }
 
     public interface IDependency
@@ -183,7 +185,8 @@ namespace WebapiApplication.Interfaces
     }
     public interface IMobileAppDev
     {
-        ArrayList getMobileAppLandingDisplay(int? CustID, int? PaidStatus, int? Startindex, int? EndIndex);
+        //ArrayList getMobileAppLandingDisplay(int? CustID, int? PaidStatus, int? Startindex, int? EndIndex);
+       
         ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj);
         ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex);
     }

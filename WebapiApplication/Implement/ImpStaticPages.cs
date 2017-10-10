@@ -61,7 +61,10 @@ namespace WebapiApplication.Implement
         public ArrayList RegisteredBranchStatus(string StrCustID) { return new StaticPagesDAL().RegisteredBranchStatus(StrCustID, "[dbo].[Usp_RegisteredBranchStatus]"); }
         public int ChangePassword(string StrCustID, string Password) { return new StaticPagesDAL().ChangePassword(StrCustID, Password, "[dbo].[Usp_CustChangePassword]"); }
 
-        public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().getMobileAppLandingDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingPage_MobileApp]"); }
+        //public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().getMobileAppLandingDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingPage_MobileApp]"); }
+
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().getMobileAppLandingDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingPage_MobileApp]"); }
+
 
         public ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj) { return new StaticPagesDAL().UpdateCustomerEmailMobileNumber_Verification(Mobj, "[dbo].[usp_EmailmobileUpdate_MobileApp]"); }
 
@@ -72,5 +75,8 @@ namespace WebapiApplication.Implement
         public ArrayList getCustomerBindings() { return new StaticPagesDAL().getCustomerBindingsDal("[dbo].[usp_customerbindings]"); }
 
         public ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepaidandunpaid(fromProfileID, toustid, EmpID, "[dbo].[GetViewProfile_FullDetails_RoleWise_PaidUnPaid]"); }
+
+
+        public ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return new StaticPagesDAL().fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid, "[dbo].[usp_GetExpressInterestStatus]"); }
     }
 }

@@ -1022,7 +1022,7 @@ namespace WebapiApplication.DAL
                                  + strTime + "</TIME24HR><CORR>1</CORR><PLACE>" + li[0].CityName + "</PLACE><LONG>" + li[0].Longitude
                                  + "</LONG><LAT>" + li[0].Latitude +
                                  "</LAT><LONGDIR>E</LONGDIR><LATDIR>N</LATDIR><TZONE>05.30</TZONE><TZONEDIR>E</TZONEDIR></BIRTHDATA><OPTIONS>"
-                                 + "<CHARTSTYLE>0</CHARTSTYLE><LANGUAGE>ENG</LANGUAGE><REPTYPE>LS-SP</REPTYPE><REPDMN>kaakateeya</REPDMN><HSETTINGS>"
+                                 + "<CHARTSTYLE>0</CHARTSTYLE><LANGUAGE>ENG</LANGUAGE><REPTYPE>LS-SP</REPTYPE><REPDMN>KKSTAGING</REPDMN><HSETTINGS>"
                                  + "<AYANAMSA>1</AYANAMSA><DASASYSTEM>1</DASASYSTEM><GULIKATYPE>1</GULIKATYPE><PARYANTHARSTART>0</PARYANTHARSTART>"
                                  + "<PARYANTHAREND>25</PARYANTHAREND><FAVMARPERIOD>50</FAVMARPERIOD><BHAVABALAMETHOD>1</BHAVABALAMETHOD><ADVANCEDOPTION1>"
                                  + "0</ADVANCEDOPTION1><ADVANCEDOPTION2>0</ADVANCEDOPTION2><ADVANCEDOPTION3>0</ADVANCEDOPTION3><ADVANCEDOPTION4>0</ADVANCEDOPTION4>"
@@ -1032,8 +1032,7 @@ namespace WebapiApplication.DAL
                         // path = "../../Images/HoroscopeImages/" + customerid + "_HaroscopeImage/" + customerid + "_HaroscopeImage.html";
                         path = ((string.IsNullOrEmpty(EmpIDQueryString) ? "../../Images" : "../Images")) + "/HoroscopeImages/" + customerid + "_HaroscopeImage/" + customerid + "_HaroscopeImage.html";
 
-                        if (EmpIDQueryString != null)
-                        {
+                      
                             AstroUploadDelete astroupdate = new AstroUploadDelete();
                             astroupdate.Cust_ID = customerid;
                             astroupdate.Horopath = path;
@@ -1043,7 +1042,7 @@ namespace WebapiApplication.DAL
                             astroupdate.IsActive = true;
                             astroupdate.i_flag = 1;
                             AstroDetailsUpdateDelete(astroupdate, "[dbo].[usp_AstroUpload_Delete]");
-                        }
+                        
 
                         string strCustDtryName = customerid + "_HaroscopeImage";
                         string FileName = customerid + "_HaroscopeImage.html";
@@ -1080,7 +1079,7 @@ namespace WebapiApplication.DAL
         }
 
 
-        public int getNoPhotoStatusDal(long custid, string spName)
+        public ArrayList getNoPhotoStatusDal(long custid, string spName)
         {
             int iStatus = 0;
 
@@ -1088,8 +1087,10 @@ namespace WebapiApplication.DAL
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
-
+            ArrayList arrayList = new ArrayList();
             SqlDataReader reader;
+            PhotosendMail Mail = null;
+            int? int32 = null;
             try
             {
                 parm[0] = new SqlParameter("@custid", SqlDbType.BigInt);
@@ -1097,14 +1098,27 @@ namespace WebapiApplication.DAL
                 parm[1] = new SqlParameter("@intStatusID", SqlDbType.Int);
                 parm[1].Direction = ParameterDirection.Output;
                 reader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
-                if (string.Compare(parm[1].Value.ToString(), System.DBNull.Value.ToString()) == 0)
+                if (reader.HasRows)
                 {
-                    iStatus = 0;
+                    if (reader.Read())
+                    {
+                        Mail = new PhotosendMail();
+                        Mail.GenderID = reader["GenderID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : int32;
+                        Mail.Status = reader["Status"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Status")) : int32;
+                       
+                    }
                 }
-                else
-                {
-                    iStatus = Convert.ToInt32(parm[1].Value);
-                }
+                arrayList.Add(Mail);
+                reader.Close();
+
+                //if (string.Compare(parm[1].Value.ToString(), System.DBNull.Value.ToString()) == 0)
+                //{
+                //    iStatus = 0;
+                //}
+                //else
+                //{
+                //    iStatus = Convert.ToInt32(parm[1].Value);
+                //}
             }
             catch (Exception EX)
             {
@@ -1116,7 +1130,9 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearPool(connection);
                 SqlConnection.ClearAllPools();
             }
-            return iStatus;
+            return arrayList;
         }
+
+
     }
 }

@@ -83,8 +83,11 @@ namespace WebapiApplication.Api
         /// <returns></returns>
 
 
-        public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
+       // public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
 
+
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
+       
         public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
         {
             if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
@@ -100,6 +103,9 @@ namespace WebapiApplication.Api
         public string getencryptedProfileID(string ProfileID) { return Commonclass.profileidEncrypt(ProfileID); }
 
         public string getdecryptedProfileID(string ProfileID) { return Commonclass.Decrypt_new(ProfileID); }
+
+
+        public ArrayList getfromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return ISuccessStories.fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid); }
 
     }
 }

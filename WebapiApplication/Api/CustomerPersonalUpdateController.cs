@@ -147,6 +147,7 @@ namespace WebapiApplication.Api
             customerpersonaldetails.dtTableValues = Commonclass.returnListDatatable(PersonaldetailsUDTables.dtcreateMotherSisterDetail(), lsteditMS);
             return this.ICustomerpersonalupdate.CustomerMotherSisterUpdatedetails(customerpersonaldetails);
         }
+
         public int CustomerReferencedetailsUpdatedetails([FromBody]JObject CgetDetails)
         {
             TeditReference editReference = CgetDetails["GetDetails"].ToObject<TeditReference>();
@@ -168,10 +169,13 @@ namespace WebapiApplication.Api
             return this.ICustomerpersonalupdate.Savephotosofcustomer(customerpersonaldetails);
         }
 
+
         public int getPhotoPassword([FromUri]Int64? CustID, [FromUri]int? ipassword) { return this.ICustomerpersonalupdate.PhotoPassword(CustID, ipassword); }
         public int AstroDetailsUpdateDelete([FromBody]AstroUploadDelete astroupdate) { return this.ICustomerpersonalupdate.AstroDetailsUpdateDelete(astroupdate); }
         public HoroGeneration getGenerateHoroscorpe(int? customerid, string EmpIDQueryString, int? intDay, int? intMonth, int? intYear, int? CityID) { return this.ICustomerpersonalupdate.GenerateHoroscorpe(customerid, EmpIDQueryString, intDay, intMonth, intYear, CityID); }
         public int getAstroGenerationS3Update(string Path, string KeyName) { return this.ICustomerpersonalupdate.AstroGenerationS3Update(Path, KeyName); }
+
+
 
     }
 }
