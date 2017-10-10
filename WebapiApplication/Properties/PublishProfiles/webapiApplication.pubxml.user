@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\customerBuild_files\21_12_2017_encrypt_decryptApi</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\customerBuild_files\21_12_2017_MobileApp12</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_WebReferences/SMSC_CLIENT/configuration.svcinfo">
@@ -118,7 +118,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2016 12:02:45</publishTime>
     </File>
     <File Include="bin/WebapiApplication.dll">
-      <publishTime>09/21/2017 18:25:29</publishTime>
+      <publishTime>09/27/2017 12:12:27</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>09/24/2016 12:02:45</publishTime>
