@@ -360,7 +360,8 @@ namespace WebapiApplication.DAL
 
             string strpath = keyName.Replace("/", "//");
 
-            filePath = "D://CustomerAngularSite//Application//" + strpath;
+            // filePath = "D://CustomerAngularSite//Application//" + strpath;
+            filePath = "C://Project//Application//" + strpath;
 
             //filePath = "C://inetpub//wwwroot//access//" + strpath;
             try
