@@ -365,7 +365,8 @@ namespace WebapiApplication.DAL
 
             string strpath = keyName.Replace("/", "//");
 
-            filePath = "D://CustomerAngularSite//Application//" + strpath;
+            // filePath = "D://CustomerAngularSite//Application//" + strpath;
+            filePath = "C://Project//Application//" + strpath;
 
             //filePath = "C://inetpub//wwwroot//access//" + strpath;
             try
@@ -424,6 +425,7 @@ namespace WebapiApplication.DAL
                 SqlConnection.ClearAllPools();
             }
         }
+
         public static ArrayList convertdataTableToArrayListTable(DataSet dtSet)
         {
 
@@ -440,6 +442,10 @@ namespace WebapiApplication.DAL
             return arraylist;
         }
 
+
+
+
+      
         public static string gethorophotoS3(string cust_id, string HoroscopeImageName)
         {
 
