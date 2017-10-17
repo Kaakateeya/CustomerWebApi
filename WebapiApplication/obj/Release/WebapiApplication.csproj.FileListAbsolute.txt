@@ -115,3 +115,5 @@ D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Friendly
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Release\WebapiApplication.csprojResolveAssemblyReference.cache
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Release\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Release\WebapiApplication.pdb
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.pdb
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.pdb
