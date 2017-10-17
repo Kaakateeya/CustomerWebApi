@@ -206,10 +206,10 @@ namespace WebapiApplication.DAL
             RijndaelManaged rijndaelCipher = new RijndaelManaged();
 
             // inputText = inputText.Replace(" ", "+");
-            string lastCharacter = inputText.Substring(inputText.Length - 3);
-            if (lastCharacter == "===")
+            string lastCharacter = inputText.Substring(inputText.Length - 1);
+            if (lastCharacter == "=")
             {
-                inputText = inputText.TrimEnd().Substring(0, inputText.Length - 1);
+               inputText = inputText.TrimEnd().Substring(0, inputText.Length - 1);
             }
             inputText = correctStringForBase64(inputText);
 
