@@ -205,7 +205,12 @@ namespace WebapiApplication.DAL
         {
             RijndaelManaged rijndaelCipher = new RijndaelManaged();
 
-           // inputText = inputText.Replace(" ", "+");
+            // inputText = inputText.Replace(" ", "+");
+            string lastCharacter = inputText.Substring(inputText.Length - 3);
+            if (lastCharacter == "===")
+            {
+                inputText = inputText.TrimEnd().Substring(0, inputText.Length - 1);
+            }
             inputText = correctStringForBase64(inputText);
 
             byte[] encryptedData = Convert.FromBase64String(inputText);
@@ -228,7 +233,7 @@ namespace WebapiApplication.DAL
 
         public static string correctStringForBase64(string _strencode)
         {
-           _strencode = _strencode.Replace(" ", "+");
+            _strencode = _strencode.Replace(" ", "+");
             string returnvalue = _strencode;
             if (_strencode.Length % 4 == 0)
             {
@@ -238,7 +243,7 @@ namespace WebapiApplication.DAL
             {
                 for (int cnt = 0; cnt < 4 - (_strencode.Length % 4); cnt++)
                 {
-                   returnvalue = returnvalue + "=";
+                    returnvalue = returnvalue + "=";
                 }
             }
             return returnvalue;
