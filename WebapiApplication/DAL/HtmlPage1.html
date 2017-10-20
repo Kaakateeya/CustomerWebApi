@@ -38,26 +38,26 @@
 
             }
 
-            //$("#Display").click(function () {
+            $("#Display").click(function () {
 
-            //    // alert(5);
+                // alert(5);
 
-            //    $.ajax({
-            //        url: 'http://localhost:63006/Api/DashboardRequest/getcustDashboardPartnerProfiles',
-            //        type: 'GET',
-            //        crossDomain: true,
-            //        // data: { TypeOfReport: 'SP', id: 97893, pagefrom: 19, pageto: 27, DashboardType: "Paid" },
-            //        data: { id: '113461', TypeOfReport: 'C', pagefrom: 1, pageto: 9, DashboardType: "Paid" },
-            //        contentType: 'application/json',
-            //        success: function (data, textStatus, xhr) {
-            //            alert(JSON.stringify(data));
-            //            console.log(data);
-            //        },
-            //        error: function (xhr, textStatus, errorThrown) {
-            //            console.log(xhr);
-            //        }
-            //    });
-            //});
+                $.ajax({
+                    url: 'http://localhost:63006/Api/DashboardRequest/getcustDashboardPartnerProfiles',
+                    type: 'GET',
+                    crossDomain: true,
+                    // data: { TypeOfReport: 'SP', id: 97893, pagefrom: 19, pageto: 27, DashboardType: "Paid" },
+                    data: { id: '95915', TypeOfReport: 'C', pagefrom: 1, pageto: 9, DashboardType: "UnPaid" },
+                    contentType: 'application/json',
+                    success: function (data, textStatus, xhr) {
+                        alert(JSON.stringify(data));
+                        console.log(data);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr);
+                    }
+                });
+            });
 
             $("#test").click(function () {
                 alert(1);
@@ -101,7 +101,7 @@
                     url: 'http://localhost:63006/Api/StaticPages/getViewFullProfileMail',
                     type: 'GET',
                     crossDomain: true,
-                    data: { OriginalString: "?MyProfileQSAccept=7YrKbCteX/RfSC2jOgj8GfaMliVJjDiPnJu7cnUEbqdCkYUuX6BeepEu8JZsMoOIbu6seK7IZ3EMB4bodiOp UpZSKfBKzy3 Sif i6eOlJDCPKjHxmTn1E3w608xY5am4M6rTDY9 Ym3QjBS2O9Rw==" },
+                    data: { OriginalString: "?MyProfileQSAccept=7YrKbCteX/RfSC2jOgj8Gcmd5CJeEgGxzzdNKIoh4aOOX4CPvZ1CU14o5KNoANxWLSs133 83qvW92QDdRgTn6AJrioE1MwAVRrFmuOvcdMSL9zqjfx/zJqC4lbxo4jD9A2aKMvQGdIiGKlIEwwKwg===" },
                     contentType: 'application/json',
                     success: function (data, textStatus, xhr) {
                         alert(JSON.stringify(data));
@@ -262,25 +262,25 @@
         });
 
 
-        $("#Display").click(function () {
+        //$("#Display").click(function () {
 
-            alert(1);
+        //    alert(1);
 
-            $.ajax({
-                url: 'http://localhost:63006/Api/DB/userLogin/person',
-                type: 'POST',
-                crossDomain: true,
-                data: JSON.stringify(Mobj),
-                contentType: 'application/json',
-                success: function (data, textStatus, xhr) {
-                    alert(JSON.stringify(data));
-                    console.log(data);
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log(xhr);
-                }
-            });
-        });
+        //    $.ajax({
+        //        url: 'http://localhost:63006/Api/DB/userLogin/person',
+        //        type: 'POST',
+        //        crossDomain: true,
+        //        data: JSON.stringify(Mobj),
+        //        contentType: 'application/json',
+        //        success: function (data, textStatus, xhr) {
+        //            alert(JSON.stringify(data));
+        //            console.log(data);
+        //        },
+        //        error: function (xhr, textStatus, errorThrown) {
+        //            console.log(xhr);
+        //        }
+        //    });
+        //});
 
 
     </script>

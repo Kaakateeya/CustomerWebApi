@@ -14,7 +14,9 @@ namespace WebapiApplication.Api
     {
         private readonly IuserLogin IuserLogin; public DBController() : base() { this.IuserLogin = new ImpUserlogin(); }
 
-        public List<userLoginML> userLogin([FromBody]CustLoginMl id) { return this.IuserLogin.DGetLogininformationdetails(id); }
+        public List<userLoginML> userLogin([FromBody]CustLoginMl id) { 
+            return this.IuserLogin.DGetLogininformationdetails(id);
+        }
     }
 }
 
