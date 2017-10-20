@@ -155,22 +155,114 @@ namespace WebapiApplication.ML
         public string spName { get; set; }
     }
 
+
+
+    /// <summary>
+    /// /create  for  mobille app  class
+    /// </summary>
+    /// 
     public class CustomerLandingOrderResponse
     {
 
-        public List<LandingOrderStatus> LandingOrderStatus { get; set; }
-        // public List<LandingOrderStatusResult> LandingOrderStatusResult { get; set; }
-        public List<PhotoStatus> PhotoStatus { get; set; }
-        public List<PaymentMembership> PaymentMembership { get; set; }
-        public List<Notifications> Notifications { get; set; }
-        public List<ProfileOwner> ProfileOwner { get; set; }
+        public bool? isPhoto { get; set; }
+        public bool? isPaidUser { get; set; }
+        public string surName { get; set; }
+        public string firstName { get; set; }
+        public string profileId { get; set; }
+        public string photoUrl { get; set; }
+
+        public List<subscriptionPlans> subscriptionPlans { get; set; }
+        public List<notifications> notifications { get; set; }
+        public rmgDetails rmgDetails { get; set; }
 
     }
+
+    public class mobileActiveStatus
+    {
+        public string lastloginDate { get; set; }
+        public string customerStatus { get; set; }
+    }
+
 
     public class PhotoStatus
     {
-        public string ProfilePic { get; set; }
+
+        public bool? isPhoto { get; set; }
+        public bool? isPaidUser { get; set; }
+        public string surName { get; set; }
+        public string firstName { get; set; }
+        public string profileId { get; set; }
+        public string photoUrl { get; set; }
+
     }
+    public class subscriptionPlans
+    {
+        public string plan { set; get; }
+        public int? planAmount { get; set; }
+    }
+    public class notifications
+    {
+        public string profileId { get; set; }
+        public string photoUrl { get; set; }
+        public string message { get; set; }
+    }
+
+    public class rmgDetails
+    {
+        public string name = string.Empty;
+        public string contactInfo = string.Empty;
+    }
+
+    public class MobileLandingOrderDisplay
+    {
+        public int? totalRows { set; get; }
+        public List<displayData> data { get; set; }
+    }
+
+    public class viewedByOther
+    {
+
+        public MobileLandingOrderDisplay viewedByOthers { set; get; }
+
+        public MobileLandingOrderDisplay bookMarkedByOthers { set; get; }
+
+        public MobileLandingOrderDisplay viewedByme { set; get; }
+
+
+
+        public MobileLandingOrderDisplay bookMarkedByMe { set; get; }
+
+        public MobileLandingOrderDisplay exactMatchingProfiles { set; get; }
+
+        public MobileLandingOrderDisplay suitableProfiles { set; get; }
+
+    }
+
+
+
+    public class displayData
+    {
+
+        public string profileID { set; get; }
+        public Int64? custID { set; get; }
+        public string lastName { get; set; }
+        public int? age { set; get; }
+        public string religionName { get; set; }
+        public string caste { get; set; }
+        public string educationGroup { get; set; }
+        public string profession { get; set; }
+        public string location { get; set; }
+        public bool? isMyBookMarked { get; set; }
+        public bool? isRecentlyViewed { get; set; }
+        public bool? isIgnored { get; set; }
+        public bool? expressFlag { get; set; }
+        public string thumbnailPhotoUrl { get; set; }
+    }
+
+
+
+
+
     public class PaymentMembership
     {
         public string MembershipName { get; set; }
@@ -255,7 +347,5 @@ namespace WebapiApplication.ML
         public string CustomerBranch { get; set; }
         public string CustomerEmail { get; set; }
         public string CustomerOwnerFullName { get; set; }
-
-
     }
 }

@@ -11,6 +11,8 @@ using System.Web.Http;
 using KaakateeyaDAL;
 using System.Data.SqlClient;
 
+
+
 namespace WebapiApplication
 {
     public class Global : HttpApplication
@@ -19,6 +21,8 @@ namespace WebapiApplication
         {          
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             SqlConnection.ClearAllPools();
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+
         }
         public void Application_End(object sender, EventArgs e) { }
         public void Application_Error(object sender, EventArgs e) {  }
@@ -30,12 +34,12 @@ namespace WebapiApplication
                 HttpContext.Current.Response.AddHeader("Cache-Control", "no-cache");
                 //HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST");
                 //HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
-
+                HttpContext.Current.Response.AppendHeader("Cache-Control", "no-cache, no-store, must-revalidate");
                 HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
                 HttpContext.Current.Response.End();
                 // SQLHelper.GetSQLConnection().Close();
-                // SqlConnection.ClearAllPools();
-                // Dispose();
+                SqlConnection.ClearAllPools();
+                Dispose();
             }
         }
     }
