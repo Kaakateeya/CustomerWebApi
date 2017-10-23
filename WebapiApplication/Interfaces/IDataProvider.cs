@@ -149,10 +149,10 @@ namespace WebapiApplication.Interfaces
 
 
        // ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex);
-        CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex);
+        CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID);
         ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj);
 
-        ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex);
+        viewedByOther MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string type);
 
 
 
@@ -162,6 +162,8 @@ namespace WebapiApplication.Interfaces
         ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID);
 
         ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid);
+
+        mobileActiveStatus getmobileloginStatus(int? custid);
     }
 
     public interface IDependency

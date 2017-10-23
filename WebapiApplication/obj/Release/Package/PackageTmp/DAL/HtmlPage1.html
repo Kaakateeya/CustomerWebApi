@@ -60,11 +60,12 @@
             });
 
             $("#test").click(function () {
+                alert(1);
                 $.ajax({
-                    url: 'http://localhost:63006/Api/DB/userLogin',
+                    url: 'http://localhost:63006/api/getMobileLandingOrderDisplay/custid/0',
                     type: 'get',
                     crossDomain: true,
-                    data: JSON.stringify(Mobj),
+                    //data: JSON.stringify(Mobj),
                     contentType: 'application/json',
                     success: function (data, textStatus, xhr) {
                         alert(JSON.stringify(data));

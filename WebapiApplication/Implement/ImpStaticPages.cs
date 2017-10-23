@@ -63,20 +63,20 @@ namespace WebapiApplication.Implement
 
         //public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().getMobileAppLandingDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingPage_MobileApp]"); }
 
-        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().getMobileAppLandingDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingPage_MobileApp]"); }
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID) { return new StaticPagesDAL().getMobileAppLandingDisplay(CustID ,"[dbo].[usp_HeaderLandingPage_MobileApp1]"); }
 
+        public mobileActiveStatus getmobileloginStatus(int? custid) { return new StaticPagesDAL().getmobileloginStatus(custid, "[dbo].[usp_mobileloginStatus]"); }
 
         public ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj) { return new StaticPagesDAL().UpdateCustomerEmailMobileNumber_Verification(Mobj, "[dbo].[usp_EmailmobileUpdate_MobileApp]"); }
 
-        public ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return new StaticPagesDAL().MobileLandingOrderDisplay(CustID, Startindex, EndIndex, "[dbo].[usp_LandingOrderDisplay_MobileApp]"); }
+        public viewedByOther MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string type) { return new StaticPagesDAL().MobileLandingOrderDisplay(CustID, Startindex, EndIndex, type, "[dbo].[usp_LandingOrder_MobileApp]"); }
 
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepartial(ToProfileID, EmpID, "[dbo].[GetViewProfile_FullDetails_Partial]"); }
 
         public ArrayList getCustomerBindings() { return new StaticPagesDAL().getCustomerBindingsDal("[dbo].[usp_customerbindings]"); }
 
         public ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepaidandunpaid(fromProfileID, toustid, EmpID, "[dbo].[GetViewProfile_FullDetails_RoleWise_PaidUnPaid]"); }
-
-
+        
         public ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return new StaticPagesDAL().fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid, "[dbo].[usp_GetExpressInterestStatus]"); }
     }
 }
