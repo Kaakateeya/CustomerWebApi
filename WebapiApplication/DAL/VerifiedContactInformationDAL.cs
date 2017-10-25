@@ -25,7 +25,7 @@ namespace WebapiApplication.DAL
             {
                 SqlParameter[] parm = new SqlParameter[6];
                 parm[0] = new SqlParameter("@CustID", SqlDbType.BigInt);
-                parm[0].Value = CustID;
+                parm[0].Value = CustID; 
                 parm[1] = new SqlParameter("@Status", SqlDbType.Int);
                 parm[1].Direction = ParameterDirection.Output;
 
@@ -64,8 +64,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
 
             }
             return verification;

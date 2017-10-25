@@ -25,6 +25,7 @@ namespace WebapiApplication.DAL
             SqlConnection con = null;
             Int64? Lnull = null;
             List<PersonalInfo> liPerson = new List<PersonalInfo>();
+
             try
             {
                 SqlParameter[] parm = new SqlParameter[6];
@@ -41,7 +42,6 @@ namespace WebapiApplication.DAL
                 using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["KakConnection"].ToString()))
                 {
                     con.Open();
-
                     reader = SQLHelper.ExecuteReader(con, CommandType.StoredProcedure, spName, parm);
 
                     if (reader.HasRows)
@@ -122,7 +122,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
-                           
+
                             PartnerProfilesLatest Partnercls = ReturnPartnerProfilesClass(reader, "Partner", spName);
                             PartnerLi.Add(Partnercls);
                         }
@@ -140,8 +140,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return land;
         }
@@ -191,8 +191,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return land;
         }
@@ -234,6 +234,7 @@ namespace WebapiApplication.DAL
                             PartnerLi.Add(Partnercls);
                         }
                     }
+             
                     reader.Close();
                 }
             }
@@ -244,13 +245,13 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return PartnerLi;
         }
 
-        public PartnerProfilesLatest ReturnPartnerProfilesClass(SqlDataReader reader, string Type,string spname)
+        public PartnerProfilesLatest ReturnPartnerProfilesClass(SqlDataReader reader, string Type, string spname)
         {
             int? inull = null;
             bool? bnull = null;
@@ -324,7 +325,7 @@ namespace WebapiApplication.DAL
                 {
                     Partnercls.RequestDate = reader["RequestDate"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("RequestDate")) : null;
                 }
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearAllPools();
             }
             catch (Exception ex)
             {
@@ -332,7 +333,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-                SqlConnection.ClearAllPools();
+                // SqlConnection.ClearAllPools();
             }
 
             return Partnercls;
@@ -412,8 +413,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return dropdownfilling;
         }
@@ -490,8 +491,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return details;
         }
@@ -556,8 +557,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return arrayList;
         }
@@ -628,8 +629,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
         }
@@ -690,8 +691,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
         }
@@ -719,7 +720,7 @@ namespace WebapiApplication.DAL
                     {
                         while (reader.Read())
                         {
-                          
+
                             Pcls.TableName = reader["TableName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("TableName")) : null;
                             Pcls.ProfileID = reader["ProfileID"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
                             Pcls.GenderID = reader["GenderID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : inull;
@@ -757,8 +758,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return Pcls;
         }
@@ -824,8 +825,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return liCount;
         }
