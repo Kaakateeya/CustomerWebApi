@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\customerBuild_files\25_10_2017_CustomerApi</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\customerBuild_files\27_10_2017_CustomerBuilddd</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_WebReferences/SMSC_CLIENT/configuration.svcinfo">
@@ -133,7 +133,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2017 11:16:58</publishTime>
     </File>
     <File Include="bin/WebapiApplication.dll">
-      <publishTime>10/25/2017 12:33:36</publishTime>
+      <publishTime>10/27/2017 18:29:07</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/23/2017 11:16:58</publishTime>
@@ -451,7 +451,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2017 15:55:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/25/2017 12:33:36</publishTime>
+      <publishTime>10/27/2017 15:25:37</publishTime>
     </File>
   </ItemGroup>
 </Project>
