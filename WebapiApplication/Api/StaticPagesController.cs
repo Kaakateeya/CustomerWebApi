@@ -70,7 +70,11 @@ namespace WebapiApplication.Api
         public void getCustomerApplicationErroLog(string ErrorMessage, long? CustID, string PageName, string Type) { Commonclass.ApplicationErrorLog(null, ErrorMessage, CustID, PageName, Type); }
         public void getUnpaidMembersOwnerNotification(int? CategoryID, int? Cust_ID, string SendPhonenumber) { DataTable dt = this.ISuccessStories.UnpaidMembersOwner_Notification(CategoryID, Cust_ID); Commonclass.PaymentSMS(dt, SendPhonenumber); }
         public void getApplicationErrorLog(string ErrorSpName, string ErrorMessage, long? CustID, string PageName, string Type) { this.ISuccessStories.ApplicationErrorLog(ErrorSpName, ErrorMessage, CustID, PageName, Type); }
-        public void getResendmobile(int? iCountryID, int? iCCode, string MobileNumber, int? CustContactNumbersID) { string VerfCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); Commonclass.ResendMobileSMS(iCountryID, iCCode, MobileNumber, VerfCode); this.ISuccessStories.EmilVerificationCode(VerfCode, 2, CustContactNumbersID, 0); }
+        public int getResendmobile(int? iCountryID, int? iCCode, string MobileNumber, int? CustContactNumbersID)
+        {
+            string VerfCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); Commonclass.ResendMobileSMS(iCountryID, iCCode, MobileNumber, VerfCode); this.ISuccessStories.EmilVerificationCode(VerfCode, 2, CustContactNumbersID, 0);
+            return 1;
+        }
         public string getEmilVerificationCode(string VerificationCode, int? i_EmilMobileVerification, int? CustContactNumbersID) { return this.ISuccessStories.EmilVerificationCode(VerificationCode, i_EmilMobileVerification, CustContactNumbersID, 1); }
         public string getCustomerfilldata(long? CustomerCustID) { return this.ISuccessStories.Customerfilldata(CustomerCustID); }
 
@@ -96,7 +100,7 @@ namespace WebapiApplication.Api
 
         }
 
-        public ArrayList UpdateCustomerEmailMobileNumber_Verification(int? CustID, [FromBody]MobileEmailVerf Mobj)
+        public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
         {
             if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
             return this.ISuccessStories.UpdateCustomerEmailMobileNumber_Verification(Mobj);
