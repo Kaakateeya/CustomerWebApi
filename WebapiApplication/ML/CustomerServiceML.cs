@@ -144,6 +144,7 @@ namespace WebapiApplication.ML
 
         public int? IsConfidential { get; set; }
         public int? HighConfendential { get; set; }
+        public string RegionName { get; set; }
     }
     public class UpdateExpressIntrestStatus
     {

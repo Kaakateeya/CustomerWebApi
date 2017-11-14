@@ -610,6 +610,7 @@ namespace WebapiApplication.ML
         public int? IsReviewed { get; set; }
         public string ProfileID { get; set; }
         public int? PhotoStatus { get; set; }
+        public string PhotPath { get; set; }
     }
 
     public class PhotosendMail

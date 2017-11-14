@@ -1734,6 +1734,7 @@ namespace WebapiApplication.DAL
                         Myprofilebind.GenderID = (reader["GenderID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : iNull;
                         Myprofilebind.IsConfidential = (reader["IsConfidential"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("IsConfidential")) : iNull;
                         Myprofilebind.HighConfendential = (reader["HighConfendential"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("HighConfendential")) : iNull;
+                        Myprofilebind.RegionName = (reader["RegionName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("RegionName")) : null;
                     }
                 }
 
@@ -1997,6 +1998,7 @@ namespace WebapiApplication.DAL
                 mobj.Fromgender = Myprofilebind.GenderID;
                 mobj.IsConfidential = Myprofilebind.IsConfidential;
                 mobj.HighConfendential = Myprofilebind.HighConfendential;
+                mobj.RegionName = Myprofilebind.RegionName;
                 DataSet ds = CustomerData(5, FromProfileID);
 
                 if (ds != null && ds.Tables.Count > 0)

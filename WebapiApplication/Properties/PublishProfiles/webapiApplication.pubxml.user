@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\customerBuild_files\31_10_2017_mobile_vererication</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\customerBuild_files\11_11_2017_viewProfilebranchwise</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_WebReferences/SMSC_CLIENT/configuration.svcinfo">
@@ -31,253 +31,253 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2016 19:37:08</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:53</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.jQuery.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:52</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.jQuery.UI.Combined.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="bin/AWSSDK.Core.dll">
-      <publishTime>12/13/2016 11:34:05</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/AWSSDK.S3.dll">
-      <publishTime>12/13/2016 11:34:09</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.AspNet.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:35</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.Core.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:34</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:35</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.OAuth.dll">
-      <publishTime>10/23/2017 11:17:01</publishTime>
+      <publishTime>10/14/2017 15:55:35</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.OpenId.dll">
-      <publishTime>10/23/2017 11:17:01</publishTime>
+      <publishTime>10/14/2017 15:55:34</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
-      <publishTime>10/23/2017 11:17:01</publishTime>
+      <publishTime>10/14/2017 15:55:34</publishTime>
     </File>
     <File Include="bin/EmailVerification3_CSharp.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/EmailVerification3_CSharp.XmlSerializers.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/EmailVerification6_CSharp.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/EmailVerification6_CSharp.XmlSerializers.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:15</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:15</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>03/03/2016 13:13:15</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:11</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Membership.OpenAuth.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:08</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Web.Optimization.WebForms.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:54</publishTime>
     </File>
     <File Include="bin/Microsoft.ScriptManager.MSAjax.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:00</publishTime>
     </File>
     <File Include="bin/Microsoft.ScriptManager.WebForms.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:58</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>09/24/2016 12:02:46</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/Mono.Math.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:34</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:46</publishTime>
     </File>
     <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:34</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Extensions.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:33</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:47</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Primitives.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:33</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:47</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:47</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:54</publishTime>
     </File>
     <File Include="bin/System.Web.Providers.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:05</publishTime>
     </File>
     <File Include="bin/WebapiApplication.dll">
-      <publishTime>10/31/2017 16:36:17</publishTime>
+      <publishTime>11/11/2017 17:59:32</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:54:56</publishTime>
     </File>
     <File Include="Content/themes/base/accordion.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/all.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/autocomplete.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/base.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/button.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/core.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/datepicker.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/dialog.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/draggable.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_444444_256x240.png">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_555555_256x240.png">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_777620_256x240.png">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_777777_256x240.png">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_cc0000_256x240.png">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_ffffff_256x240.png">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/jquery-ui.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/jquery-ui.min.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/menu.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/progressbar.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/resizable.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/selectable.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/selectmenu.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/slider.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/sortable.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:47</publishTime>
     </File>
     <File Include="Content/themes/base/spinner.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:46</publishTime>
     </File>
     <File Include="Content/themes/base/tabs.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:46</publishTime>
     </File>
     <File Include="Content/themes/base/theme.css">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/14/2017 15:55:46</publishTime>
     </File>
     <File Include="Content/themes/base/tooltip.css">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:46</publishTime>
     </File>
     <File Include="Customer_new/Employee_new/EmployeeViewFullProfile.aspx">
-      <publishTime>02/02/2017 12:45:52</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="DAL/HtmlPage1.html">
-      <publishTime>10/23/2017 11:17:02</publishTime>
+      <publishTime>10/20/2017 10:53:09</publishTime>
     </File>
     <File Include="DAL/TestAngular.html">
-      <publishTime>01/13/2017 11:57:44</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="DAL/TestDesign.html">
-      <publishTime>01/31/2017 14:42:38</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>09/24/2016 12:02:42</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/23/2017 11:16:58</publishTime>
+      <publishTime>10/14/2017 15:55:52</publishTime>
     </File>
     <File Include="Scripts/jquery-3.1.1.js">
       <publishTime>10/14/2017 15:55:52</publishTime>
@@ -370,61 +370,61 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2017 15:54:58</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/configuration.svcinfo">
-      <publishTime>12/06/2016 16:55:59</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/configuration91.svcinfo">
-      <publishTime>12/06/2016 16:55:59</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Reference.svcmap">
-      <publishTime>12/06/2016 16:55:59</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/service.disco">
-      <publishTime>12/06/2016 16:55:59</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/service.wsdl">
-      <publishTime>12/06/2016 16:55:59</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.GetbalanceResponse.datasource">
-      <publishTime>12/06/2016 16:56:01</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.GetDeliveryReportResponse.datasource">
-      <publishTime>12/06/2016 16:56:01</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.getInboxResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.MarkRead_inboxResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.Mark_UnRead_inboxResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendBinarySMSResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendFlashSMSResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendLOGOResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.sendMultiSMSResponse.datasource">
-      <publishTime>12/06/2016 16:56:01</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendPictureSMSResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendRingToneResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendTextSMSResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendUnicodeSMSResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/WebapiApplication.ServiceReference1.SendWapPushResponse.datasource">
-      <publishTime>12/06/2016 16:56:00</publishTime>
+      <publishTime>05/20/2017 12:23:50</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>10/14/2017 15:55:12</publishTime>
@@ -451,7 +451,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2017 15:55:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/31/2017 16:36:17</publishTime>
+      <publishTime>11/01/2017 19:26:22</publishTime>
     </File>
   </ItemGroup>
 </Project>
