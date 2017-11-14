@@ -700,6 +700,7 @@ namespace WebapiApplication.DAL
                         ml.Cust_Photos_ID = (reader["Cust_Photos_ID"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_Photos_ID")) : intNull;
                         ml.strModifiedByEmpID = (reader["ModifiedByEmpID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ModifiedByEmpID")) : null;
                         ml.UploadedBy = (reader["UploadedBy"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("UploadedBy")) : null;
+                        ml.PhotPath = (reader["PhotoUrl"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoUrl")) : null;
                         arrayList.Add(ml);
                     }
                 }
