@@ -1,83 +1,3 @@
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\WebapiApplication.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\WebapiApplication.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Antlr3.Runtime.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.AspNet.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.Core.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OAuth.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OpenId.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EmailVerification3_CSharp.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EmailVerification3_CSharp.XmlSerializers.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EmailVerification6_CSharp.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EmailVerification6_CSharp.XmlSerializers.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EntityFramework.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.ScriptManager.MSAjax.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.ScriptManager.WebForms.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Newtonsoft.Json.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Net.Http.Formatting.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Web.Http.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Web.Http.WebHost.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Web.Optimization.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Web.Providers.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\WebGrease.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EmailVerification3_CSharp.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EmailVerification6_CSharp.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Newtonsoft.Json.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Net.Http.Formatting.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Web.Http.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\System.Web.Http.WebHost.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\EntityFramework.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.Core.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OAuth.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OpenId.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\DotNetOpenAuth.AspNet.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\obj\Debug\WebapiApplication.dll
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\WebapiApplication\WebapiApplication\obj\Debug\WebapiApplication.pdb
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\WebapiApplication.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\WebapiApplication.pdb
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Antlr3.Runtime.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\AspNet.ScriptManager.jQuery.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.AspNet.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.Core.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\EntityFramework.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.ScriptManager.MSAjax.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.ScriptManager.WebForms.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.Web.Infrastructure.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Newtonsoft.Json.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\System.Web.Optimization.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\System.Web.Providers.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\WebGrease.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Newtonsoft.Json.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\EntityFramework.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.Core.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.Consumer.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.AspNet.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
-D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
-D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
 D:\CustomerWebApi\WebapiApplication\bin\WebapiApplication.dll
 D:\CustomerWebApi\WebapiApplication\bin\WebapiApplication.pdb
 D:\CustomerWebApi\WebapiApplication\bin\Antlr3.Runtime.dll
@@ -89,6 +9,10 @@ D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.dll
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.dll
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.XmlSerializers.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.XmlSerializers.dll
 D:\CustomerWebApi\WebapiApplication\bin\EntityFramework.dll
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.dll
@@ -97,10 +21,18 @@ D:\CustomerWebApi\WebapiApplication\bin\Microsoft.ScriptManager.MSAjax.dll
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.ScriptManager.WebForms.dll
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.Web.Infrastructure.dll
 D:\CustomerWebApi\WebapiApplication\bin\Newtonsoft.Json.dll
+D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.dll
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.dll
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.dll
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Optimization.dll
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Providers.dll
 D:\CustomerWebApi\WebapiApplication\bin\WebGrease.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.pdb
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.pdb
 D:\CustomerWebApi\WebapiApplication\bin\Newtonsoft.Json.xml
+D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.xml
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.xml
+D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.xml
 D:\CustomerWebApi\WebapiApplication\bin\EntityFramework.xml
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.Core.xml
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.xml
@@ -112,16 +44,3 @@ D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
-D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.XmlSerializers.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.XmlSerializers.dll
-D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.dll
-D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.dll
-D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.pdb
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.pdb
-D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Formatting.xml
-D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.xml
-D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.xml

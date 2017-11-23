@@ -17,10 +17,10 @@ using Newtonsoft.Json.Linq;
 using WebapiApplication.UserDefinedTable;
 using System.IO;
 using WebapiApplication.ServiceReference1;
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
-using Amazon.S3.Transfer;
+//using Amazon;
+//using Amazon.S3;
+//using Amazon.S3.Model;
+//using Amazon.S3.Transfer;
 
 namespace WebapiApplication.DAL
 {
@@ -361,69 +361,70 @@ namespace WebapiApplication.DAL
 
         public static bool S3upload(string filePath, string keyName)
         {
-            //filePath = "D://KaakateeyaMainProject//Kaakateeya//Development_Kaakateeya//kaakateeyaWeb//access//Images//ProfilePics//KMPL_71668_Images//img2.jpg";
+            ////filePath = "D://KaakateeyaMainProject//Kaakateeya//Development_Kaakateeya//kaakateeyaWeb//access//Images//ProfilePics//KMPL_71668_Images//img2.jpg";
 
-            string strpath = keyName.Replace("/", "//");
+            //string strpath = keyName.Replace("/", "//");
 
-            // filePath = "D://CustomerAngularSite//Application//" + strpath;
-            filePath = "C://Project//Application//" + strpath;
+            //// filePath = "D://CustomerAngularSite//Application//" + strpath;
+            //filePath = "C://Project//Application//" + strpath;
 
-            //filePath = "C://inetpub//wwwroot//access//" + strpath;
-            try
-            {
-                TransferUtility fileTransferUtility = new
-                    TransferUtility(new AmazonS3Client(Amazon.RegionEndpoint.APSouth1));
+            ////filePath = "C://inetpub//wwwroot//access//" + strpath;
+            //try
+            //{
+            //    TransferUtility fileTransferUtility = new
+            //        TransferUtility(new AmazonS3Client(Amazon.RegionEndpoint.APSouth1));
 
-                //TransferUtility utility = new TransferUtility();
-                //utility.UploadDirectory(directoryPath, bucketName);
-
-
-                // 1. Upload a file, file name is used as the object key name.
-                //fileTransferUtility.Upload(filePath, bucketName);
-                //Console.WriteLine("Upload 1 completed");
+            //    //TransferUtility utility = new TransferUtility();
+            //    //utility.UploadDirectory(directoryPath, bucketName);
 
 
-                //// 2. Specify object key name explicitly.
-                //fileTransferUtility.Upload(filePath,
-                //                      	bucketName, keyName);
-                //Console.WriteLine("Upload 2 completed");
+            //    // 1. Upload a file, file name is used as the object key name.
+            //    //fileTransferUtility.Upload(filePath, bucketName);
+            //    //Console.WriteLine("Upload 1 completed");
 
 
-                //// 3. Upload data from a type of System.IO.Stream.
-                //using (FileStream fileToUpload =
-                //	new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                //{
-                //	fileTransferUtility.Upload(fileToUpload,
-                //                           	bucketName, keyName);
-                //}
-                //Console.WriteLine("Upload 3 completed");
+            //    //// 2. Specify object key name explicitly.
+            //    //fileTransferUtility.Upload(filePath,
+            //    //                      	bucketName, keyName);
+            //    //Console.WriteLine("Upload 2 completed");
 
 
-                // 4.Specify advanced settings/options.
-                TransferUtilityUploadRequest fileTransferUtilityRequest = new TransferUtilityUploadRequest
-                {
-                    BucketName = "kaakateeyaprod",
-                    FilePath = filePath,
-                    StorageClass = S3StorageClass.ReducedRedundancy,
-                    PartSize = 6291456, // 6 MB.
-                    Key = keyName,
-                    CannedACL = S3CannedACL.PublicRead
-                };
-                fileTransferUtilityRequest.Metadata.Add("param1", "Value1");
-                fileTransferUtilityRequest.Metadata.Add("param2", "Value2");
-                fileTransferUtility.Upload(fileTransferUtilityRequest);
-                return true;
-            }
-            catch (AmazonS3Exception s3Exception)
-            {
-                Commonclass.ApplicationErrorLog("s3 Horo", Convert.ToString(s3Exception.Message), null, null, null);
+            //    //// 3. Upload data from a type of System.IO.Stream.
+            //    //using (FileStream fileToUpload =
+            //    //	new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            //    //{
+            //    //	fileTransferUtility.Upload(fileToUpload,
+            //    //                           	bucketName, keyName);
+            //    //}
+            //    //Console.WriteLine("Upload 3 completed");
 
-                return false;
-            }
-            finally
-            {
-                SqlConnection.ClearAllPools();
-            }
+
+            //    // 4.Specify advanced settings/options.
+            //    TransferUtilityUploadRequest fileTransferUtilityRequest = new TransferUtilityUploadRequest
+            //    {
+            //        BucketName = "kaakateeyaprod",
+            //        FilePath = filePath,
+            //        StorageClass = S3StorageClass.ReducedRedundancy,
+            //        PartSize = 6291456, // 6 MB.
+            //        Key = keyName,
+            //        CannedACL = S3CannedACL.PublicRead
+            //    };
+            //    fileTransferUtilityRequest.Metadata.Add("param1", "Value1");
+            //    fileTransferUtilityRequest.Metadata.Add("param2", "Value2");
+            //    fileTransferUtility.Upload(fileTransferUtilityRequest);
+            //    return true;
+            //}
+            //catch (AmazonS3Exception s3Exception)
+            //{
+            //    Commonclass.ApplicationErrorLog("s3 Horo", Convert.ToString(s3Exception.Message), null, null, null);
+
+            //    return false;
+            //}
+            //finally
+            //{
+            //    SqlConnection.ClearAllPools();
+            //}
+            return false;
         }
 
         public static ArrayList convertdataTableToArrayListTable(DataSet dtSet)
