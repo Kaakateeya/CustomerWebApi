@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using WebapiApplication.ML;
 using WebapiApplication.Implement;
 using WebapiApplication.Interfaces;
@@ -11,6 +11,8 @@ using System.Collections;
 using WebapiApplication.DAL;
 using System.Data;
 using WebapiApplication.ServiceReference1;
+using WebapiApplication.Common;
+using System.Net.Http;
 
 namespace WebapiApplication.Api
 {
@@ -30,20 +32,20 @@ namespace WebapiApplication.Api
         public ArrayList getpaymentdetailsmethoddal(Int64? CustID) { return this.ISuccessStories.paymentdetailsmethoddal(CustID); }
         public ArrayList TicketDetails([FromBody]TicketDetails ticketdetails) { return this.ISuccessStories.GetTicketDetails(ticketdetails); }
         //public ArrayList getExpressIntrstfullprofile(string ToProfileID, string FromProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(ToProfileID, FromProfileID, EmpID); }
-       // public ArrayList getExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(tocustid, fromcustid, EmpID); }
+        // public ArrayList getExpressIntrstfullprofile(int? tocustid, int? fromcustid, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(tocustid, fromcustid, EmpID); }
         public ArrayList getExpressIntrstfullprofile(string ToProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofile(ToProfileID, EmpID); }
-      
-        
+
+
         //15-09-2017
-         
+
         public ArrayList getExpressIntrstfullprofilepaidandunpaid(string fromProfileID, Int64? toustid, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofilepaidandunpaid(fromProfileID, toustid, EmpID); }
-        
+
         public ArrayList getExpressinterst_bookmark_ignore_data(long? Loggedcustid, long? ToCustID) { return this.ISuccessStories.Expressinterst_bookmark_ignore_data(Loggedcustid, ToCustID); }
         public ArrayList getdisplayMissingFieldsupdate_Customerdetails(string CustID, int? i_updateflag) { return this.ISuccessStories.displayMissingFieldsupdate_Customerdetails(CustID, i_updateflag); }
         public ArrayList getCust_NotificationDetails(int? Cust_NotificationID, long? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.Cust_NotificationDetails(Cust_NotificationID, CustID, Startindex, EndIndex); }
         public ArrayList getCheckForgotPasswordStatus(string StrCustID) { return this.ISuccessStories.CheckForgotPasswordStatus(StrCustID); }
         public ArrayList getRegisteredBranchStatus(string StrCustID) { return this.ISuccessStories.RegisteredBranchStatus(StrCustID); }
-        
+
         public int UpdateExpressIntrestViewfullprofile([FromBody]UpdateExpressIntrestStatus Mobj) { return this.ISuccessStories.UpdateExpressIntrestViewfullprofile(Mobj); }
         public int getPhotopasswordAcceptReject(Int64? FromcustID, Int64? TocustID, Int64? Accept_Reject) { return this.ISuccessStories.PhotopasswordAcceptReject(FromcustID, TocustID, Accept_Reject); }
         public int getInsertcustomerProfilesettings(DateTime? Expirydate, int? CustID, int? iflag) { return this.ISuccessStories.InsertcustomerProfilesettings(Expirydate, CustID, iflag); }
@@ -68,7 +70,11 @@ namespace WebapiApplication.Api
         public void getCustomerApplicationErroLog(string ErrorMessage, long? CustID, string PageName, string Type) { Commonclass.ApplicationErrorLog(null, ErrorMessage, CustID, PageName, Type); }
         public void getUnpaidMembersOwnerNotification(int? CategoryID, int? Cust_ID, string SendPhonenumber) { DataTable dt = this.ISuccessStories.UnpaidMembersOwner_Notification(CategoryID, Cust_ID); Commonclass.PaymentSMS(dt, SendPhonenumber); }
         public void getApplicationErrorLog(string ErrorSpName, string ErrorMessage, long? CustID, string PageName, string Type) { this.ISuccessStories.ApplicationErrorLog(ErrorSpName, ErrorMessage, CustID, PageName, Type); }
-        public void getResendmobile(int? iCountryID, int? iCCode, string MobileNumber, int? CustContactNumbersID) { string VerfCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); Commonclass.ResendMobileSMS(iCountryID, iCCode, MobileNumber, VerfCode); this.ISuccessStories.EmilVerificationCode(VerfCode, 2, CustContactNumbersID, 0); }
+        public int getResendmobile(int? iCountryID, int? iCCode, string MobileNumber, int? CustContactNumbersID)
+        {
+            string VerfCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); Commonclass.ResendMobileSMS(iCountryID, iCCode, MobileNumber, VerfCode); this.ISuccessStories.EmilVerificationCode(VerfCode, 2, CustContactNumbersID, 0);
+            return 1;
+        }
         public string getEmilVerificationCode(string VerificationCode, int? i_EmilMobileVerification, int? CustContactNumbersID) { return this.ISuccessStories.EmilVerificationCode(VerificationCode, i_EmilMobileVerification, CustContactNumbersID, 1); }
         public string getCustomerfilldata(long? CustomerCustID) { return this.ISuccessStories.Customerfilldata(CustomerCustID); }
 
@@ -83,18 +89,33 @@ namespace WebapiApplication.Api
         /// <returns></returns>
 
 
-       // public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
+        // public ArrayList getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
 
 
-        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.getMobileAppLandingDisplay(CustID, Startindex, EndIndex); }
-       
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID)
+        {
+            CustomerLandingOrderResponse list = new CustomerLandingOrderResponse();
+            list = this.ISuccessStories.getMobileAppLandingDisplay(CustID);
+            return list;
+
+        }
+
         public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
         {
             if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
             return this.ISuccessStories.UpdateCustomerEmailMobileNumber_Verification(Mobj);
         }
 
-        public ArrayList getMobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return this.ISuccessStories.MobileLandingOrderDisplay(CustID, Startindex, EndIndex); }
+
+        public mobileActiveStatus getmobileloginStatus(int? custid) { return this.ISuccessStories.getmobileloginStatus(custid); }
+
+
+        public viewedByOther getMobileLandingOrderDisplay_all(int custid) { return this.ISuccessStories.MobileLandingOrderDisplay(custid, 1, 9, "all"); }
+        public viewedByOther getMobileLandingOrderDisplay(int custid, int? startIndex, int? endIndex, string type) { return this.ISuccessStories.MobileLandingOrderDisplay(custid, startIndex, endIndex, type); }
+
+
+
+        //public  viewedByOther getMobileLandingOrderDisplay(long? CustID, string type) { return this.ISuccessStories.MobileLandingOrderDisplay(CustID, 1, 9, type); }
 
         public ArrayList getExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return this.ISuccessStories.ExpressIntrstfullprofilepartial(ToProfileID, EmpID); }
 

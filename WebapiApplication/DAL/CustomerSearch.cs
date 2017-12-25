@@ -113,8 +113,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return Mobjresult;
         }
@@ -152,7 +152,7 @@ namespace WebapiApplication.DAL
                 parm[10] = new SqlParameter("@tbl_ProfessionGroup", SqlDbType.Structured);
                 parm[10].Value = Commonclass.returndt(search.Professiongroup, search.dtProfessionGroup, "ProfessionGroup", "ProfessionGroupIDs09");
                 parm[11] = new SqlParameter("@tbl_MotherTongue", SqlDbType.Structured);
-                parm[11].Value = Commonclass.returndt(search.MotherTongue, search.dtMothertongue, "Mothertongue", "MothertongueIDs1");
+                parm[11].Value = Commonclass.returndt(search.MotherTongue, search.dtMotherTongue, "Mothertongue", "MothertongueIDs1");
                 parm[12] = new SqlParameter("@i_Photoflag", SqlDbType.Int);
                 parm[12].Value = search.intPhotoCount;
                 parm[13] = new SqlParameter("@i_StartIndex", SqlDbType.Int);
@@ -247,8 +247,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return listSearch;
         }
@@ -359,8 +359,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return listSearch;
         }
@@ -405,8 +405,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return intStatus;
         }
@@ -473,8 +473,8 @@ namespace WebapiApplication.DAL
             {
 
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return listSaveEdit;
         }
@@ -567,8 +567,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return listSearch;
         }
@@ -607,7 +607,7 @@ namespace WebapiApplication.DAL
                 parm[10] = new SqlParameter("@tbl_ProfessionGroup", SqlDbType.Structured);
                 parm[10].Value = Commonclass.returndt(search.Professiongroup, search.dtProfessionGroup, "ProfessionGroup", "ProfessionGroupIDs09");
                 parm[11] = new SqlParameter("@tbl_MotherTongue", SqlDbType.Structured);
-                parm[11].Value = Commonclass.returndt(search.MotherTongue, search.dtMothertongue, "Mothertongue", "MothertongueIDs1");
+                parm[11].Value = Commonclass.returndt(search.MotherTongue, search.dtMotherTongue, "Mothertongue", "MothertongueIDs1");
                 parm[12] = new SqlParameter("@i_Photoflag", SqlDbType.Int);
                 parm[12].Value = search.intPhotoCount;
                 parm[13] = new SqlParameter("@i_StartIndex", SqlDbType.Int);
@@ -702,8 +702,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 con.Close();
-                SqlConnection.ClearPool(con);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(con);
+                //SqlConnection.ClearAllPools();
             }
             return listSearch;
         }

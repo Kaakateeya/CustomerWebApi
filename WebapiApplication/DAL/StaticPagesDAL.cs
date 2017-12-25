@@ -63,8 +63,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Sucessstories;
         }
@@ -120,8 +120,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return kakBranchnames;
         }
@@ -183,8 +183,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
         }
@@ -249,8 +249,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return intStatus;
         }
@@ -328,8 +328,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return helpmail;
 
@@ -361,8 +361,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
 
             }
             return Commonclass.convertdataTableToArrayList(dataset);
@@ -396,8 +396,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             DalCustomerExpressinterestBookMarkflag(loggedcustid, ToCustID, strSpname);
             return Commonclass.convertdataTableToArrayList(dataset);
@@ -474,7 +474,7 @@ namespace WebapiApplication.DAL
                 }
                 Expbook.Add(Bookexp);
                 reader.Close();
-                SQLHelper.GetSQLConnection().Close();
+               // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -484,8 +484,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Expbook;
 
@@ -532,7 +532,7 @@ namespace WebapiApplication.DAL
                 }
                 intStatus = smtp.Statusint;
                 reader.Close();
-                SQLHelper.GetSQLConnection().Close();
+                //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -542,8 +542,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
 
 
@@ -574,7 +574,7 @@ namespace WebapiApplication.DAL
                     }
                 }
                 reader.Close();
-                SQLHelper.GetSQLConnection().Close();
+               // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -584,8 +584,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return iGrade;
         }
@@ -634,8 +634,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return photoSlide;
         }
@@ -665,7 +665,7 @@ namespace WebapiApplication.DAL
 
                 ds = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
                 if (string.Compare(parm[3].Value.ToString(), System.DBNull.Value.ToString()) == 0) { iStatus = 0; } else { iStatus = Convert.ToInt32(parm[3].Value); }
-                SQLHelper.GetSQLConnection().Close();
+               // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception ex)
             {
@@ -675,8 +675,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return iStatus;
         }
@@ -736,7 +736,7 @@ namespace WebapiApplication.DAL
                 }
                 lstprofilesetting.Add(profilesettings);
                 reader.Close();
-                SQLHelper.GetSQLConnection().Close();
+               // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -746,8 +746,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
 
             return lstprofilesetting;
@@ -783,8 +783,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
 
             }
             return iStatus;
@@ -849,8 +849,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
 
@@ -886,8 +886,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return pwdStatus;
         }
@@ -914,7 +914,8 @@ namespace WebapiApplication.DAL
                 parm[3].Direction = ParameterDirection.Output;
                 ds = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
                 if (string.Compare(parm[3].Value.ToString(), System.DBNull.Value.ToString()) == 0) { iStatus = 0; } else { iStatus = Convert.ToInt32(parm[3].Value); }
-                SQLHelper.GetSQLConnection().Close();
+               
+                //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception ex)
             {
@@ -924,8 +925,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return iStatus;
         }
@@ -965,8 +966,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return iStatus;
         }
@@ -1001,8 +1002,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
 
         }
@@ -1037,8 +1038,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return iStatus;
         }
@@ -1073,8 +1074,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return iStatus;
         }
@@ -1108,8 +1109,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(dsAdvertisementserach);
         }
@@ -1148,8 +1149,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(ds);
         }
@@ -1191,8 +1192,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return intStatus;
         }
@@ -1241,8 +1242,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Status;
         }
@@ -1273,8 +1274,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             if (ds != null) { if (ds.Tables.Count > 0) { dt = ds.Tables[0]; } }
             return dt;
@@ -1314,8 +1315,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return intStatus;
         }
@@ -1356,8 +1357,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return intStatus;
         }
@@ -1396,8 +1397,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Status;
         }
@@ -1449,8 +1450,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Status;
         }
@@ -1533,8 +1534,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
 
             }
             return intstatus;
@@ -1569,8 +1570,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(ds);
         }
@@ -1606,8 +1607,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
         }
@@ -1643,8 +1644,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return ds;
         }
@@ -1697,8 +1698,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
         }
@@ -1733,6 +1734,7 @@ namespace WebapiApplication.DAL
                         Myprofilebind.GenderID = (reader["GenderID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : iNull;
                         Myprofilebind.IsConfidential = (reader["IsConfidential"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("IsConfidential")) : iNull;
                         Myprofilebind.HighConfendential = (reader["HighConfendential"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("HighConfendential")) : iNull;
+                        Myprofilebind.RegionName = (reader["RegionName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("RegionName")) : null;
                     }
                 }
 
@@ -1745,8 +1747,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Myprofilebind;
         }
@@ -1823,8 +1825,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return status;
         }
@@ -1996,6 +1998,7 @@ namespace WebapiApplication.DAL
                 mobj.Fromgender = Myprofilebind.GenderID;
                 mobj.IsConfidential = Myprofilebind.IsConfidential;
                 mobj.HighConfendential = Myprofilebind.HighConfendential;
+                mobj.RegionName = Myprofilebind.RegionName;
                 DataSet ds = CustomerData(5, FromProfileID);
 
                 if (ds != null && ds.Tables.Count > 0)
@@ -2012,7 +2015,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-                SqlConnection.ClearAllPools();
+               // SqlConnection.ClearAllPools();
             }
 
             return mobj;
@@ -2092,8 +2095,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return CP;
         }
@@ -2193,8 +2196,9 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
@@ -2227,8 +2231,10 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
+
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
@@ -2272,8 +2278,10 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
+
             }
             return intStatus;
         }
@@ -2310,8 +2318,10 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
+
             }
             return Commonclass.convertdataTableToArrayList(ds);
         }
@@ -2346,8 +2356,9 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(ds);
         }
@@ -2382,7 +2393,8 @@ namespace WebapiApplication.DAL
                 {
                     Status = Convert.ToInt32(cmd.Parameters[2].Value);
                 }
-                SQLHelper.GetSQLConnection().Close();
+                
+                //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception Ex)
             {
@@ -2391,8 +2403,9 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Status;
         }
@@ -2427,8 +2440,8 @@ namespace WebapiApplication.DAL
             {
 
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(ds);
         }
@@ -2485,24 +2498,31 @@ namespace WebapiApplication.DAL
         //}
 
 
-        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, int? Startindex, int? EndIndex, string spName)
+        public CustomerLandingOrderResponse getMobileAppLandingDisplay(int? CustID, string spName)
         {
 
-            CustomerLandingOrderResponse MarketingTicketResponse = new CustomerLandingOrderResponse();
+            CustomerLandingOrderResponse MarketingTicketResponse = null;
 
             string strErrorMsg = string.Empty;
             int? intnull = null;
-            long? intlongnull = null;
-            Int64? longnull = null;
+
             bool? ibool = null;
-            SqlParameter[] parm = new SqlParameter[30];
+            SqlParameter[] parm = new SqlParameter[5];
             SqlDataReader drReader = null;
 
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
+            List<subscriptionPlans> subscriptionPlans = new List<subscriptionPlans>();
+            List<notifications> notifications = new List<notifications>();
+            List<rmgDetails> rmgDetails = new List<rmgDetails>();
 
-            string TableName = string.Empty;
+
+
+            subscriptionPlans subscriptionPlan = null;
+            notifications notificationsMessages = null;
+            rmgDetails rmgDetailsdisplay = null;
+
 
             try
             {
@@ -2510,137 +2530,86 @@ namespace WebapiApplication.DAL
                 parm[1] = new SqlParameter("@i_CustID", SqlDbType.Int);
                 parm[1].Value = CustID;
 
-                parm[2] = new SqlParameter("@iStartindex", SqlDbType.Int);
-                parm[2].Value = Startindex;
-
-                parm[3] = new SqlParameter("@iEndIndex", SqlDbType.Int);
-                parm[3].Value = EndIndex;
 
                 drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
 
-                List<LandingOrderStatus> LandingOrderStatus = new List<LandingOrderStatus>();
-                List<LandingOrderStatusResult> LandingOrderStatusResult = new List<LandingOrderStatusResult>();
-
-
-                List<PhotoStatus> PhotoStatus = new List<PhotoStatus>();
-                List<PaymentMembership> PaymentMembership = new List<PaymentMembership>();
-                List<Notifications> Notifications = new List<Notifications>();
-                List<ProfileOwner> ProfileOwner = new List<ProfileOwner>();
-                
-
-
-
-                if (drReader.HasRows)
-                {
-
-                    while (drReader.Read())
-                    {
-
-                        LandingOrderStatus.Add(new LandingOrderStatus
-                        {
-
-                            PaidStatus = drReader["PaidStatus"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("PaidStatus")) : ibool,
-
-                            Notifications = drReader["Notifications"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("Notifications")) : ibool,
-
-                            ProfileOwner = drReader["ProfileOwner"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("ProfileOwner")) : ibool,
-
-                            PhtoStatus = drReader["PhtoStatus"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("PhtoStatus")) : ibool
-                        });
-
-                    }
-
-                    MarketingTicketResponse.LandingOrderStatus = LandingOrderStatus;
-
-                }
-
-                drReader.NextResult();
-
                 if (drReader.HasRows)
                 {
                     while (drReader.Read())
                     {
-                        TableName = drReader["TableName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("TableName")) : string.Empty;
-                        switch (TableName)
+
+                        MarketingTicketResponse = new CustomerLandingOrderResponse()
                         {
-                            case "PhotoStatus":
-                                PhotoStatus.Add(new PhotoStatus
+
+                            isPhoto = drReader["isPhoto"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("isPhoto")) : ibool,
+
+                            isPaidUser = drReader["isPaidUser"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("isPaidUser")) : ibool,
+
+                            surName = drReader["surName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("surName")) : string.Empty,
+                            firstName = drReader["firstName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("firstName")) : string.Empty,
+                            profileId = drReader["profileId"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("profileId")) : string.Empty,
+                            photoUrl = drReader["photoUrl"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("photoUrl")) : string.Empty
+
+                        };
+
+                        drReader.NextResult();
+
+                        if (drReader.HasRows)
+                        {
+                            while (drReader.Read())
+                            {
+                                subscriptionPlan = new subscriptionPlans()
                                 {
+                                    planAmount = drReader["planAmount"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("planAmount")) : intnull,
+                                    plan = drReader["plan"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("plan")) : string.Empty,
 
-                                    ProfilePic = drReader["ProfilePic"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ProfilePic")) : string.Empty
+                                };
 
-                                });
-
-                                MarketingTicketResponse.PhotoStatus = PhotoStatus;
-                                break;
-
-                            case "PaymentMembership":
-                                PaymentMembership.Add(new PaymentMembership
-                                {
-
-                                    //PaymentMembership
-
-                                    MembershipName = drReader["MembershipName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("MembershipName")) : string.Empty,
-                                    MemberShipTypeID = drReader["MemberShipTypeID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipTypeID")) : intnull,
-                                    MemberShipDuration = drReader["MemberShipDuration"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipDuration")) : intnull,
-                                    AllottedServicePoints = drReader["AllottedServicePoints"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("AllottedServicePoints")) : intnull,
-                                    MembershipAmount = drReader["MembershipAmount"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MembershipAmount")) : intnull,
-                                    AccessFeatue = drReader["AccessFeatue"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("AccessFeatue")) : string.Empty,
-                                    Ppluspath = drReader["Ppluspath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppluspath")) : string.Empty,
-                                    Ppath = drReader["Ppath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppath")) : string.Empty
-
-
-                                });
-                                MarketingTicketResponse.PaymentMembership = PaymentMembership;
-                                break;
-
-                            case "Notifications":
-                                Notifications.Add(new Notifications
-                                {
-                                    //Notifications
-
-                                    Cust_NotificationID = drReader["Cust_NotificationID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Cust_NotificationID")) : intnull,
-                                    CategoryID = drReader["CategoryID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("CategoryID")) : intnull,
-                                    ToCust_Id = drReader["ToCust_Id"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("ToCust_Id")) : intnull,
-                                    ActionType = drReader["ActionType"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ActionType")) : string.Empty,
-                                    ActionDate = drReader["ActionDate"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ActionDate")) : string.Empty,
-                                    Cust_ID = drReader["Cust_ID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Cust_ID")) : intnull,
-                                    LogID = drReader["LogID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("LogID")) : intnull,
-
-                                    unpaidnotify = drReader["unpaidnotify"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("unpaidnotify")) : intnull,
-                                    TotalRows = drReader["TotalRows"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("TotalRows")) : intnull,
-                                    Totalpages = drReader["Totalpages"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Totalpages")) : intnull,
-                                    
-                                       ProfilePic = drReader["ProfilePic"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ProfilePic")) : string.Empty
-                                    
-                                });
-                                MarketingTicketResponse.Notifications = Notifications;
-                                break;
-
-                            case "ProfileOwner":
-                                ProfileOwner.Add(new ProfileOwner
-                                {
-
-                                    // ProfileOwner
-
-                                    CustomerOwnerEmpID = drReader["CustomerOwnerEmpID"] != DBNull.Value ? drReader.GetInt64(drReader.GetOrdinal("CustomerOwnerEmpID")) : intlongnull,
-                                    CustomerOwnerName = drReader["CustomerOwnerName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerOwnerName")) : string.Empty,
-                                    CustomerMobile = drReader["CustomerMobile"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerMobile")) : string.Empty,
-                                    CustomerLand = drReader["CustomerLand"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerLand")) : string.Empty,
-                                    CustomerBranch = drReader["CustomerBranch"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerBranch")) : string.Empty,
-                                    CustomerEmail = drReader["CustomerEmail"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerEmail")) : string.Empty,
-                                    CustomerOwnerFullName = drReader["CustomerOwnerFullName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerOwnerFullName")) : string.Empty
-
-                                });
-                                MarketingTicketResponse.ProfileOwner = ProfileOwner;
-                                break;
-
-                            default:
-                                break;
+                                subscriptionPlans.Add(subscriptionPlan);
+                            }
                         }
-                    }
 
-                  
+                        MarketingTicketResponse.subscriptionPlans = subscriptionPlans;
+
+                        drReader.NextResult();
+
+                        if (drReader.HasRows)
+                        {
+                            while (drReader.Read())
+                            {
+                                notificationsMessages = new notifications()
+                                {
+                                    profileId = drReader["profileId"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("profileId")) : string.Empty,
+                                    photoUrl = drReader["photoUrl"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("photoUrl")) : string.Empty,
+                                    message = drReader["message"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("message")) : string.Empty
+                                };
+
+                                notifications.Add(notificationsMessages);
+                            }
+
+                        }
+
+                        MarketingTicketResponse.notifications = notifications;
+
+                        drReader.NextResult();
+
+                        if (drReader.HasRows)
+                        {
+                            while (drReader.Read())
+                            {
+                                rmgDetailsdisplay = new rmgDetails()
+                                {
+
+                                    name = drReader["name"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("name")) : string.Empty,
+
+                                    contactInfo = drReader["contactInfo"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("contactInfo")) : string.Empty
+                                };
+                            }
+                        }
+
+                        MarketingTicketResponse.rmgDetails = rmgDetailsdisplay;
+
+                    }
                 }
             }
             catch (Exception EX)
@@ -2650,13 +2619,65 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
 
             return MarketingTicketResponse;
         }
 
+
+        public mobileActiveStatus getmobileloginStatus(int? custid, string spName)
+        {
+
+
+            string strErrorMsg = string.Empty;
+
+            SqlParameter[] parm = new SqlParameter[5];
+            SqlDataReader drReader = null;
+
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            mobileActiveStatus activeStatus = null;
+
+            try
+            {
+
+                parm[1] = new SqlParameter("@i_CustID", SqlDbType.Int);
+                parm[1].Value = custid;
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+
+                        activeStatus = new mobileActiveStatus()
+                        {
+                            customerStatus = drReader["customerStatus"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("customerStatus")) : string.Empty,
+                            lastloginDate = drReader["lastloginDate"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("lastloginDate")) : string.Empty
+
+
+                        };
+                    }
+                }
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
+            }
+
+            return activeStatus;
+        }
 
         /// <summary>
         /// S.A.Kiran
@@ -2704,8 +2725,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             if (Mobj.isVerified == 0)
             {
@@ -2738,8 +2759,12 @@ namespace WebapiApplication.DAL
         /// 
 
 
-        public ArrayList MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string spName)
+        public viewedByOther MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string type, string spName)
         {
+
+            MobileLandingOrderDisplay displayOrder = null;
+
+            MobileLandingOrderDisplay bookmark = null;
 
             ArrayList arrayList = new ArrayList();
             SqlConnection connection = new SqlConnection();
@@ -2748,20 +2773,79 @@ namespace WebapiApplication.DAL
 
             DataSet dtAssignSettings = new DataSet();
             SqlDataAdapter daParentDetails = new SqlDataAdapter();
+            SqlParameter[] parm = new SqlParameter[10];
+            SqlDataReader drReader = null;
+
+            string TableName = string.Empty;
+            int? intnull = null;
+            List<displayData> displayData = new List<displayData>() { };
+            List<displayData> bookmarkData = new List<displayData>();
+
+            displayData disply = null;
+            displayData BMdisply = null;
+
+            viewedByOther customerLandind = new viewedByOther();
 
             try
             {
 
-                SqlCommand cmd = new SqlCommand(spName, connection);
+                parm[1] = new SqlParameter("@i_CustID", SqlDbType.Int);
+                parm[1].Value = CustID;
 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@i_CustID", CustID);
-                cmd.Parameters.AddWithValue("@ipagefrom", Startindex);
-                cmd.Parameters.AddWithValue("@ipageto", EndIndex);
+                parm[2] = new SqlParameter("@ipagefrom", SqlDbType.Int);
+                parm[2].Value = Startindex;
 
-                daParentDetails.SelectCommand = cmd;
-                daParentDetails.Fill(dtAssignSettings);
+                parm[3] = new SqlParameter("@ipageto", SqlDbType.Int);
+                parm[3].Value = EndIndex;
 
+                parm[4] = new SqlParameter("@v_Type", SqlDbType.VarChar);
+                parm[4].Value = type;
+
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        displayOrder = new MobileLandingOrderDisplay()
+                        {
+                            totalRows = drReader["totalRows"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("totalRows")) : intnull
+
+                        };
+
+                        disply = getreaderDate(drReader);
+                        displayData.Add(disply);
+                    }
+                }
+
+                drReader.NextResult();
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        bookmark = new MobileLandingOrderDisplay()
+                        {
+                            totalRows = drReader["totalRows"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("totalRows")) : intnull
+
+                        };
+
+                        BMdisply = getreaderDate(drReader);
+                        bookmarkData.Add(BMdisply);
+                    }
+                }
+
+                if (displayData != null && displayData.Count != 0)
+                {
+                    displayOrder.data = displayData;
+                    customerLandind.viewedByOthers = displayOrder;
+                }
+                if (bookmarkData != null && bookmarkData.Count != 0)
+                {
+                    bookmark.data = bookmarkData;
+                    customerLandind.bookMarkedByMe = bookmark;
+                }
             }
             catch (Exception Ex)
             {
@@ -2770,13 +2854,59 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
 
-            return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
+            return customerLandind;
 
         }
+
+        private displayData getreaderDate(SqlDataReader drReader)
+        {
+
+            int? intnull = null;
+
+            Int64? longnull = null;
+            bool? ibool = null;
+
+            displayData BMdisply = null;
+            BMdisply = new displayData()
+            {
+
+                profileID = drReader["ProfileID"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ProfileID")) : string.Empty,
+
+                custID = drReader["Cust_ID"] != DBNull.Value ? drReader.GetInt64(drReader.GetOrdinal("Cust_ID")) : longnull,
+
+                lastName = drReader["LastName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("LastName")) : string.Empty,
+
+                age = drReader["Age"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("Age")) : intnull,
+
+                religionName = drReader["ReligionName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("ReligionName")) : string.Empty,
+
+                caste = drReader["Caste"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Caste")) : string.Empty,
+
+                educationGroup = drReader["EducationGroup"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("EducationGroup")) : string.Empty,
+
+                profession = drReader["profession"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("profession")) : string.Empty,
+
+                location = drReader["Location"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Location")) : string.Empty,
+
+                isMyBookMarked = drReader["mybookmarked"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("mybookmarked")) : ibool,
+
+                isRecentlyViewed = drReader["recentlyviewes"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("recentlyviewes")) : ibool,
+
+                isIgnored = drReader["ignode"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("ignode")) : ibool,
+
+                expressFlag = drReader["ExpressFlag"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("ExpressFlag")) : ibool,
+
+                thumbnailPhotoUrl = drReader["thumbnailPhotoUrl"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("thumbnailPhotoUrl")) : string.Empty
+
+            };
+
+            return BMdisply;
+        }
+
 
 
 
@@ -2808,8 +2938,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
@@ -2836,8 +2966,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
@@ -2869,8 +2999,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayList(dset);
         }
@@ -2904,8 +3034,8 @@ namespace WebapiApplication.DAL
             finally
             {
                 connection.Close();
-                SqlConnection.ClearPool(connection);
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearPool(connection);
+                //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayListTable(dset);
         }

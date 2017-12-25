@@ -12,11 +12,14 @@ namespace WebapiApplication.App_Start
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-           name: "DefaultApi",
-          //name: "ReportingApi",
-        routeTemplate: "api/{controller}/{action}/{id}",
-        defaults: new { id = RouteParameter.Optional }
-               );
+         name: "DefaultApi",
+                //name: "ReportingApi",
+      routeTemplate: "api/{controller}/{action}/{id}",
+      defaults: new { id = RouteParameter.Optional }
+             );
+
+            //config.MapHttpAttributeRoutes();
+            //config.EnsureInitialized();
         }
     }
 }

@@ -72,10 +72,13 @@ namespace WebapiApplication.ML
         public DataTable dtCateIDs { get; set; }
         public DataTable dtEducation { get; set; }
         public DataTable dtProfession { get; set; }
-        public DataTable dtMotherTongue { get; set; }
+     
         public int? intPhotoCount { get; set; }
         public DataTable dtMaritalstatus { get; set; }
-        public DataTable dtMothertongue { get; set; }
+
+        //public DataTable dtMothertongue { get; set; }
+        public DataTable dtMotherTongue { get; set; }
+
         public DataTable dtComplexion { get; set; }
         public DataTable dtCountrylivingin { get; set; }
         public DataTable dtStateLivingIn { get; set; }
@@ -138,6 +141,92 @@ namespace WebapiApplication.ML
 
     }
 
+
+
+    public class searchResultDisplay
+    {
+
+        public Int64? intCusID { set; get; }
+
+        public int? intGender { get; set; }
+
+        public int? FromAge { set; get; }
+
+        public int? ToAge { set; get; }
+
+        public int? iFromHeight { set; get; }
+
+        public int? iToHeight { set; get; }
+
+        public int? intReligionID { get; set; }//
+
+        public string Caste { get; set; }
+
+        public DataTable dtCateIDs { get; set; }
+
+        public string Country { get; set; }
+
+        public DataTable dtCountrylivingin { get; set; }
+
+        public string Education { get; set; }
+
+        public DataTable dtEducationGroup { get; set; }
+
+        public string Professiongroup { get; set; }
+
+        public DataTable dtProfessionGroup { get; set; }
+
+        public string MotherTongue { get; set; }
+
+        public DataTable dtMothertongue { get; set; }
+
+        public int? intPhotoCount { get; set; }
+
+        public int? StartIndex { get; set; }
+        public int? EndIndex { get; set; }
+
+        public int? i_Registrationdays { set; get; }
+
+        public string Maritalstatus { get; set; }
+
+        public DataTable dtMaritalstatus { get; set; }
+
+        public int? iPhysicalstatus { get; set; }
+      
+        public long? iToSal { get; set; }
+
+        public string Complexion { get; set; }
+
+        public DataTable dtComplexion { get; set; }
+
+        public string Educationcategory { get; set; }
+
+        public DataTable dtEduactionCat { get; set; }
+
+        public DataTable dtStateLivingIn { get; set; }
+
+        public string Visastatus { get; set; }
+
+        public DataTable dtVisaStatus { get; set; }
+
+        public long? iFromSal { get; set; }
+
+        public int? iStarLanguage { get; set; }
+
+        public DataTable dtStarLang { get; set; }
+
+      
+
+        public string Stars { get; set; }
+
+        public DataTable dtStar { get; set; }
+
+        public int? iManglinkKujaDosham { get; set; }
+
+        public int? iDiet { get; set; }
+
+        public int? iAnnualincome { get; set; }
+    }
 
 
     public class partnerInfoMl

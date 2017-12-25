@@ -31,7 +31,7 @@ namespace WebapiApplication.Implement
         }
 
         public List<DashboardRequestChats> CustometExpressIntrestDashBoardchats(long? CustID, int? Status, int iStartIndex, int iEndIndex) { return dashboard.DgetCustometExpressIntrestDashBoardchats(CustID, Status, iStartIndex, iEndIndex, "[dbo].[usp_CustomerDashBoard_messages]"); }
-        public List<TicketHistoryinfoResponse> GetTicketinformationDal(long? Ticketid, char Type) { return dashboard.GetTicketinformationDal(Ticketid, Type, "[dbo].[Usp_select_MatchFollowupTicketHistory]"); }
+        public List<TicketHistoryinfoResponse> GetTicketinformationDal(long? Ticketid, char Type) { return dashboard.GetTicketinformationDal(Ticketid, Type, "[dbo].[Usp_select_MatchFollowupTicketHistory_Customer]"); }
         public List<CommunicationHistry> GetCustometMessagesCount(CommunicationHistoryReq Mobj) { return dashboard.GetCustometMessagesCount(Mobj, "[dbo].[usp_GetCustMessageHistory]"); }
         public int InsertExpressViewTicket(long? FromCustID, long? ToCustID, string EncriptedText, string strtypeOfReport) { return dashboard.InsertExpressViewTicket(FromCustID, ToCustID, EncriptedText, strtypeOfReport, "[dbo].[Usp_InsertExpressViewTicket_new]"); }
         public int InsertCustomerExpressinterest(int? fromcustid, int? tocustid, long? logID, string interstTYpe, int? empid) { return dashboard.InsertCustomerExpressinterest(fromcustid, tocustid, logID, interstTYpe, empid, "[dbo].[usp_insert_customerDashboard_expressinterest]"); }

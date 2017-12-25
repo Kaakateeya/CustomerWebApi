@@ -34,6 +34,15 @@ namespace WebapiApplication.ML
         public string FullPhotoPath { set; get; }
         public string ApplicationPhotoPath { set; get; }
     }
+
+    public class mobileOrderDisplay
+    {
+        public long? custID { set; get; }
+        public int? startIndex { set; get; }
+        public int? endIndex { set; get; }
+        public string type { set; get; }
+    }
+
     public class MobileEmailVerf
     {
         public long? CustID { set; get; }
@@ -221,6 +230,8 @@ namespace WebapiApplication.ML
         public int? IsConfidential { get; set; }
 
         public int? HighConfendential { get; set; }
+
+        public string RegionName { get; set; }
     }
     public class KaakateeyaBranchesML
     {

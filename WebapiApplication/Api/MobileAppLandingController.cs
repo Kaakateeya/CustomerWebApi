@@ -23,7 +23,7 @@ namespace WebapiApplication.Api
             return this.IMobileAppDev.UpdateCustomerEmailMobileNumber_Verification(Mobj);
         }
 
-        public ArrayList getMobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return this.IMobileAppDev.MobileLandingOrderDisplay(CustID, Startindex, EndIndex); }
+        //public ArrayList getMobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex) { return this.IMobileAppDev.MobileLandingOrderDisplay(CustID, Startindex, EndIndex); }
 
     }
 }

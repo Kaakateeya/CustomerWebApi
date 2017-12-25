@@ -73,7 +73,9 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-                SqlConnection.ClearAllPools();
+
+             //   SqlConnection.ClearAllPools();
+            
             }
         }
 
@@ -129,7 +131,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-                SqlConnection.ClearAllPools();
+                //SqlConnection.ClearAllPools();
             }
         }
 
@@ -316,7 +318,8 @@ namespace WebapiApplication.DAL
         public static void ApplicationErrorLog(string ErrorSpName, string ErrorMessage, long? CustID, string PageName, string Type)
         {
             new StaticPagesDAL().DApplicationErrorLog(ErrorSpName, ErrorMessage, CustID, PageName, Type, "[dbo].[usp_ApplicationErrorLog]");
-            SqlConnection.ClearAllPools();
+           
+            //SqlConnection.ClearAllPools();
         }
         public static void PaymentSMS(DataTable dt, string SendPhonenumber)
         {
@@ -336,7 +339,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-                SqlConnection.ClearAllPools();
+               // SqlConnection.ClearAllPools();
             }
         }
 
@@ -353,7 +356,7 @@ namespace WebapiApplication.DAL
                 string result1 = cc.SendTextSMS("ykrishna", "summary$1", MobileNumber, "Greeting from Kaakateeya.com ! Your pin Number is " + strMobileverf + " Use this PIN to verify your primary mobile", "smscntry");
             }
 
-            SqlConnection.ClearAllPools();
+           // SqlConnection.ClearAllPools();
         }
 
         public static string S3bucketname = ConfigurationManager.AppSettings["bucketName"];
@@ -361,70 +364,69 @@ namespace WebapiApplication.DAL
 
         public static bool S3upload(string filePath, string keyName)
         {
-            ////filePath = "D://KaakateeyaMainProject//Kaakateeya//Development_Kaakateeya//kaakateeyaWeb//access//Images//ProfilePics//KMPL_71668_Images//img2.jpg";
+            //filePath = "D://KaakateeyaMainProject//Kaakateeya//Development_Kaakateeya//kaakateeyaWeb//access//Images//ProfilePics//KMPL_71668_Images//img2.jpg";
 
-            //string strpath = keyName.Replace("/", "//");
+            string strpath = keyName.Replace("/", "//");
 
-            //// filePath = "D://CustomerAngularSite//Application//" + strpath;
-            //filePath = "C://Project//Application//" + strpath;
+            // filePath = "D://CustomerAngularSite//Application//" + strpath;
+            filePath = "C://Project//Application//" + strpath;
 
-            ////filePath = "C://inetpub//wwwroot//access//" + strpath;
-            //try
-            //{
-            //    TransferUtility fileTransferUtility = new
-            //        TransferUtility(new AmazonS3Client(Amazon.RegionEndpoint.APSouth1));
+            //filePath = "C://inetpub//wwwroot//access//" + strpath;
+            try
+            {
+                TransferUtility fileTransferUtility = new
+                    TransferUtility(new AmazonS3Client(Amazon.RegionEndpoint.APSouth1));
 
-            //    //TransferUtility utility = new TransferUtility();
-            //    //utility.UploadDirectory(directoryPath, bucketName);
-
-
-            //    // 1. Upload a file, file name is used as the object key name.
-            //    //fileTransferUtility.Upload(filePath, bucketName);
-            //    //Console.WriteLine("Upload 1 completed");
+                //TransferUtility utility = new TransferUtility();
+                //utility.UploadDirectory(directoryPath, bucketName);
 
 
-            //    //// 2. Specify object key name explicitly.
-            //    //fileTransferUtility.Upload(filePath,
-            //    //                      	bucketName, keyName);
-            //    //Console.WriteLine("Upload 2 completed");
+                // 1. Upload a file, file name is used as the object key name.
+                //fileTransferUtility.Upload(filePath, bucketName);
+                //Console.WriteLine("Upload 1 completed");
 
 
-            //    //// 3. Upload data from a type of System.IO.Stream.
-            //    //using (FileStream fileToUpload =
-            //    //	new FileStream(filePath, FileMode.Open, FileAccess.Read))
-            //    //{
-            //    //	fileTransferUtility.Upload(fileToUpload,
-            //    //                           	bucketName, keyName);
-            //    //}
-            //    //Console.WriteLine("Upload 3 completed");
+                //// 2. Specify object key name explicitly.
+                //fileTransferUtility.Upload(filePath,
+                //                      	bucketName, keyName);
+                //Console.WriteLine("Upload 2 completed");
 
 
-            //    // 4.Specify advanced settings/options.
-            //    TransferUtilityUploadRequest fileTransferUtilityRequest = new TransferUtilityUploadRequest
-            //    {
-            //        BucketName = "kaakateeyaprod",
-            //        FilePath = filePath,
-            //        StorageClass = S3StorageClass.ReducedRedundancy,
-            //        PartSize = 6291456, // 6 MB.
-            //        Key = keyName,
-            //        CannedACL = S3CannedACL.PublicRead
-            //    };
-            //    fileTransferUtilityRequest.Metadata.Add("param1", "Value1");
-            //    fileTransferUtilityRequest.Metadata.Add("param2", "Value2");
-            //    fileTransferUtility.Upload(fileTransferUtilityRequest);
-            //    return true;
-            //}
-            //catch (AmazonS3Exception s3Exception)
-            //{
-            //    Commonclass.ApplicationErrorLog("s3 Horo", Convert.ToString(s3Exception.Message), null, null, null);
+                //// 3. Upload data from a type of System.IO.Stream.
+                //using (FileStream fileToUpload =
+                //	new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                //{
+                //	fileTransferUtility.Upload(fileToUpload,
+                //                           	bucketName, keyName);
+                //}
+                //Console.WriteLine("Upload 3 completed");
 
-            //    return false;
-            //}
-            //finally
-            //{
-            //    SqlConnection.ClearAllPools();
-            //}
-            return false;
+
+                // 4.Specify advanced settings/options.
+                TransferUtilityUploadRequest fileTransferUtilityRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = "kaakateeyaprod",
+                    FilePath = filePath,
+                    StorageClass = S3StorageClass.ReducedRedundancy,
+                    PartSize = 6291456, // 6 MB.
+                    Key = keyName,
+                    CannedACL = S3CannedACL.PublicRead
+                };
+                fileTransferUtilityRequest.Metadata.Add("param1", "Value1");
+                fileTransferUtilityRequest.Metadata.Add("param2", "Value2");
+                fileTransferUtility.Upload(fileTransferUtilityRequest);
+                return true;
+            }
+            catch (AmazonS3Exception s3Exception)
+            {
+                Commonclass.ApplicationErrorLog("s3 Horo", Convert.ToString(s3Exception.Message), null, null, null);
+
+                return false;
+            }
+            finally
+            {
+               // SqlConnection.ClearAllPools();
+            }
         }
 
         public static ArrayList convertdataTableToArrayListTable(DataSet dtSet)
@@ -468,7 +470,7 @@ namespace WebapiApplication.DAL
                 path = !string.IsNullOrEmpty(S3PhotoPath) ? S3PhotoPath + "Images/customernoimages/Horo_no.jpg" : "../../Customer_new/images/Horo_no.jpg";
             }
 
-            SqlConnection.ClearAllPools();
+          //  SqlConnection.ClearAllPools();
             return path;
         }
 
