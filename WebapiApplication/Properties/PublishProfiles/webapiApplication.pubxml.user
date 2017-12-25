@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\customerBuild_files\14_11_2017_latestbuild</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\customerBuild_files\25_11\2_2017_Umasystembuild</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_WebReferences/SMSC_CLIENT/configuration.svcinfo">
@@ -40,10 +40,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2017 11:16:58</publishTime>
     </File>
     <File Include="bin/AWSSDK.Core.dll">
-      <publishTime>12/13/2016 11:34:05</publishTime>
+      <publishTime>12/25/2017 17:49:51</publishTime>
     </File>
     <File Include="bin/AWSSDK.S3.dll">
-      <publishTime>12/13/2016 11:34:09</publishTime>
+      <publishTime>12/25/2017 17:49:51</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.AspNet.dll">
       <publishTime>10/23/2017 11:16:58</publishTime>
@@ -64,16 +64,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2017 11:17:01</publishTime>
     </File>
     <File Include="bin/EmailVerification3_CSharp.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>12/25/2017 17:49:52</publishTime>
     </File>
     <File Include="bin/EmailVerification3_CSharp.XmlSerializers.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>12/25/2017 17:49:52</publishTime>
     </File>
     <File Include="bin/EmailVerification6_CSharp.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>12/25/2017 17:49:52</publishTime>
     </File>
     <File Include="bin/EmailVerification6_CSharp.XmlSerializers.dll">
-      <publishTime>03/03/2016 13:13:08</publishTime>
+      <publishTime>12/25/2017 17:49:52</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 11:16:58</publishTime>
@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2017 11:16:58</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>03/03/2016 13:13:15</publishTime>
+      <publishTime>12/25/2017 17:49:54</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>10/23/2017 11:16:58</publishTime>
@@ -133,7 +133,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2017 11:16:58</publishTime>
     </File>
     <File Include="bin/WebapiApplication.dll">
-      <publishTime>11/14/2017 13:02:25</publishTime>
+      <publishTime>12/25/2017 17:53:38</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/23/2017 11:16:58</publishTime>
@@ -451,7 +451,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2017 15:55:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/14/2017 13:06:44</publishTime>
+      <publishTime>12/25/2017 17:53:39</publishTime>
     </File>
   </ItemGroup>
 </Project>

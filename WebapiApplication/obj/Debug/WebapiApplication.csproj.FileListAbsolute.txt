@@ -153,6 +153,5 @@ D:\CustomerWebApi\WebapiApplication\bin\System.Web.Providers.xml
 D:\CustomerWebApi\WebapiApplication\bin\Org.Mentalis.Security.Cryptography.xml
 D:\CustomerWebApi\WebapiApplication\bin\Mono.Math.xml
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csproj.App.config
-D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
