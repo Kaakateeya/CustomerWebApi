@@ -112,6 +112,10 @@ D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OAuth.dll
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.dll
 D:\CustomerWebApi\WebapiApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.XmlSerializers.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.dll
+D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.XmlSerializers.dll
 D:\CustomerWebApi\WebapiApplication\bin\EntityFramework.dll
 D:\CustomerWebApi\WebapiApplication\bin\EntityFramework.SqlServer.dll
 D:\CustomerWebApi\WebapiApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
