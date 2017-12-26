@@ -87,7 +87,7 @@ namespace WebapiApplication.Implement
 
         public rmgDetailsdisply getrmgDetailsdisplay(int? custid) { return new StaticPagesDAL().getrmgDetailsdisplay(custid, "[dbo].[usp_rmdetails_MobileApp]"); }
 
-        public ArrayList fullprofileself(string ProfileID, int? EmpID) { return new StaticPagesDAL().fullprofileself(ProfileID, EmpID, "[dbo].[GetViewProfile_CustomerNewViewAdminFullDetails]"); }
+        public ArrayList fullprofileself(string ProfileID, int? EmpID) { return new StaticPagesDAL().fullprofileself(ProfileID, EmpID, "[dbo].[GetViewProfile_CustomerNewViewAdminFullDetails_Cust_AJS]"); }
     
     }
 }
