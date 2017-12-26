@@ -75,6 +75,7 @@ namespace WebapiApplication.Implement
 
         }
 
+        
         public viewedByOther MobileLandingOrderDisplaysingleselection(long? CustID, int? Startindex, int? EndIndex, string type) { return new StaticPagesDAL().MobileLandingOrderDisplaysingle(CustID, Startindex, EndIndex, type, "[dbo].[usp_LandingOrderSingledisplay_MobileApp]"); }
         
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepartial(ToProfileID, EmpID, "[dbo].[GetViewProfile_FullDetails_Partial]"); }

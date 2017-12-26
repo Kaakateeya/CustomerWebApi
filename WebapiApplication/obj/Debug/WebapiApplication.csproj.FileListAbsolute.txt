@@ -92,15 +92,6 @@ D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Primitives.xml
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.xml
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Http.WebHost.xml
 D:\CustomerWebApi\WebapiApplication\bin\WebapiApplication.dll.config
-D:\CustomerWebApi\WebapiApplication\bin\EntityFramework.SqlServer.dll
-D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Extensions.dll
-D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Primitives.dll
-D:\CustomerWebApi\WebapiApplication\bin\Org.Mentalis.Security.Cryptography.dll
-D:\CustomerWebApi\WebapiApplication\bin\Mono.Math.dll
-D:\CustomerWebApi\WebapiApplication\bin\Antlr3.Runtime.pdb
-D:\CustomerWebApi\WebapiApplication\bin\EntityFramework.SqlServer.xml
-D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Extensions.xml
-D:\CustomerWebApi\WebapiApplication\bin\System.Net.Http.Primitives.xml
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Optimization.xml
 D:\CustomerWebApi\WebapiApplication\bin\System.Web.Providers.xml
 D:\CustomerWebApi\WebapiApplication\bin\Org.Mentalis.Security.Cryptography.xml
@@ -159,5 +150,6 @@ D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\System.Web.Providers.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Org.Mentalis.Security.Cryptography.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Mono.Math.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csproj.App.config
+D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
