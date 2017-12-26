@@ -17,10 +17,12 @@ using Newtonsoft.Json.Linq;
 using WebapiApplication.UserDefinedTable;
 using System.IO;
 using WebapiApplication.ServiceReference1;
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
 using Amazon.S3.Transfer;
+using Amazon.S3;
+//using Amazon;
+//using Amazon.S3;
+//using Amazon.S3.Model;
+//using Amazon.S3.Transfer;
 
 namespace WebapiApplication.DAL
 {

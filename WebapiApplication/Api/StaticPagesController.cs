@@ -145,6 +145,7 @@ namespace WebapiApplication.Api
 
         public rmgDetailsdisply getrmgDetailsdisplay(int? custid) { return this.ISuccessStories.getrmgDetailsdisplay(custid); }  
 
+        public ArrayList getfullprofileself(string ProfileID, int? EmpID) { return this.ISuccessStories.fullprofileself(ProfileID, EmpID); }
 
     }
 }

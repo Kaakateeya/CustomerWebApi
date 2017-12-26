@@ -22,7 +22,7 @@ namespace WebapiApplication.Implement
         public List<KaakateeyaBranchesML> ImpgetKaakateeyaBranchesDetails(string dependencyName, string dependencyValue, string dependencyflagID) { return new StaticPagesDAL().getKaakateeyaBranchesDetails(dependencyName, dependencyValue, dependencyflagID, "[dbo].[DropdownValues_dependency_injection]"); }
         public List<PhotoPathDisplay> GetPhotoSlideImages(string CustID) { return new StaticPagesDAL().GetPhotoSlideImages(CustID, "[dbo].[usp_PhotoSlideImages]"); }
         public List<ProfileSettings> customerProfilesettings(Int64? CustID) { return new StaticPagesDAL().customerProfilesettings(CustID, "[dbo].[usp_Profilesettings_customer]"); }
-        public ArrayList CustomerViewfullProfileDetails(long? ProfileID, int? CustID, int? Relationship) { string spname = Relationship == 283 ? "[dbo].[GetViewProfile_FullDetails]" : "[dbo].[GetViewProfile_FullDetails_Partner]"; return new StaticPagesDAL().CustomerViewfullProfileDetails(ProfileID, CustID, spname); }
+        public ArrayList CustomerViewfullProfileDetails(long? ProfileID, int? CustID, int? Relationship) { string spname = Relationship == 283 ? "[dbo].[GetViewProfile_FullDetails]" : "[dbo].[GetViewProfile_FullDetails_Partner]"; return new StaticPagesDAL().CustomerViewfullProfileDetails(ProfileID, CustID, spname); }//
         public ArrayList GetExpressinterstBookmarkIgnore(long? loggedcustid, long? ToCustID) { return new StaticPagesDAL().GetExpressinterst_bookmark_ignore_Data(loggedcustid, ToCustID, "[dbo].[usp_GetExpressinterst_bookmark_ignore_data_New]"); }
         public ArrayList paymentdetailsmethoddal(Int64? CustID) { return new StaticPagesDAL().paymentdetailsmethoddal(CustID, "[dbo].[usp_ProfilePayments_NewDesign]"); }
         public ArrayList GetTicketDetails(TicketDetails ticketdetails) { return new StaticPagesDAL().GetTicketDetailsDal(ticketdetails, "[dbo].[usp_Reports_CustomerTicketingReports]"); }
@@ -87,5 +87,7 @@ namespace WebapiApplication.Implement
 
         public rmgDetailsdisply getrmgDetailsdisplay(int? custid) { return new StaticPagesDAL().getrmgDetailsdisplay(custid, "[dbo].[usp_rmdetails_MobileApp]"); }
 
+        public ArrayList fullprofileself(string ProfileID, int? EmpID) { return new StaticPagesDAL().fullprofileself(ProfileID, EmpID, "[dbo].[GetViewProfile_CustomerNewViewAdminFullDetails]"); }
+    
     }
 }

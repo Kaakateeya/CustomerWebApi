@@ -179,6 +179,7 @@ namespace WebapiApplication.Interfaces
         viewedByOther MobileLandingOrderDisplaysingleselection(long? CustID, int? Startindex, int? EndIndex, string type);
 
         rmgDetailsdisply getrmgDetailsdisplay(int? custid);
+        ArrayList fullprofileself(string ProfileID, int? EmpID);
     }
 
     public interface IDependency

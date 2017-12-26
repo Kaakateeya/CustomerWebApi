@@ -3204,6 +3204,39 @@ namespace WebapiApplication.DAL
             return rmgdisplay;
 
         }
+public ArrayList fullprofileself(string ProfileID, int? EmpID, string strSpname)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet dataset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            SqlCommand cmd = new SqlCommand(strSpname, connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@strProfileID", ProfileID);
+                cmd.Parameters.AddWithValue("@intAdminId", EmpID);
+                da.SelectCommand = cmd;
+                da.Fill(dataset);
+
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(strSpname, Convert.ToString(EX.Message), Convert.ToInt32(ProfileID), "fullprofileself", null);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Commonclass.convertdataTableToArrayList(dataset);
+        }
+
+
+
     }
 }
 
