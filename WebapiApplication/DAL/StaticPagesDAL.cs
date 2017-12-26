@@ -474,7 +474,7 @@ namespace WebapiApplication.DAL
                 }
                 Expbook.Add(Bookexp);
                 reader.Close();
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -574,7 +574,7 @@ namespace WebapiApplication.DAL
                     }
                 }
                 reader.Close();
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -665,7 +665,7 @@ namespace WebapiApplication.DAL
 
                 ds = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
                 if (string.Compare(parm[3].Value.ToString(), System.DBNull.Value.ToString()) == 0) { iStatus = 0; } else { iStatus = Convert.ToInt32(parm[3].Value); }
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception ex)
             {
@@ -736,7 +736,7 @@ namespace WebapiApplication.DAL
                 }
                 lstprofilesetting.Add(profilesettings);
                 reader.Close();
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -914,7 +914,7 @@ namespace WebapiApplication.DAL
                 parm[3].Direction = ParameterDirection.Output;
                 ds = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
                 if (string.Compare(parm[3].Value.ToString(), System.DBNull.Value.ToString()) == 0) { iStatus = 0; } else { iStatus = Convert.ToInt32(parm[3].Value); }
-               
+
                 //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception ex)
@@ -2015,7 +2015,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-               // SqlConnection.ClearAllPools();
+                // SqlConnection.ClearAllPools();
             }
 
             return mobj;
@@ -2393,7 +2393,7 @@ namespace WebapiApplication.DAL
                 {
                     Status = Convert.ToInt32(cmd.Parameters[2].Value);
                 }
-                
+
                 //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception Ex)
@@ -3038,6 +3038,37 @@ namespace WebapiApplication.DAL
                 //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayListTable(dset);
+        }
+
+        public ArrayList fullprofileself(string ProfileID, int? EmpID, string strSpname)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet dataset = new DataSet();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+            var sqlCommand = connection.CreateCommand();
+            sqlCommand.CommandTimeout = 120;
+            SqlCommand cmd = new SqlCommand(strSpname, connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@strProfileID", ProfileID);
+                cmd.Parameters.AddWithValue("@intAdminId", EmpID);
+                da.SelectCommand = cmd;
+                da.Fill(dataset);
+
+            }
+            catch (Exception EX)
+            {
+                Commonclass.ApplicationErrorLog(strSpname, Convert.ToString(EX.Message), Convert.ToInt32(ProfileID), "fullprofileself", null);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Commonclass.convertdataTableToArrayList(dataset);
         }
     }
 }

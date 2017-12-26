@@ -164,6 +164,8 @@ namespace WebapiApplication.Interfaces
         ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid);
 
         mobileActiveStatus getmobileloginStatus(int? custid);
+
+        ArrayList fullprofileself(string ProfileID, int? EmpID);
     }
 
     public interface IDependency

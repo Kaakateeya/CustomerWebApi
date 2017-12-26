@@ -128,6 +128,8 @@ namespace WebapiApplication.Api
 
         public ArrayList getfromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return ISuccessStories.fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid); }
 
+        public ArrayList getfullprofileself(string ProfileID, int? EmpID) { return this.ISuccessStories.fullprofileself(ProfileID, EmpID); }
+
     }
 }
 
