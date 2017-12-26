@@ -45,6 +45,7 @@ namespace WebapiApplication.DAL
                         {
                             while (reader.Read())
                             {
+
                                 Mobjresult.intCusID = (reader["Cust_ID"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_ID")) : intNull;
                                 Mobjresult.intGender = (reader["GenderID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("GenderID")) : iNull;
                                 Mobjresult.Agefrom = (reader["AgeMax"]) != DBNull.Value ? (reader.GetDouble(reader.GetOrdinal("AgeMax"))).ToString() : null;
@@ -52,21 +53,23 @@ namespace WebapiApplication.DAL
                                 Mobjresult.Heightfrom = (reader["MaxHeight"]) != DBNull.Value ? (reader.GetDouble(reader.GetOrdinal("MaxHeight"))).ToString() : null;
                                 Mobjresult.Heightto = (reader["MinHeight"]) != DBNull.Value ? (reader.GetDouble(reader.GetOrdinal("MinHeight"))).ToString() : null;
                                 Mobjresult.Maritalstatus = (reader["maritalstatusid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("maritalstatusid")) : null;
-                                Mobjresult.Religion = (reader["religionid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("religionid")) : string.Empty;
-                                Mobjresult.MotherTongue = (reader["MotherTongueID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MotherTongueID")) : string.Empty;
-                                Mobjresult.Caste = (reader["casteid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("casteid")) : string.Empty;
-                                Mobjresult.Complexion = (reader["complexionid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("complexionid")) : string.Empty;
-                                Mobjresult.bodytype = (reader["BodyTypeID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("BodyTypeID")) : string.Empty;
-                                Mobjresult.PhysicalStatusstring = (reader["physicalstatusid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("physicalstatusid")) : string.Empty;
-                                Mobjresult.Educationcategory = (reader["EducationCategoryID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationCategoryID")) : string.Empty;
-                                Mobjresult.Education = (reader["EducationGroupID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationGroupID")) : string.Empty;
-                                Mobjresult.Professiongroup = (reader["ProfessionGroup"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfessionGroup")) : string.Empty;
-                                Mobjresult.Country = (reader["CountryID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("CountryID")) : string.Empty;
-                                Mobjresult.State = (reader["StateID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("StateID")) : string.Empty;
-                                Mobjresult.Stars = (reader["StarLanguageID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("StarLanguageID")) : string.Empty;
-                                Mobjresult.Stars = (reader["PreferredStars"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PreferredStars")) : string.Empty;
+                                Mobjresult.Religion = (reader["religionid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("religionid")) : null;
+                                Mobjresult.MotherTongue = (reader["MotherTongueID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MotherTongueID")) : null;
+                                Mobjresult.Caste = (reader["casteid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("casteid")) : null;
+                                Mobjresult.Complexion = (reader["complexionid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("complexionid")) : null;
+                                Mobjresult.bodytype = (reader["BodyTypeID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("BodyTypeID")) : null;
+                                Mobjresult.PhysicalStatusstring = (reader["physicalstatusid"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("physicalstatusid")) : null;
+                                Mobjresult.Educationcategory = (reader["EducationCategoryID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationCategoryID")) : null;
+                                Mobjresult.Education = (reader["EducationGroupID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationGroupID")) : null;
+                                Mobjresult.Professiongroup = (reader["ProfessionGroup"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfessionGroup")) : null;
+                                Mobjresult.Country = (reader["CountryID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("CountryID")) : null;
+                                Mobjresult.State = (reader["StateID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("StateID")) : null;
+                                Mobjresult.Stars = (reader["StarLanguageID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("StarLanguageID")) : null;
+                                Mobjresult.Stars = (reader["PreferredStars"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PreferredStars")) : null;
                                 Mobjresult.iManglinkKujaDosham = (reader["KujaDosham"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("KujaDosham")) : iNull;
-                                Mobjresult.CasteText = (reader["Caste"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Caste")) : string.Empty;
+                                Mobjresult.CasteText = (reader["Caste"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Caste")) : null;
+                                Mobjresult.ivisaTypeID = (reader["VisaTypeID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("VisaTypeID")) : iNull;
+
                             }
                         }
                         else
@@ -75,31 +78,32 @@ namespace WebapiApplication.DAL
                             {
                                 Mobjresult.intCusID = (reader["CustID"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("CustID")) : intNull;
                                 Mobjresult.intGender = (reader["LookingforID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("LookingforID")) : iNull;
-                                Mobjresult.Agefrom = (reader["ToAgeID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("ToAgeID"))) : string.Empty;
-                                Mobjresult.Ageto = (reader["FromAgeID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("FromAgeID"))) : string.Empty;
-                                Mobjresult.Heightfrom = (reader["ToHeightID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("ToHeightID"))) : string.Empty;
-                                Mobjresult.Heightto = (reader["FromHeightID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("FromHeightID"))) : string.Empty;
+                                Mobjresult.Agefrom = (reader["ToAgeID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("ToAgeID"))) : null;
+                                Mobjresult.Ageto = (reader["FromAgeID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("FromAgeID"))) : null;
+                                Mobjresult.Heightfrom = (reader["ToHeightID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("ToHeightID"))) : null;
+                                Mobjresult.Heightto = (reader["FromHeightID"]) != DBNull.Value ? (reader.GetString(reader.GetOrdinal("FromHeightID"))) : null;
                                 Mobjresult.Maritalstatus = (reader["MaritalstatusID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MaritalstatusID")) : null;
-                                Mobjresult.Religion = (reader["ReligionID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ReligionID")) : string.Empty;
-                                Mobjresult.MotherTongue = (reader["MothertongueID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MothertongueID")) : string.Empty;
-                                Mobjresult.Caste = (reader["CasteID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("CasteID")) : string.Empty;
-                                Mobjresult.Complexion = (reader["ComplexionId"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ComplexionId")) : string.Empty;
-                                Mobjresult.PhysicalStatusstring = (reader["PhysicalstatusID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhysicalstatusID")) : string.Empty;
-                                Mobjresult.Educationcategory = (reader["EducationcategoryID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationcategoryID")) : string.Empty;
-                                Mobjresult.Education = (reader["EducationGroupID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationGroupID")) : string.Empty;
-                                Mobjresult.Professiongroup = (reader["ProfessiongroupId"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfessiongroupId")) : string.Empty;
-                                Mobjresult.Country = (reader["CountyWorkingInID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("CountyWorkingInID")) : string.Empty;
-                                Mobjresult.State = (reader["StateWorkingInID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("StateWorkingInID")) : string.Empty;
+                                Mobjresult.Religion = (reader["ReligionID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ReligionID")) : null;
+                                Mobjresult.MotherTongue = (reader["MothertongueID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("MothertongueID")) : null;
+                                Mobjresult.Caste = (reader["CasteID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("CasteID")) : null;
+                                Mobjresult.Complexion = (reader["ComplexionId"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ComplexionId")) : null;
+                                Mobjresult.PhysicalStatusstring = (reader["PhysicalstatusID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhysicalstatusID")) : null;
+                                Mobjresult.Educationcategory = (reader["EducationcategoryID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationcategoryID")) : null;
+                                Mobjresult.Education = (reader["EducationGroupID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("EducationGroupID")) : null;
+                                Mobjresult.Professiongroup = (reader["ProfessiongroupId"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfessiongroupId")) : null;
+                                Mobjresult.Country = (reader["CountyWorkingInID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("CountyWorkingInID")) : null;
+                                Mobjresult.State = (reader["StateWorkingInID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("StateWorkingInID")) : null;
                                 Mobjresult.iStarID = (reader["StarId"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("StarId")) : iNull;
                                 Mobjresult.iStarLanguage = (reader["StarlanguageID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("StarlanguageID")) : iNull;
                                 Mobjresult.iManglinkKujaDosham = (reader["ManglikKujaDoshamID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("ManglikKujaDoshamID")) : iNull;
-                                Mobjresult.CasteText = (reader["Caste"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Caste")) : string.Empty;
-                                Mobjresult.Visastatus = (reader["VisastatusID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("VisastatusID")) : string.Empty;
+                                Mobjresult.CasteText = (reader["Caste"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("Caste")) : null;
+                                Mobjresult.Visastatus = (reader["VisastatusID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("VisastatusID")) : null;
                                 Mobjresult.iAnnualincome = (reader["Annualincome"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Annualincome")) : iNull;
                                 Mobjresult.iFromSal = (reader["FromSal"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("FromSal")) : intNull;
                                 Mobjresult.iToSal = (reader["Tosal"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Tosal")) : intNull;
                                 Mobjresult.iDiet = (reader["DietID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("DietID")) : iNull;
                                 Mobjresult.i_Registrationdays = (reader["Registrationdays"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Registrationdays")) : iNull;
+                                Mobjresult.ivisaTypeID = (reader["VisaTypeID"]) != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("VisaTypeID")) : iNull;
                             }
                         }
                     }
@@ -112,6 +116,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
+
                 con.Close();
                 //SqlConnection.ClearPool(con);
                 //SqlConnection.ClearAllPools();
@@ -229,8 +234,13 @@ namespace WebapiApplication.DAL
                                 Mobjresult.LogID = (reader["LogId"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("LogId")) : intNull;
                                 Mobjresult.Photo = (reader["PhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoPath")) : string.Empty;
                                 Mobjresult.Photofullpath = (reader["FullPhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FullPhotoPath")) : string.Empty;
+                                Mobjresult.thumbnailPhotoPath = (reader["thumbnailPhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("thumbnailPhotoPath")) : string.Empty;
                                 Mobjresult.DistName = (reader["DistName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("DistName")) : string.Empty;
                                 Mobjresult.strFirstName = (reader["FirstName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FirstName")) : string.Empty;
+
+                                Mobjresult.fullphotoimageUrl1 = (reader["fullphotoimageUrl1"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl1")) : string.Empty;
+                                Mobjresult.fullphotoimageUrl2 = (reader["fullphotoimageUrl2"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl2")) : string.Empty;
+                                Mobjresult.fullphotoimageUrl3 = (reader["fullphotoimageUrl3"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl3")) : string.Empty;
 
                             }
 
@@ -264,6 +274,7 @@ namespace WebapiApplication.DAL
             SqlConnection con = null;
             try
             {
+
                 parm[0] = new SqlParameter("@i_PCustId", SqlDbType.Int);
                 parm[0].Value = ProfileIDSearch.intCusID;
                 parm[1] = new SqlParameter("@i_GenderId", SqlDbType.Int);
@@ -289,12 +300,14 @@ namespace WebapiApplication.DAL
                     sqlCommand.CommandTimeout = 120;
 
                     reader = SQLHelper.ExecuteReader(con, CommandType.StoredProcedure, spName, parm);
+
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             QuicksearchResultML Mobjresult = new QuicksearchResultML();
                             {
+
                                 Mobjresult.intCusID = (reader["Cust_Id"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_Id")) : intNull;
                                 Mobjresult.NAME = (reader["NAME"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("NAME")) : strNP;
                                 Mobjresult.ProfileID = (reader["ProfileID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
@@ -342,7 +355,16 @@ namespace WebapiApplication.DAL
                                 Mobjresult.LogID = (reader["LogId"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("LogId")) : intNull;
                                 Mobjresult.Photo = (reader["PhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("PhotoPath")) : string.Empty;
                                 Mobjresult.Photofullpath = (reader["FullPhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FullPhotoPath")) : string.Empty;
+                                Mobjresult.thumbnailPhotoPath = (reader["thumbnailPhotoPath"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("thumbnailPhotoPath")) : string.Empty;
+                               
+                                
                                 Mobjresult.DistName = (reader["DistName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("DistName")) : string.Empty;
+
+                                Mobjresult.fullphotoimageUrl1 = (reader["fullphotoimageUrl1"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl1")) : string.Empty;
+                                Mobjresult.fullphotoimageUrl2 = (reader["fullphotoimageUrl2"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl2")) : string.Empty;
+                                Mobjresult.fullphotoimageUrl3 = (reader["fullphotoimageUrl3"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl3")) : string.Empty;
+
+                                
                             }
 
                             listSearch.Add(Mobjresult);
@@ -656,6 +678,7 @@ namespace WebapiApplication.DAL
                         {
                             generalAdvanceSearchResult Mobjresult = new generalAdvanceSearchResult();
                             {
+
                                 Mobjresult.intCusID = (reader["Cust_Id"]) != DBNull.Value ? reader.GetInt64(reader.GetOrdinal("Cust_Id")) : intNull;
                                 Mobjresult.NAME = (reader["NAME"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("NAME")) : strNP;
                                 Mobjresult.ProfileID = (reader["ProfileID"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("ProfileID")) : null;
@@ -687,6 +710,10 @@ namespace WebapiApplication.DAL
                                 Mobjresult.DistName = (reader["DistName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("DistName")) : string.Empty;
                                 Mobjresult.strFirstName = (reader["FirstName"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("FirstName")) : string.Empty;
 
+                                Mobjresult.fullphotoimageUrl1 = (reader["fullphotoimageUrl1"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl1")) : string.Empty;
+                                Mobjresult.fullphotoimageUrl2 = (reader["fullphotoimageUrl2"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl2")) : string.Empty;
+                                Mobjresult.fullphotoimageUrl3 = (reader["fullphotoimageUrl3"]) != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl3")) : string.Empty;
+                                
                             }
 
                             listSearch.Add(Mobjresult);

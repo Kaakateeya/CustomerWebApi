@@ -8,6 +8,16 @@ using System.Data.SqlClient;
 using System.Collections;
 using System.Configuration;
 using KaakateeyaDAL;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Net;
+using System.IO;
+using CCA.Util;
+using System.Collections.Specialized;
+using System.Xml;
+
+
 
 namespace WebapiApplication.DAL
 {
@@ -26,7 +36,7 @@ namespace WebapiApplication.DAL
 
             var sqlCommand = connection.CreateCommand();
             sqlCommand.CommandTimeout = 120;
-            
+
             try
             {
                 parm[0] = new SqlParameter("@i_FromCustID", SqlDbType.BigInt);
@@ -62,6 +72,7 @@ namespace WebapiApplication.DAL
                     {
                         Paymentselect payment = new Paymentselect();
                         {
+
                             payment.MembershipName = reader["MembershipName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("MembershipName")) : null;
                             payment.Emp_Membership_ID = reader["Emp_Membership_ID"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Emp_Membership_ID")) : intnull;
                             payment.MemberShipDuration = reader["MemberShipDuration"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("MemberShipDuration")) : intnull;
@@ -70,6 +81,7 @@ namespace WebapiApplication.DAL
                             payment.AllottedServicePoints = reader["AllottedServicePoints"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("AllottedServicePoints")) : intnull;
                             payment.AccessFeature = reader["AccessFeature"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("AccessFeature")) : intnull;
                             payment.MembershipAmount = reader["MembershipAmount"] != DBNull.Value ? reader.GetDouble(reader.GetOrdinal("MembershipAmount")) : floatnull;
+                      
                         }
 
                         arrayList.Add(payment);
@@ -82,6 +94,7 @@ namespace WebapiApplication.DAL
             {
                 Commonclass.ApplicationErrorLog(spName, Convert.ToString(EX.Message), CustID, "GetPaymentDetails", null);
             }
+
             finally
             {
 
@@ -190,10 +203,10 @@ namespace WebapiApplication.DAL
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
-            
+
             var sqlCommand = connection.CreateCommand();
             sqlCommand.CommandTimeout = 120;
-            
+
             SqlParameter[] parm = new SqlParameter[7];
 
             try
@@ -243,10 +256,10 @@ namespace WebapiApplication.DAL
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
-            
+
             var sqlCommand = connection.CreateCommand();
             sqlCommand.CommandTimeout = 120;
-            
+
             SqlDataAdapter daPaymentDetails = new SqlDataAdapter();
             try
             {
@@ -316,10 +329,10 @@ namespace WebapiApplication.DAL
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
-            
+
             var sqlCommand = connection.CreateCommand();
             sqlCommand.CommandTimeout = 120;
-            
+
             try
             {
                 SqlCommand cmd = new SqlCommand(spName, connection);
@@ -380,10 +393,10 @@ namespace WebapiApplication.DAL
             SqlConnection connection = new SqlConnection();
             connection = SQLHelper.GetSQLConnection();
             connection.Open();
-            
+
             var sqlCommand = connection.CreateCommand();
             sqlCommand.CommandTimeout = 120;
-            
+
             SqlParameter[] parm = new SqlParameter[7];
             try
             {
@@ -411,6 +424,7 @@ namespace WebapiApplication.DAL
 
             if (dsPayment.Tables.Count == 0)
                 dsPayment = null;
+
             return Commonclass.convertdataTableToArrayList(dsPayment);
 
         }
@@ -456,7 +470,7 @@ namespace WebapiApplication.DAL
             return Commonclass.convertdataTableToArrayList(dsPayment);
         }
 
-     
+
 
         public ArrayList getCustomerPaymentPackagesDisplayDal(long? LcustID, string spName)
         {
@@ -488,5 +502,288 @@ namespace WebapiApplication.DAL
                 dsPayment = null;
             return Commonclass.convertdataTableToArrayList(dsPayment);
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public string RSAccavenue(Rsakey Rsakey)
+        {
+            String message = null;
+
+            try
+            {
+                string queryUrl = "https://secure.ccavenue.com/transaction/getRSAKey";
+
+                string vParams = "";
+
+
+                //for (int icount = 1; array.Count > icount; icount++)
+                //{
+                //    string indexname = array[icount].ToString();
+                //    vParams += indexname + "=" + array[icount]+ "&";
+
+                //}
+
+
+
+                vParams += "merchant_id" + "=" + Commonclass.checknullornot(Rsakey.merchant_id) + "&";
+                vParams += "order_id" + "=" + Commonclass.checknullornot(Rsakey.order_id) + "&";
+                vParams += "currency" + "=" + Commonclass.checknullornot(Rsakey.currency) + "&";
+                vParams += "amount" + "=" + Commonclass.checknullornot(Rsakey.amount) + "&";
+                vParams += "redirect_url" + "=" + Commonclass.checknullornot(Rsakey.redirect_url) + "&";
+                vParams += "cancel_url" + "=" + Commonclass.checknullornot(Rsakey.cancel_url) + "&";
+                vParams += "language" + "=" + Commonclass.checknullornot(Rsakey.language) + "&";
+                vParams += "billing_name" + "=" + Commonclass.checknullornot(Rsakey.billing_name) + "&";
+                vParams += "billing_address" + "=" + Commonclass.checknullornot(Rsakey.billing_address) + "&";
+                vParams += "billing_city" + "=" + Commonclass.checknullornot(Rsakey.billing_city) + "&";
+                vParams += "billing_state" + "=" + Commonclass.checknullornot(Rsakey.billing_state) + "&";
+                vParams += "billing_zip" + "=" + Commonclass.checknullornot(Rsakey.billing_zip) + "&";
+                vParams += "billing_country" + "=" + Commonclass.checknullornot(Rsakey.billing_country) + "&";
+                vParams += "billing_tel" + "=" + Commonclass.checknullornot(Rsakey.billing_tel) + "&";
+                vParams += "billing_email" + "=" + Commonclass.checknullornot(Rsakey.billing_email) + "&";
+                vParams += "delivery_name" + "=" + Commonclass.checknullornot(Rsakey.delivery_name) + "&";
+                vParams += "delivery_addres" + "=" + Commonclass.checknullornot(Rsakey.delivery_addres) + "&";
+                vParams += "delivery_city" + "=" + Commonclass.checknullornot(Rsakey.delivery_city) + "&";
+                vParams += "delivery_state" + "=" + Commonclass.checknullornot(Rsakey.delivery_state) + "&";
+                vParams += "delivery_zip" + "=" + Commonclass.checknullornot(Rsakey.delivery_zip) + "&";
+                vParams += "delivery_country" + "=" + Commonclass.checknullornot(Rsakey.delivery_country) + "&";
+                vParams += "delivery_tel" + "=" + Commonclass.checknullornot(Rsakey.delivery_tel) + "&";
+
+                vParams += "merchant_param1" + "=" + Commonclass.checknullornot(Rsakey.merchant_param1) + "&";
+                vParams += "merchant_param2" + "=" + Commonclass.checknullornot(Rsakey.merchant_param2) + "&";
+                vParams += "merchant_param3" + "=" + Commonclass.checknullornot(Rsakey.merchant_param3) + "&";
+                vParams += "merchant_param4" + "=" + Commonclass.checknullornot(Rsakey.merchant_param4) + "&";
+                vParams += "merchant_param5" + "=" + Commonclass.checknullornot(Rsakey.merchant_param5) + "&";
+                vParams += "promo_code" + "=" + Commonclass.checknullornot(Rsakey.promo_code) + "&";
+                vParams += "customer_identifie" + "=" + Commonclass.checknullornot(Rsakey.customer_identifie) + "&";
+
+                vParams += "access_code" + "=" + "AVED04CD92AO01DEOA" + "&";
+
+                // Url Connection
+
+                message = postPaymentRequestToGateway(queryUrl, vParams);
+
+                //Response.Write(message);
+            }
+            catch (Exception exp)
+            {
+                Commonclass.ApplicationErrorLog("RSAccavenue", Convert.ToString(exp.Message), Convert.ToInt32(Rsakey.merchant_id), "RSAccavenue post method call", null);
+            }
+
+            return message;
+        }
+
+        private string postPaymentRequestToGateway(String queryUrl, String urlParam)
+        {
+            String message = "";
+            try
+            {
+                StreamWriter myWriter = null;// it will open a http connection with provided url
+                WebRequest objRequest = WebRequest.Create(queryUrl);//send data using objxmlhttp object
+                objRequest.Method = "POST";
+                //objRequest.ContentLength = TranRequest.Length;
+                objRequest.ContentType = "application/x-www-form-urlencoded";//to set content type
+                myWriter = new System.IO.StreamWriter(objRequest.GetRequestStream());
+                myWriter.Write(urlParam);//send data
+                myWriter.Close();//closed the myWriter object
+
+                // Getting Response
+                System.Net.HttpWebResponse objResponse = (System.Net.HttpWebResponse)objRequest.GetResponse();//receive the responce from objxmlhttp object 
+                using (System.IO.StreamReader sr = new System.IO.StreamReader(objResponse.GetResponseStream()))
+                {
+                    message = sr.ReadToEnd();
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.Write("Exception occured while connection." + exception);
+            }
+
+            return message;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="encResp"></param>
+        /// <param name="workingKey"></param>
+        /// <returns></returns>
+        /// 
+
+        public string getResponseHandler(string encResp, string workingKey)
+        {
+            // string workingKey = "";//put in the 32bit alpha numeric key in the quotes provided here
+            string strResponsewirite = string.Empty;
+
+            CCACrypto ccaCrypto = new CCACrypto();
+
+            /// string encResponse = ccaCrypto.Decrypt(Request.Form["encResp"], workingKey);
+            string encResponse = ccaCrypto.Decrypt(encResp, workingKey);
+
+            NameValueCollection Params = new NameValueCollection();
+
+            string[] segments = encResponse.Split('&');
+
+            foreach (string seg in segments)
+            {
+                string[] parts = seg.Split('=');
+                if (parts.Length > 0)
+                {
+                    string Key = parts[0].Trim();
+                    string Value = parts[1].Trim();
+                    Params.Add(Key, Value);
+                }
+            }
+
+            for (int i = 0; i < Params.Count; i++)
+            {
+                if (string.IsNullOrEmpty(strResponsewirite))
+                {
+                    strResponsewirite = strResponsewirite + Params.Keys[i] + " = " + Params[i] + "<br>";
+                }
+                else
+                {
+                    strResponsewirite = Params.Keys[i] + " = " + Params[i] + "<br>";
+                }
+            }
+
+            return strResponsewirite;
+
+        }
+
+        public singlePaymentPackages getcustomersinglePaymentPackagesDisplay(long? icustid, int? imembershipTypeID, string spName)
+        {
+
+
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+
+            SqlDataAdapter daParentDetails = new SqlDataAdapter();
+            SqlParameter[] parm = new SqlParameter[10];
+            SqlDataReader drReader = null;
+
+            string TableName = string.Empty;
+            int? intnull = null;
+            singlePaymentPackages singlepackage = null;
+
+
+            try
+            {
+
+                parm[1] = new SqlParameter("@i_FromCustID", SqlDbType.Int);
+                parm[1].Value = icustid;
+
+                parm[2] = new SqlParameter("@imembershipTypeID", SqlDbType.Int);
+                parm[2].Value = imembershipTypeID;
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        singlepackage = new singlePaymentPackages()
+                        {
+                            membershipName = drReader["MembershipName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("MembershipName")) : null,
+                            membershipTypeID = drReader["MemberShipTypeID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipTypeID")) : intnull,
+                            membershipDuration = drReader["MemberShipDuration"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipDuration")) : intnull,
+                            allottedServicePoints = drReader["AllottedServicePoints"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("AllottedServicePoints")) : intnull,
+                            membershipAmount = drReader["MembershipAmount"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MembershipAmount")) : intnull,
+                            accessFeatue = drReader["AccessFeatue"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("AccessFeatue")) : null,
+                            Ppluspath = drReader["Ppluspath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppluspath")) : null,
+                            Ppath = drReader["Ppath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppath")) : null
+
+                        };
+                    }
+                }
+
+                            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+            return singlepackage;
+
+        }
+
+        public List <singlePaymentPackages> getcustomerMultiPaymentPackagesDisplay(long? icustid, string spName)
+        {
+
+
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+
+            SqlDataAdapter daParentDetails = new SqlDataAdapter();
+            SqlParameter[] parm = new SqlParameter[10];
+            SqlDataReader drReader = null;
+
+            string TableName = string.Empty;
+            int? intnull = null;
+            singlePaymentPackages singlepackage = null;
+
+            List<singlePaymentPackages> multi = new List<singlePaymentPackages>(); 
+
+            try
+            {
+
+                parm[1] = new SqlParameter("@i_FromCustID", SqlDbType.Int);
+                parm[1].Value = icustid;
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        singlepackage = new singlePaymentPackages()
+                        {
+                            membershipName = drReader["MembershipName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("MembershipName")) : null,
+                            membershipTypeID = drReader["MemberShipTypeID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipTypeID")) : intnull,
+                            membershipDuration = drReader["MemberShipDuration"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MemberShipDuration")) : intnull,
+                            allottedServicePoints = drReader["AllottedServicePoints"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("AllottedServicePoints")) : intnull,
+                            membershipAmount = drReader["MembershipAmount"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("MembershipAmount")) : intnull,
+                            accessFeatue = drReader["AccessFeatue"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("AccessFeatue")) : null,
+                            Ppluspath = drReader["Ppluspath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppluspath")) : null,
+                            Ppath = drReader["Ppath"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("Ppath")) : null
+
+                        };
+
+                        multi.Add(singlepackage);
+                    }
+                }
+
+
+            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+            return multi;
+
+        }
+
+
     }
 }

@@ -40,6 +40,26 @@ namespace WebapiApplication.Api
         public ArrayList getProfilePaymentDetailsGridview(long? intProfileID) { return this.IPayment.ProfilePaymentDetails_Gridview(intProfileID); }
         public ArrayList getProfilePaymentDetails_NewDesigns(long? intProfileID) { return this.IPayment.DgetProfilePaymentDetails_NewDesigns(intProfileID); }
 
+      
+      
+
+        /// <summary>
+        /// 
+        /// Mobile  app Payment
+        /// </summary>
+        /// 
+
+
+        public string RSAccavenue([FromBody]Rsakey Rsakey) { return this.IPayment.RSAccavenue(Rsakey); }
+
+        public string getResponseHandler(string encResp, string workingKey) { return this.IPayment.getResponseHandler(encResp, workingKey); }
+
         public ArrayList getCustomerPaymentPackagesDisplay(long? LcustID) { return this.IPayment.getCustomerPaymentPackagesDisplay(LcustID); }
+
+        public List<singlePaymentPackages> getcustomerMultiPaymentPackagesDisplay(long? icustid) { return this.IPayment.getcustomerMultiPaymentPackagesDisplay(icustid); }
+
+        public singlePaymentPackages getcustomersinglePaymentPackagesDisplay(long? icustid, int? membershipTypeID) { return this.IPayment.getcustomersinglePaymentPackagesDisplay(icustid, membershipTypeID); }
+
     }
 }
+

@@ -44,6 +44,15 @@ namespace WebapiApplication.Interfaces
         ArrayList DgetProfilePaymentDetails_NewDesigns(long? intProfileID);
 
         ArrayList getCustomerPaymentPackagesDisplay(long? LcustID);
+
+        string getResponseHandler(string encResp, string workingKey);
+
+        string RSAccavenue(Rsakey Rsakey);
+
+        singlePaymentPackages getcustomersinglePaymentPackagesDisplay(long? LcustID, int? membershipTypeID);
+
+
+        List<singlePaymentPackages> getcustomerMultiPaymentPackagesDisplay(long? icustid);
     }
     public interface ICustomerSearch
     {
@@ -164,6 +173,12 @@ namespace WebapiApplication.Interfaces
         ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid);
 
         mobileActiveStatus getmobileloginStatus(int? custid);
+
+
+
+        viewedByOther MobileLandingOrderDisplaysingleselection(long? CustID, int? Startindex, int? EndIndex, string type);
+
+        rmgDetailsdisply getrmgDetailsdisplay(int? custid);
     }
 
     public interface IDependency

@@ -11,7 +11,7 @@ namespace WebapiApplication.ML
     {
         public string strFirstName { get; set; }
         public string strLastName { get; set; }
-       // public DateTime dtDOB { get; set; }
+        // public DateTime dtDOB { get; set; }
         public string dtDOB { get; set; }
         public int intGenderID { get; set; }
         public int? intReligionID { get; set; }//
@@ -72,7 +72,7 @@ namespace WebapiApplication.ML
         public DataTable dtCateIDs { get; set; }
         public DataTable dtEducation { get; set; }
         public DataTable dtProfession { get; set; }
-     
+
         public int? intPhotoCount { get; set; }
         public DataTable dtMaritalstatus { get; set; }
 
@@ -192,7 +192,7 @@ namespace WebapiApplication.ML
         public DataTable dtMaritalstatus { get; set; }
 
         public int? iPhysicalstatus { get; set; }
-      
+
         public long? iToSal { get; set; }
 
         public string Complexion { get; set; }
@@ -215,7 +215,7 @@ namespace WebapiApplication.ML
 
         public DataTable dtStarLang { get; set; }
 
-      
+
 
         public string Stars { get; set; }
 
@@ -231,6 +231,7 @@ namespace WebapiApplication.ML
 
     public class partnerInfoMl
     {
+
         public Int64? intCusID { set; get; }
         public int? intGender { get; set; }
         public string Agefrom { get; set; }
@@ -260,7 +261,7 @@ namespace WebapiApplication.ML
         public Int64? iToSal { get; set; }
         public int? iDiet { get; set; }
         public int? i_Registrationdays { set; get; }
-
+        public int? ivisaTypeID { set; get; }
 
     }
 
@@ -417,6 +418,12 @@ namespace WebapiApplication.ML
         public long? LogId { get; set; }
         public long? LogID { get; set; }
         public string DistName { get; set; }
+        public string thumbnailPhotoPath { set; get; }
+
+        public string fullphotoimageUrl1 { set; get; }
+        public string fullphotoimageUrl2 { set; get; }
+        public string fullphotoimageUrl3 { set; get; }
+
     }
 
 
@@ -448,12 +455,19 @@ namespace WebapiApplication.ML
         public int? ignode { get; set; }
         public long? LogId { get; set; }
         public long? LogID { get; set; }
-        
+
         public string Photofullpath { set; get; }
         public string DistName { get; set; }
         public string strFirstName { get; set; }
+
+        public string thumbnailPhotoPath { set; get; }
+        public string fullphotoimageUrl1 { set; get; }
+        public string fullphotoimageUrl2 { set; get; }
+        public string fullphotoimageUrl3 { set; get; }
+
+
     }
-	
+
 
 
 

@@ -69,8 +69,14 @@ namespace WebapiApplication.Implement
 
         public ArrayList UpdateCustomerEmailMobileNumber_Verification(MobileEmailVerf Mobj) { return new StaticPagesDAL().UpdateCustomerEmailMobileNumber_Verification(Mobj, "[dbo].[usp_EmailmobileUpdate_MobileApp]"); }
 
-        public viewedByOther MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string type) { return new StaticPagesDAL().MobileLandingOrderDisplay(CustID, Startindex, EndIndex, type, "[dbo].[usp_LandingOrder_MobileApp]"); }
+        public viewedByOther MobileLandingOrderDisplay(long? CustID, int? Startindex, int? EndIndex, string type) { 
 
+            return new StaticPagesDAL().MobileLandingOrderDisplay(CustID, Startindex, EndIndex, type, "[dbo].[usp_LandingOrder_MobileApp]"); 
+
+        }
+
+        public viewedByOther MobileLandingOrderDisplaysingleselection(long? CustID, int? Startindex, int? EndIndex, string type) { return new StaticPagesDAL().MobileLandingOrderDisplaysingle(CustID, Startindex, EndIndex, type, "[dbo].[usp_LandingOrderSingledisplay_MobileApp]"); }
+        
         public ArrayList ExpressIntrstfullprofilepartial(string ToProfileID, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepartial(ToProfileID, EmpID, "[dbo].[GetViewProfile_FullDetails_Partial]"); }
 
         public ArrayList getCustomerBindings() { return new StaticPagesDAL().getCustomerBindingsDal("[dbo].[usp_customerbindings]"); }
@@ -78,5 +84,8 @@ namespace WebapiApplication.Implement
         public ArrayList ExpressIntrstfullprofilepaidandunpaid(string fromProfileID, long? toustid, int? EmpID) { return new StaticPagesDAL().ExpressIntrstfullprofilepaidandunpaid(fromProfileID, toustid, EmpID, "[dbo].[GetViewProfile_FullDetails_RoleWise_PaidUnPaid]"); }
         
         public ArrayList fromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return new StaticPagesDAL().fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid, "[dbo].[usp_GetExpressInterestStatus]"); }
+
+        public rmgDetailsdisply getrmgDetailsdisplay(int? custid) { return new StaticPagesDAL().getrmgDetailsdisplay(custid, "[dbo].[usp_rmdetails_MobileApp]"); }
+
     }
 }

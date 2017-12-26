@@ -19,7 +19,7 @@ namespace WebapiApplication.Api
 
         public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
         {
-            if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
+            if (Mobj.isVerified == 0 &&  !string.IsNullOrEmpty( Mobj.MobileNumber) ) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
             return this.IMobileAppDev.UpdateCustomerEmailMobileNumber_Verification(Mobj);
         }
 

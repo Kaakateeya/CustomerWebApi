@@ -60,6 +60,15 @@ namespace WebapiApplication.Implement
         public ArrayList ProfilePaymentDetails_Gridview(long? intProfileID) { return new PaymentDAL().ProfilePaymentDetails_Gridview(intProfileID, "[dbo].[usp_getSearchMemberShipPackege_NewDesign]"); }
         public ArrayList DgetProfilePaymentDetails_NewDesigns(long? intProfileID) { return new PaymentDAL().DgetProfilePaymentDetails_NewDesigns(intProfileID, "[dbo].[usp_Payment_getProfilePaymentDetails_NewDesigns]"); }
         public ArrayList getCustomerPaymentPackagesDisplay(long? LcustID) { return new PaymentDAL().getCustomerPaymentPackagesDisplayDal(LcustID, "[dbo].[usp_CustomerPayments_NewDesign]"); }
-    
+
+        public singlePaymentPackages getcustomersinglePaymentPackagesDisplay(long? LcustID, int? membershipTypeID) { return new PaymentDAL().getcustomersinglePaymentPackagesDisplay(LcustID, membershipTypeID, "[dbo].[usp_CustomerPayments_MemberShipTypeID]"); }
+
+        public List<singlePaymentPackages> getcustomerMultiPaymentPackagesDisplay(long? icustid) { return new PaymentDAL().getcustomerMultiPaymentPackagesDisplay(icustid, "[dbo].[usp_CustomerPayments_NewDesign]"); }
+
+
+        public string RSAccavenue(Rsakey Rsakey) { return new PaymentDAL().RSAccavenue(Rsakey); }
+
+        public string getResponseHandler(string encResp, string workingKey) { return new PaymentDAL().getResponseHandler(encResp, workingKey); }
+
     }
 }

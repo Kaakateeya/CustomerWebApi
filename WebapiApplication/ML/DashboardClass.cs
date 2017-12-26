@@ -96,6 +96,20 @@ namespace WebapiApplication.ML
         public int? PhotoCount { get; set; }
         public string Profession { get; set; }
         public string DistName { get; set; }
+
+
+        public string customerOwnerName { set; get; }
+        public string mobilenumber { set; get; }
+        public string landnumber { set; get; }
+        public string branchName { set; get; }
+        public string email { set; get; }
+        public string customerownerFullName { set; get; }
+
+        public string fullphotoimageUrl1 { set; get; }
+        public string fullphotoimageUrl2 { set; get; }
+        public string fullphotoimageUrl3 { set; get; }
+        
+
     }
 
     public class DashboardRequest

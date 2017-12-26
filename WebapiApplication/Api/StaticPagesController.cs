@@ -102,16 +102,31 @@ namespace WebapiApplication.Api
 
         public ArrayList UpdateCustomerEmailMobileNumber_Verification([FromBody]MobileEmailVerf Mobj)
         {
-            if (Mobj.isVerified == 0) { Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString()); }
+
+            if (Mobj.isVerified == 0 && !string.IsNullOrEmpty(Mobj.MobileNumber))
+            {
+                Mobj.VerificationCode = Convert.ToString((new Random()).Next(10000, 99999).ToString());
+            }
+
             return this.ISuccessStories.UpdateCustomerEmailMobileNumber_Verification(Mobj);
+
         }
 
 
         public mobileActiveStatus getmobileloginStatus(int? custid) { return this.ISuccessStories.getmobileloginStatus(custid); }
-
-
         public viewedByOther getMobileLandingOrderDisplay_all(int custid) { return this.ISuccessStories.MobileLandingOrderDisplay(custid, 1, 9, "all"); }
-        public viewedByOther getMobileLandingOrderDisplay(int custid, int? startIndex, int? endIndex, string type) { return this.ISuccessStories.MobileLandingOrderDisplay(custid, startIndex, endIndex, type); }
+        public viewedByOther getMobileLandingOrderDisplay(int custid, int? startIndex, int? endIndex, string type)
+        {
+
+            if (type == "all")
+            {
+                return this.ISuccessStories.MobileLandingOrderDisplay(custid, 1, 9, "all");
+            }
+            else
+            {
+                return this.ISuccessStories.MobileLandingOrderDisplaysingleselection(custid, startIndex, endIndex, type);
+            }
+        }
 
 
 
@@ -127,6 +142,9 @@ namespace WebapiApplication.Api
 
 
         public ArrayList getfromexpresstoexpressstatus(string Fromprofileid, string Toprofileid, int? Empid) { return ISuccessStories.fromexpresstoexpressstatus(Fromprofileid, Toprofileid, Empid); }
+
+        public rmgDetailsdisply getrmgDetailsdisplay(int? custid) { return this.ISuccessStories.getrmgDetailsdisplay(custid); }  
+
 
     }
 }

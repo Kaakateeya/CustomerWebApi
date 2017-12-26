@@ -214,6 +214,19 @@ namespace WebapiApplication.ML
         public string contactInfo = string.Empty;
     }
 
+    public class rmgDetailsdisply
+    {
+
+        //public string name { set; get; }
+        //public int? customerOwnerEmpID { set; get; }
+        public string customerOwnerName { set; get; }
+        public string mobilenumber { set; get; }
+        public string landnumber { set; get; }
+        public string branchName { set; get; }
+        public string email { set; get; }
+        public string customerownerFullName { set; get; }
+
+    }
     public class MobileLandingOrderDisplay
     {
         public int? totalRows { set; get; }
@@ -258,6 +271,10 @@ namespace WebapiApplication.ML
         public bool? isIgnored { get; set; }
         public bool? expressFlag { get; set; }
         public string thumbnailPhotoUrl { get; set; }
+        public string fullphotoimageUrl1 { get; set; }
+        public string fullphotoimageUrl2 { get; set; }
+        public string fullphotoimageUrl3 { get; set; }
+
     }
 
 

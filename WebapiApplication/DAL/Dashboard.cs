@@ -234,7 +234,7 @@ namespace WebapiApplication.DAL
                             PartnerLi.Add(Partnercls);
                         }
                     }
-             
+
                     reader.Close();
                 }
             }
@@ -257,6 +257,7 @@ namespace WebapiApplication.DAL
             bool? bnull = null;
             DateTime? dnull = null;
             Int64? Lnull = null;
+
             PartnerProfilesLatest Partnercls = new PartnerProfilesLatest();
 
             try
@@ -298,6 +299,20 @@ namespace WebapiApplication.DAL
                 Partnercls.Photo = reader["Photo"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("Photo")) : null;
                 Partnercls.DescribeYourSelf = reader["DescribeYourSelf"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("DescribeYourSelf")) : null;
                 Partnercls.DistName = reader["DistName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("DistName")) : null;
+                
+                //rmg  details  
+
+                Partnercls.customerOwnerName = reader["customerOwnerName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("customerOwnerName")) : null;
+                Partnercls.mobilenumber = reader["mobilenumber"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("mobilenumber")) : null;
+                Partnercls.landnumber = reader["landnumber"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("landnumber")) : null;
+                Partnercls.branchName = reader["branchName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("branchName")) : null;
+                Partnercls.customerownerFullName = reader["customerownerFullName"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("customerownerFullName")) : null;
+                Partnercls.email = reader["email"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("email")) : null;
+
+                Partnercls.fullphotoimageUrl1 = reader["fullphotoimageUrl1"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl1")) : null;
+                Partnercls.fullphotoimageUrl2 = reader["fullphotoimageUrl2"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl2")) : null;
+                Partnercls.fullphotoimageUrl3 = reader["fullphotoimageUrl3"] != DBNull.Value ? reader.GetString(reader.GetOrdinal("fullphotoimageUrl3")) : null;
+
 
                 if (Type == "ExpressInterest")
                 {
@@ -320,6 +335,7 @@ namespace WebapiApplication.DAL
                     Partnercls.OppProceed = reader["OppProceed"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("OppProceed")) : inull;
                     Partnercls.Oppskipped = reader["Oppskipped"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Oppskipped")) : inull;
                     Partnercls.Opppending = reader["Opppending"] != DBNull.Value ? reader.GetInt32(reader.GetOrdinal("Opppending")) : inull;
+
                 }
                 else
                 {

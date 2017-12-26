@@ -108,6 +108,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="MCPG.CCA.Util">
+      <HintPath>C:\Users\Administrator\Desktop\New folder (4)\ASP.NET\Dll's for Partailly Trusted Callers\4.0_Dll_For Partially_trusted\4.0_Dll_For Partially_trusted\MCPG.CCA.Util.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
       <Private>True</Private>

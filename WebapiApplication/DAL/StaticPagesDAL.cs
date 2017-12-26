@@ -474,7 +474,7 @@ namespace WebapiApplication.DAL
                 }
                 Expbook.Add(Bookexp);
                 reader.Close();
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -574,7 +574,7 @@ namespace WebapiApplication.DAL
                     }
                 }
                 reader.Close();
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -665,7 +665,7 @@ namespace WebapiApplication.DAL
 
                 ds = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
                 if (string.Compare(parm[3].Value.ToString(), System.DBNull.Value.ToString()) == 0) { iStatus = 0; } else { iStatus = Convert.ToInt32(parm[3].Value); }
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception ex)
             {
@@ -736,7 +736,7 @@ namespace WebapiApplication.DAL
                 }
                 lstprofilesetting.Add(profilesettings);
                 reader.Close();
-               // SQLHelper.GetSQLConnection().Close();
+                // SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception EX)
             {
@@ -914,7 +914,7 @@ namespace WebapiApplication.DAL
                 parm[3].Direction = ParameterDirection.Output;
                 ds = SQLHelper.ExecuteDataset(connection, CommandType.StoredProcedure, spName, parm);
                 if (string.Compare(parm[3].Value.ToString(), System.DBNull.Value.ToString()) == 0) { iStatus = 0; } else { iStatus = Convert.ToInt32(parm[3].Value); }
-               
+
                 //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception ex)
@@ -2015,7 +2015,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-               // SqlConnection.ClearAllPools();
+                // SqlConnection.ClearAllPools();
             }
 
             return mobj;
@@ -2393,7 +2393,7 @@ namespace WebapiApplication.DAL
                 {
                     Status = Convert.ToInt32(cmd.Parameters[2].Value);
                 }
-                
+
                 //SQLHelper.GetSQLConnection().Close();
             }
             catch (Exception Ex)
@@ -2739,10 +2739,18 @@ namespace WebapiApplication.DAL
                         string MobileNumber = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["MobileNumber"].ToString()) ? dtAssignSettings.Tables[0].Rows[0]["MobileNumber"].ToString() : null;
                         string VerificationCode = !string.IsNullOrEmpty(dtAssignSettings.Tables[0].Rows[0]["VerificationCode"].ToString()) ? dtAssignSettings.Tables[0].Rows[0]["VerificationCode"].ToString() : null;
 
-                        Commonclass.ResendMobileSMS(CountryCode, iCCode, MobileNumber, VerificationCode);
+                        if (!string.IsNullOrEmpty(Mobj.MobileNumber) && Mobj.isVerified == 0)
+                        {
+                            Commonclass.ResendMobileSMS(CountryCode, iCCode, MobileNumber, VerificationCode);
+                        }
+                        if (!string.IsNullOrEmpty(Mobj.Email) && Mobj.isVerified == 0)
+                        {
+                            ResendEmailVerficationLink(Mobj.CustID, "[dbo].[Usp_ResendEmailVerficationLink]");
+                        }
                     }
                 }
             }
+
             return Commonclass.convertdataTableToArrayListTable(dtAssignSettings);
         }
 
@@ -2825,6 +2833,7 @@ namespace WebapiApplication.DAL
                 {
                     while (drReader.Read())
                     {
+
                         bookmark = new MobileLandingOrderDisplay()
                         {
                             totalRows = drReader["totalRows"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("totalRows")) : intnull
@@ -2846,6 +2855,7 @@ namespace WebapiApplication.DAL
                     bookmark.data = bookmarkData;
                     customerLandind.bookMarkedByMe = bookmark;
                 }
+
             }
             catch (Exception Ex)
             {
@@ -2900,8 +2910,11 @@ namespace WebapiApplication.DAL
 
                 expressFlag = drReader["ExpressFlag"] != DBNull.Value ? drReader.GetBoolean(drReader.GetOrdinal("ExpressFlag")) : ibool,
 
-                thumbnailPhotoUrl = drReader["thumbnailPhotoUrl"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("thumbnailPhotoUrl")) : string.Empty
-
+                thumbnailPhotoUrl = drReader["thumbnailPhotoUrl"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("thumbnailPhotoUrl")) : string.Empty ,
+                fullphotoimageUrl1 = drReader["fullphotoimageUrl1"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("fullphotoimageUrl1")) : string.Empty,
+                fullphotoimageUrl2 = drReader["fullphotoimageUrl2"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("fullphotoimageUrl2")) : string.Empty,
+                fullphotoimageUrl3 = drReader["fullphotoimageUrl3"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("fullphotoimageUrl3")) : string.Empty
+            
             };
 
             return BMdisply;
@@ -3038,6 +3051,158 @@ namespace WebapiApplication.DAL
                 //SqlConnection.ClearAllPools();
             }
             return Commonclass.convertdataTableToArrayListTable(dset);
+        }
+
+        public viewedByOther MobileLandingOrderDisplaysingle(long? CustID, int? Startindex, int? EndIndex, string type, string spName)
+        {
+
+            MobileLandingOrderDisplay displayOrder = null;
+
+
+
+            ArrayList arrayList = new ArrayList();
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+            DataSet dtAssignSettings = new DataSet();
+            SqlDataAdapter daParentDetails = new SqlDataAdapter();
+            SqlParameter[] parm = new SqlParameter[10];
+            SqlDataReader drReader = null;
+
+            string TableName = string.Empty;
+            int? intnull = null;
+            List<displayData> displayData = new List<displayData>() { };
+            List<displayData> bookmarkData = new List<displayData>();
+
+            displayData disply = null;
+
+            viewedByOther customerLandind = new viewedByOther();
+
+            try
+            {
+
+                parm[1] = new SqlParameter("@i_CustID", SqlDbType.Int);
+                parm[1].Value = CustID;
+
+                parm[2] = new SqlParameter("@ipagefrom", SqlDbType.Int);
+                parm[2].Value = Startindex;
+
+                parm[3] = new SqlParameter("@ipageto", SqlDbType.Int);
+                parm[3].Value = EndIndex;
+
+                parm[4] = new SqlParameter("@v_Type", SqlDbType.VarChar);
+                parm[4].Value = type;
+
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        displayOrder = new MobileLandingOrderDisplay()
+                        {
+                            totalRows = drReader["totalRows"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("totalRows")) : intnull
+
+                        };
+
+                        disply = getreaderDate(drReader);
+                        displayData.Add(disply);
+                    }
+                }
+
+                if (displayData != null && displayData.Count != 0)
+                {
+                    displayOrder.data = displayData;
+                    switch (type)
+                    {
+                        case "viewedByOthers":
+                            customerLandind.viewedByOthers = displayOrder;
+                            break;
+                        case "bookMarkedByMe":
+                            customerLandind.bookMarkedByMe = displayOrder;
+                            break;
+                        case "bookMarkedByOthers":
+                            customerLandind.bookMarkedByOthers = displayOrder;
+                            break;
+
+                        case "exactMatchingProfiles":
+                            customerLandind.exactMatchingProfiles = displayOrder;
+                            break;
+                        case "suitableProfiles":
+                            customerLandind.suitableProfiles = displayOrder;
+                            break;
+                    }
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+            return customerLandind;
+        }
+
+        public rmgDetailsdisply getrmgDetailsdisplay(int? custid, string spName)
+        {
+            SqlConnection connection = new SqlConnection();
+            connection = SQLHelper.GetSQLConnection();
+            connection.Open();
+
+
+            SqlDataAdapter daParentDetails = new SqlDataAdapter();
+            SqlParameter[] parm = new SqlParameter[5];
+            SqlDataReader drReader = null;
+            int? intnull = null;
+            rmgDetailsdisply rmgdisplay = null;
+
+
+            try
+            {
+
+                parm[1] = new SqlParameter("@i_CustID", SqlDbType.Int);
+                parm[1].Value = custid;
+
+                drReader = SQLHelper.ExecuteReader(connection, CommandType.StoredProcedure, spName, parm);
+
+                if (drReader.HasRows)
+                {
+                    while (drReader.Read())
+                    {
+                        rmgdisplay = new rmgDetailsdisply()
+                        {
+                            customerOwnerName = drReader["NAME"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("NAME")) : null,
+                            //customerOwnerEmpID = drReader["CustomerOwnerEmpID"] != DBNull.Value ? drReader.GetInt32(drReader.GetOrdinal("CustomerOwnerEmpID")) : intnull,
+                            mobilenumber = drReader["CustomerMobile"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerMobile")) : null,
+                            landnumber = drReader["CustomerLand"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerLand")) : null,
+                            branchName = drReader["CustomerBranch"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerBranch")) : null,
+                            email = drReader["CustomerEmail"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerEmail")) : null,
+                            customerownerFullName = drReader["CustomerOwnerFullName"] != DBNull.Value ? drReader.GetString(drReader.GetOrdinal("CustomerOwnerFullName")) : null
+                        };
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Commonclass.ApplicationErrorLog(spName, Convert.ToString(Ex.Message), null, null, null);
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+            return rmgdisplay;
+
         }
     }
 }

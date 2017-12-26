@@ -107,5 +107,52 @@ namespace WebapiApplication.ML
         public int PaysmsID { get; set; }
     }
 
+    public class Rsakey
+    {
+        public string merchant_id { set; get; }
+        public string order_id { set; get; }
+        public string currency { set; get; }
+        public string amount { set; get; }
+        public string redirect_url { set; get; }
+        public string cancel_url { set; get; }
+        public string language { set; get; }
+        public string billing_name { set; get; }
+        public string billing_address { set; get; }
+        public string billing_city { set; get; }
+        public string billing_state { set; get; }
+        public string billing_zip { set; get; }
+        public string billing_country { set; get; }
+        public string billing_tel { set; get; }
+        public string billing_email { set; get; }
+        public string delivery_name { set; get; }
+        public string delivery_addres { set; get; }
+        public string delivery_city { set; get; }
+        public string delivery_state { set; get; }
+        public string delivery_zip { set; get; }
+        public string delivery_country { set; get; }
+        public string delivery_tel { set; get; }
+        public string merchant_param1 { set; get; }
+        public string merchant_param2 { set; get; }
+        public string merchant_param3 { set; get; }
+        public string merchant_param4 { set; get; }
+        public string merchant_param5 { set; get; }
+        public string promo_code { set; get; }
+        public string customer_identifie { set; get; }
+
+    }
+
+    public class singlePaymentPackages
+    {
+        public string membershipName { set; get; }
+        public int? membershipTypeID { set; get; }
+        public int? membershipDuration { set; get; }
+        public int? allottedServicePoints { set; get; }
+        public int? membershipAmount { set; get; }
+        public string accessFeatue { set; get; }
+        public string Ppluspath { set; get; }
+        public string Ppath { set; get; }
+
+    }
+
 
 }

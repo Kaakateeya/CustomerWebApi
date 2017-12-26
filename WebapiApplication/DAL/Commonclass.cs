@@ -74,8 +74,8 @@ namespace WebapiApplication.DAL
             finally
             {
 
-             //   SqlConnection.ClearAllPools();
-            
+                //   SqlConnection.ClearAllPools();
+
             }
         }
 
@@ -211,7 +211,7 @@ namespace WebapiApplication.DAL
             string lastCharacter = inputText.Substring(inputText.Length - 1);
             if (lastCharacter == "=")
             {
-               inputText = inputText.TrimEnd().Substring(0, inputText.Length - 1);
+                inputText = inputText.TrimEnd().Substring(0, inputText.Length - 1);
             }
             inputText = correctStringForBase64(inputText);
 
@@ -318,7 +318,7 @@ namespace WebapiApplication.DAL
         public static void ApplicationErrorLog(string ErrorSpName, string ErrorMessage, long? CustID, string PageName, string Type)
         {
             new StaticPagesDAL().DApplicationErrorLog(ErrorSpName, ErrorMessage, CustID, PageName, Type, "[dbo].[usp_ApplicationErrorLog]");
-           
+
             //SqlConnection.ClearAllPools();
         }
         public static void PaymentSMS(DataTable dt, string SendPhonenumber)
@@ -339,7 +339,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-               // SqlConnection.ClearAllPools();
+                // SqlConnection.ClearAllPools();
             }
         }
 
@@ -356,7 +356,7 @@ namespace WebapiApplication.DAL
                 string result1 = cc.SendTextSMS("ykrishna", "summary$1", MobileNumber, "Greeting from Kaakateeya.com ! Your pin Number is " + strMobileverf + " Use this PIN to verify your primary mobile", "smscntry");
             }
 
-           // SqlConnection.ClearAllPools();
+            // SqlConnection.ClearAllPools();
         }
 
         public static string S3bucketname = ConfigurationManager.AppSettings["bucketName"];
@@ -425,7 +425,7 @@ namespace WebapiApplication.DAL
             }
             finally
             {
-               // SqlConnection.ClearAllPools();
+                // SqlConnection.ClearAllPools();
             }
         }
 
@@ -448,7 +448,7 @@ namespace WebapiApplication.DAL
 
 
 
-      
+
         public static string gethorophotoS3(string cust_id, string HoroscopeImageName)
         {
 
@@ -470,7 +470,7 @@ namespace WebapiApplication.DAL
                 path = !string.IsNullOrEmpty(S3PhotoPath) ? S3PhotoPath + "Images/customernoimages/Horo_no.jpg" : "../../Customer_new/images/Horo_no.jpg";
             }
 
-          //  SqlConnection.ClearAllPools();
+            //  SqlConnection.ClearAllPools();
             return path;
         }
 
@@ -519,6 +519,12 @@ namespace WebapiApplication.DAL
             }
             return cipherText;
         }
+
+        public static string checknullornot(string strnullornot)
+        {
+            return !string.IsNullOrEmpty(strnullornot) ? strnullornot : null;
+        }
+
 
     }
 }
