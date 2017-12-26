@@ -155,9 +155,4 @@ D:\CustomerWebApi\WebapiApplication\bin\Mono.Math.xml
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csproj.App.config
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.XmlSerializers.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.XmlSerializers.dll
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.pdb
-D:\CustomerWebApi\WebapiApplication\bin\EmailVerification6_CSharp.pdb
+D:\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
