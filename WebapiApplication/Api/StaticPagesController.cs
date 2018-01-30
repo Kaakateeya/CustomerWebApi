@@ -115,6 +115,7 @@ namespace WebapiApplication.Api
 
         public mobileActiveStatus getmobileloginStatus(int? custid) { return this.ISuccessStories.getmobileloginStatus(custid); }
         public viewedByOther getMobileLandingOrderDisplay_all(int custid) { return this.ISuccessStories.MobileLandingOrderDisplay(custid, 1, 9, "all"); }
+
         public viewedByOther getMobileLandingOrderDisplay(int custid, int? startIndex, int? endIndex, string type)
         {
 

@@ -150,6 +150,7 @@ D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\System.Web.Providers.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Org.Mentalis.Security.Cryptography.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\bin\Mono.Math.xml
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csproj.App.config
+D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.csprojResolveAssemblyReference.cache
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.dll
 D:\customerWebApi\CustomerWebApi\WebapiApplication\obj\Debug\WebapiApplication.pdb
 D:\CustomerWebApi\WebapiApplication\bin\EmailVerification3_CSharp.dll
